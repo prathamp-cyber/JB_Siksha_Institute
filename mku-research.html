@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School of Philosophy & Research - MK University | JB Siksha Institute</title>
+    <meta name="description" content="Explore UGC conforming Ph.D. programs and Post-Doctoral fellowships offered by the School of Philosophy & Research, MK University Patan.">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Custom Styles for Research Course Page */
+        .school-hero {
+            padding: calc(var(--header-height) + 2rem) 0 3rem;
+            background-image: linear-gradient(to bottom, rgba(27, 83, 56, 0.1), rgba(255, 255, 255, 1));
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb i {
+            font-size: 0.75rem;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 3.2fr 1.3fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .course-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            min-height: 380px;
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--primary-brown);
+        }
+
+        .course-card.postdoc::before {
+            background-color: #1e88e5;
+        }
+
+        .course-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(27, 83, 56, 0.2);
+        }
+
+        .course-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.2rem;
+            gap: 0.5rem;
+        }
+
+        .course-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--radius-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-phd {
+            background-color: var(--primary-brown-subtle);
+            color: var(--primary-brown);
+        }
+
+        .badge-fellow {
+            background-color: #e3f2fd;
+            color: #1e88e5;
+        }
+
+        .course-duration {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .course-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+            font-family: var(--font-serif);
+        }
+
+        .course-syllabus-list {
+            list-style-type: square;
+            padding-left: 1.2rem;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            flex-grow: 1;
+        }
+
+        .course-careers {
+            background-color: var(--bg-light);
+            border-radius: var(--radius-sm);
+            padding: 0.8rem 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-left: 3px solid var(--primary-brown);
+        }
+
+        .sticky-sidebar {
+            position: sticky;
+            top: 110px;
+        }
+
+        .form-message {
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: var(--primary-green-subtle);
+            color: var(--primary-green);
+            border: 1px solid rgba(14, 58, 36, 0.1);
+        }
+
+        .form-message.error {
+            background-color: #fce4ec;
+            color: var(--accent-red);
+            border: 1px solid rgba(192, 57, 43, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition-normal);
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px var(--primary-green-subtle);
+        }
+
+        @media (max-width: 1024px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">JB</div>
+                JB Siksha <span>Institute</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="universities.html" class="nav-link">Universities</a></li>
+                <li><a href="syllabus.html" class="nav-link">Syllabus</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li><a href="contact.html" class="btn btn-primary btn-sm">Get Counseling</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- School Hero Section -->
+    <section class="school-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="universities.html">Universities</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="mk-university.html">MK University</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>School of Philosophy & Research</span>
+            </div>
+            
+            <span class="section-tag"><i class="fa-solid fa-microscope"></i> Philosophy & Advanced Research</span>
+            <h1 style="font-size: 2.8rem; margin-top: 0.5rem; color: var(--primary-green);">Academic Programs & Offerings</h1>
+            <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 800px; margin-top: 0.8rem; line-height: 1.6;">
+                Strictly conforming to UGC guidelines, coordinating doctoral research projects, peer-reviewed publications, and advanced research fellowships.
+            </p>
+        </div>
+    </section>
+
+    <!-- Courses Grid Section -->
+    <section class="section" style="padding-top: 3rem;">
+        <div class="container">
+            <div class="grid-layout">
+                
+                <!-- Left: Attractive Cards List -->
+                <div>
+                    <h2 style="font-family: var(--font-serif); color: var(--primary-green); margin-bottom: 1.5rem;">Allotted Courses Directory</h2>
+                    
+                    <div class="courses-grid">
+                        
+                        <!-- Card 1: PhD Eng -->
+                        <div class="course-card">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-phd">Doctoral (Ph.D.)</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 3 - 6 Years</span>
+                                </div>
+                                <h3 class="course-title">Ph.D. in Engineering & Computer Science</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Available domains: CSE, ME, Civil, Electrical, EC and Information Technology.</li>
+                                    <li>Structure: Direct thesis research, research seminars, publication counts.</li>
+                                    <li>Both Full-Time and Part-Time tracks are available.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Director R&D, Senior Principal Scientist, Chief Engineer.
+                            </div>
+                        </div>
+
+                        <!-- Card 2: PhD Commerce -->
+                        <div class="course-card">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-phd">Doctoral (Ph.D.)</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 3 - 6 Years</span>
+                                </div>
+                                <h3 class="course-title">Ph.D. in Commerce & Management Studies</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Available domains: Strategic Finance, HR planning, Consumer Analytics.</li>
+                                    <li>Focus areas: Corporate behavior, auditing trends, statistical modeling.</li>
+                                    <li>Both Full-Time and Part-Time tracks are available.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> University Dean, Policy Consultant, Corporate Advisor.
+                            </div>
+                        </div>
+
+                        <!-- Card 3: PhD Sciences -->
+                        <div class="course-card">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-phd">Doctoral (Ph.D.)</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 3 - 6 Years</span>
+                                </div>
+                                <h3 class="course-title">Ph.D. in Basic & Applied Sciences</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Available domains: Organic Chemistry, Analytical Chemistry, Physics, Math, Botany.</li>
+                                    <li>Focus areas: Laboratory experimental setups, chemical profiling, bio-diversity.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Research Scientist, Laboratory Director, Academic Scholar.
+                            </div>
+                        </div>
+
+                        <!-- Card 4: PhD Law -->
+                        <div class="course-card">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-phd">Doctoral (Ph.D.)</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 3 - 6 Years</span>
+                                </div>
+                                <h3 class="course-title">Ph.D. in Law & Legal Studies</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Available domains: Constitutional Law, Corporate Governance, Judicial Reforms.</li>
+                                    <li>Focus areas: Criminology, human rights treaties, international arbitration codes.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Judicial Adviser, Policy Architect, Law Professor.
+                            </div>
+                        </div>
+
+                        <!-- Card 5: Post Doc -->
+                        <div class="course-card postdoc">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-fellow">Fellowship</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 1 - 2 Years</span>
+                                </div>
+                                <h3 class="course-title">Post-Doctoral Research Fellowship (PDF)</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Designed for Ph.D. graduates to perform independent scholarly research.</li>
+                                    <li>Focus areas: Grant writing, patent registrations, and international journals.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Lead Scientist, Project Investigator, Principal Academic.
+                            </div>
+                        </div>
+
+                        <!-- Card 6: Pre PhD -->
+                        <div class="course-card postdoc">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-fellow">UGC Credits</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 6 Months</span>
+                                </div>
+                                <h3 class="course-title">Pre-Ph.D. Research Course Work</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Mandatory credit program covering Research Methodology and ethics.</li>
+                                    <li>Focus areas: Literature reviews, computer tools, statistical analysis.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Essential for Doctor of Philosophy (Ph.D.) registration.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right: Sticky Counseling Sidebar -->
+                <div class="sticky-sidebar">
+                    <div class="card" style="padding: 2.2rem 1.8rem; border-color: var(--primary-brown);">
+                        <h3 style="font-size: 1.35rem; margin-bottom: 0.6rem; color: var(--primary-green); display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-solid fa-headset"></i> Counseling Desk
+                        </h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5;">
+                            JB Siksha Institute manages the counseling, choice filling, registration, and seat coordinates for Research at MK University.
+                        </p>
+                        
+                        <div style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.9rem;">
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-phone" style="color: var(--primary-brown); width: 16px;"></i>
+                                <a href="tel:+919876543210" style="font-weight: 700; color: var(--text-dark);">+91 98765 43210</a>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-envelope" style="color: var(--primary-brown); width: 16px;"></i>
+                                <a href="mailto:prathamyatharoop@gmail.com" style="font-weight: 700; color: var(--text-dark); word-break: break-all;">prathamyatharoop@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: var(--primary-green);">Request Admissions Guidance</h4>
+                        
+                        <form id="university-counseling-form">
+                            <div class="form-group">
+                                <label for="counsel-name">Full Name *</label>
+                                <input type="text" id="counsel-name" placeholder="Your Name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="counsel-email">Email Address *</label>
+                                <input type="email" id="counsel-email" placeholder="Your Email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="counsel-phone">Mobile Number *</label>
+                                <input type="tel" id="counsel-phone" placeholder="Your Phone Number" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="counsel-school">Preferred School *</label>
+                                <select id="counsel-school" required>
+                                    <option value="Research (Ph.D.)" selected>Philosophy & Research (Ph.D.)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="counsel-message">Your Message</label>
+                                <textarea id="counsel-message" rows="3" placeholder="Describe your background or questions..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                                Submit Request <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        
+                        <div id="counsel-form-response" class="form-message"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    JB Siksha <span>Institute</span>
+                </a>
+                <p>A trusted educational admission consultancy helping students choose appropriate degree paths and secure seats in leading colleges across Gujarat and India.</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html">Home</a></li>
+                    <li class="footer-link-item"><a href="about.html">About Us</a></li>
+                    <li class="footer-link-item"><a href="universities.html">Universities</a></li>
+                    <li class="footer-link-item"><a href="syllabus.html">Syllabus</a></li>
+                    <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Our Services</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="#">Career Profiling</a></li>
+                    <li class="footer-link-item"><a href="#">ACPC Counselling</a></li>
+                    <li class="footer-link-item"><a href="#">Management Seats</a></li>
+                    <li class="footer-link-item"><a href="#">NRI Sponsorship</a></li>
+                    <li class="footer-link-item"><a href="#">Hostel Coordination</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Contact Office</h3>
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>302, Premium Plaza, Near University Circle, University Road, Ahmedabad, Gujarat - 380009</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 98765 43210<br>+91 79 2654 9870</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>admissions@jbsiksha.in<br>info@jbsiksha.in</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 JB Siksha Institute. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript & Form Handler Script -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('university-counseling-form');
+            const responseDiv = document.getElementById('counsel-form-response');
+
+            if (form && responseDiv) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const name = document.getElementById('counsel-name').value.trim();
+                    const email = document.getElementById('counsel-email').value.trim();
+                    const phone = document.getElementById('counsel-phone').value.trim();
+                    const school = document.getElementById('counsel-school').value;
+
+                    if (!name || !email || !phone || !school) {
+                        responseDiv.textContent = 'Please fill out all required fields.';
+                        responseDiv.className = 'form-message error';
+                        responseDiv.style.display = 'block';
+                        return;
+                    }
+
+                    responseDiv.textContent = 'Submitting counseling request...';
+                    responseDiv.className = 'form-message';
+                    responseDiv.style.display = 'block';
+
+                    // Simulate email routing trigger
+                    setTimeout(() => {
+                        responseDiv.innerHTML = `<strong>Request Received!</strong> Thank you ${name}. We have logged your request for the <strong>${school}</strong> at MK University. Admissions specialist will contact you on <strong>${phone}</strong> or send details to <strong>${email}</strong>. (Lead sent to prathamyatharoop@gmail.com)`;
+                        responseDiv.className = 'form-message success';
+                        form.reset();
+                    }, 1200);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

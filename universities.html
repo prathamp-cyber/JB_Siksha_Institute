@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Universities | JB Siksha Institute Consultancy</title>
+    <meta name="description" content="Search and filter through premier partner universities in Gujarat and across India. Get detailed entry criteria, accredited ratings, and eligibility info.">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">JB</div>
+                JB Siksha <span>Institute</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="universities.html" class="nav-link">Universities</a></li>
+                <li><a href="syllabus.html" class="nav-link">Syllabus</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li><a href="contact.html" class="btn btn-primary btn-sm">Get Counseling</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="about-hero" style="padding-bottom: 2rem;">
+        <div class="container">
+            <span class="section-tag">Explore Options</span>
+            <h1>Universities & Institutions</h1>
+            <p class="section-desc" style="max-width: 600px; margin: 0 auto;">Select from the finest private and government institutions across Gujarat and India.</p>
+        </div>
+    </section>
+
+    <!-- Filter & Grid Section -->
+    <section class="section" style="padding-top: 2rem;">
+        <div class="container">
+            
+            <!-- Filters Panel -->
+            <div class="filter-controls">
+                <div class="search-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="university-search" class="search-input" placeholder="Search by university name or city...">
+                </div>
+                <div class="tags-group">
+                    <button class="tag-btn active" data-filter="all">All Institutions</button>
+                    <button class="tag-btn" data-filter="gujarat">Gujarat Region</button>
+                    <button class="tag-btn" data-filter="india-wide">India-wide (Other States)</button>
+                    <button class="tag-btn" data-filter="engineering">Engineering / Tech</button>
+                    <button class="tag-btn" data-filter="medical">Medical / Pharmacy</button>
+                    <button class="tag-btn" data-filter="management">MBA / Management</button>
+                </div>
+            </div>
+
+            <!-- University Cards Grid -->
+            <div class="grid-3" id="university-grid">
+                
+                <!-- Uni 1: Nirma -->
+                <div class="card university-card uni-grid-item" data-tags="gujarat engineering management">
+                    <div class="uni-header" style="background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=500&q=80')">
+                        <span class="uni-badge">Gujarat</span>
+                        <div class="uni-logo-placeholder">NU</div>
+                    </div>
+                    <div class="uni-body">
+                        <div class="uni-location"><i class="fa-solid fa-location-dot"></i> Ahmedabad, Gujarat</div>
+                        <h3 class="uni-title">Nirma University</h3>
+                        <div class="uni-meta-list">
+                            <div class="uni-meta-item"><i class="fa-solid fa-building-columns"></i> Private University</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-award"></i> NAAC A+ Grade</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-book-open"></i> B.Tech, MBA, B.Pharm, Law</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Uni 2: MSU Baroda -->
+                <div class="card university-card uni-grid-item" data-tags="gujarat engineering arts">
+                    <div class="uni-header" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=500&q=80')">
+                        <span class="uni-badge">Gujarat</span>
+                        <div class="uni-logo-placeholder">MS</div>
+                    </div>
+                    <div class="uni-body">
+                        <div class="uni-location"><i class="fa-solid fa-location-dot"></i> Vadodara, Gujarat</div>
+                        <h3 class="uni-title">Maharaja Sayajirao University (MSU)</h3>
+                        <div class="uni-meta-list">
+                            <div class="uni-meta-item"><i class="fa-solid fa-building-columns"></i> State Govt University</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-award"></i> NAAC A Grade</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-book-open"></i> Fine Arts, B.E., Science, Comm</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Uni 3: SRM Chennai -->
+                <div class="card university-card uni-grid-item" data-tags="india-wide engineering medical management">
+                    <div class="uni-header" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=500&q=80')">
+                        <span class="uni-badge">National</span>
+                        <div class="uni-logo-placeholder">SR</div>
+                    </div>
+                    <div class="uni-body">
+                        <div class="uni-location"><i class="fa-solid fa-location-dot"></i> Chennai, Tamil Nadu</div>
+                        <h3 class="uni-title">SRM Institute of Science & Tech</h3>
+                        <div class="uni-meta-list">
+                            <div class="uni-meta-item"><i class="fa-solid fa-building-columns"></i> Deemed University</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-award"></i> NAAC A++ Grade</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-book-open"></i> B.Tech, MBBS, MBA, Arts</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Uni 4: DA-IICT -->
+                <div class="card university-card uni-grid-item" data-tags="gujarat engineering">
+                    <div class="uni-header" style="background-image: url('https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=500&q=80')">
+                        <span class="uni-badge">Gujarat</span>
+                        <div class="uni-logo-placeholder">DA</div>
+                    </div>
+                    <div class="uni-body">
+                        <div class="uni-location"><i class="fa-solid fa-location-dot"></i> Gandhinagar, Gujarat</div>
+                        <h3 class="uni-title">DA-IICT</h3>
+                        <div class="uni-meta-list">
+                            <div class="uni-meta-item"><i class="fa-solid fa-building-columns"></i> Private (Reliance Group)</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-award"></i> Premier ICT Academy</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-book-open"></i> B.Tech (ICT, MnC), M.Tech</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Uni 5: PDEU -->
+                <div class="card university-card uni-grid-item" data-tags="gujarat engineering management">
+                    <div class="uni-header" style="background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=500&q=80')">
+                        <span class="uni-badge">Gujarat</span>
+                        <div class="uni-logo-placeholder">PD</div>
+                    </div>
+                    <div class="uni-body">
+                        <div class="uni-location"><i class="fa-solid fa-location-dot"></i> Gandhinagar, Gujarat</div>
+                        <h3 class="uni-title">Pandit Deendayal Energy University</h3>
+                        <div class="uni-meta-list">
+                            <div class="uni-meta-item"><i class="fa-solid fa-building-columns"></i> Private / State-Recognized</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-award"></i> NAAC A++ Grade</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-book-open"></i> Petroleum Eng, CSE, MBA, Liberal Studies</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Uni 6: Symbiosis Pune -->
+                <div class="card university-card uni-grid-item" data-tags="india-wide management">
+                    <div class="uni-header" style="background-image: url('https://images.unsplash.com/photo-1607237138185-eedd996c5c0c?auto=format&fit=crop&w=500&q=80')">
+                        <span class="uni-badge">National</span>
+                        <div class="uni-logo-placeholder">SI</div>
+                    </div>
+                    <div class="uni-body">
+                        <div class="uni-location"><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra</div>
+                        <h3 class="uni-title">Symbiosis International University</h3>
+                        <div class="uni-meta-list">
+                            <div class="uni-meta-item"><i class="fa-solid fa-building-columns"></i> Deemed University</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-award"></i> NAAC A++ Grade</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-book-open"></i> BBA, MBA, LLB, Design</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Uni 7: VIT Vellore -->
+                <div class="card university-card uni-grid-item" data-tags="india-wide engineering">
+                    <div class="uni-header" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=500&q=80')">
+                        <span class="uni-badge">National</span>
+                        <div class="uni-logo-placeholder">VI</div>
+                    </div>
+                    <div class="uni-body">
+                        <div class="uni-location"><i class="fa-solid fa-location-dot"></i> Vellore, Tamil Nadu</div>
+                        <h3 class="uni-title">Vellore Institute of Technology</h3>
+                        <div class="uni-meta-list">
+                            <div class="uni-meta-item"><i class="fa-solid fa-building-columns"></i> Institution of Eminence</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-award"></i> NIRF Top 10 Engineering</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-book-open"></i> B.Tech, Integrated M.Tech, BCA</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Uni 8: GMERS medical -->
+                <div class="card university-card uni-grid-item" data-tags="gujarat medical">
+                    <div class="uni-header" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=500&q=80')">
+                        <span class="uni-badge">Gujarat</span>
+                        <div class="uni-logo-placeholder">GM</div>
+                    </div>
+                    <div class="uni-body">
+                        <div class="uni-location"><i class="fa-solid fa-location-dot"></i> Multiple Cities, Gujarat</div>
+                        <h3 class="uni-title">GMERS Medical Colleges</h3>
+                        <div class="uni-meta-list">
+                            <div class="uni-meta-item"><i class="fa-solid fa-building-columns"></i> Semi-Government Medical</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-award"></i> NMC Approved</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-book-open"></i> MBBS, General Nursing</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Uni 9: IIM Ahmedabad -->
+                <div class="card university-card uni-grid-item" data-tags="gujarat management">
+                    <div class="uni-header" style="background-image: url('https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?auto=format&fit=crop&w=500&q=80')">
+                        <span class="uni-badge">Gujarat</span>
+                        <div class="uni-logo-placeholder">IIM</div>
+                    </div>
+                    <div class="uni-body">
+                        <div class="uni-location"><i class="fa-solid fa-location-dot"></i> Ahmedabad, Gujarat</div>
+                        <h3 class="uni-title">IIM Ahmedabad</h3>
+                        <div class="uni-meta-list">
+                            <div class="uni-meta-item"><i class="fa-solid fa-building-columns"></i> Autonomous National Institute</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-award"></i> NIRF Rank #1 Management</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-book-open"></i> PGP (MBA), FABM, Executive MBA</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- No Results Block -->
+                <div class="no-results" id="no-results" style="display: none;">
+                    <i class="fa-solid fa-building-circle-exclamation"></i>
+                    <h3>No Universities Match Your Query</h3>
+                    <p style="margin-top: 0.5rem;">Try adjusting your search terms or choosing a different filter category.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    JB Siksha <span>Institute</span>
+                </a>
+                <p>A trusted educational admission consultancy helping students choose appropriate degree paths and secure seats in leading colleges across Gujarat and India.</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html">Home</a></li>
+                    <li class="footer-link-item"><a href="about.html">About Us</a></li>
+                    <li class="footer-link-item"><a href="universities.html">Universities</a></li>
+                    <li class="footer-link-item"><a href="syllabus.html">Syllabus</a></li>
+                    <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Our Services</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="#">Career Profiling</a></li>
+                    <li class="footer-link-item"><a href="#">ACPC Counselling</a></li>
+                    <li class="footer-link-item"><a href="#">Management Seats</a></li>
+                    <li class="footer-link-item"><a href="#">NRI Sponsorship</a></li>
+                    <li class="footer-link-item"><a href="#">Hostel Coordination</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Contact Office</h3>
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>302, Premium Plaza, Near University Circle, University Road, Ahmedabad, Gujarat - 380009</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 98765 43210<br>+91 79 2654 9870</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>admissions@jbsiksha.in<br>info@jbsiksha.in</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 JB Siksha Institute. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School of Philosophy & Research - MK University | JB Siksha Institute</title>
-    <meta name="description" content="Explore UGC conforming Ph.D. programs and Post-Doctoral fellowships offered by the School of Philosophy & Research, MK University Patan.">
+    <title>U.V. Patel College of Engineering (UVPCE) - Ganpat University | JB Siksha Institute</title>
+    <meta name="description" content="Explore B.Tech and M.Tech programs, specializations, approvals, eligibility, and fees for U.V. Patel College of Engineering, Ganpat University Mehsana.">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Custom Styles for Research Course Page */
+        /* Custom Styles for Engineering Course Page */
         .school-hero {
             padding: calc(var(--header-height) + 2rem) 0 3rem;
             background-image: linear-gradient(to bottom, rgba(27, 83, 56, 0.1), rgba(255, 255, 255, 1));
@@ -72,10 +72,14 @@
             left: 0;
             width: 100%;
             height: 4px;
+            background-color: var(--primary-green);
+        }
+
+        .course-card.diploma::before {
             background-color: var(--primary-brown);
         }
 
-        .course-card.postdoc::before {
+        .course-card.postgrad::before {
             background-color: #1e88e5;
         }
 
@@ -102,14 +106,19 @@
             letter-spacing: 0.5px;
         }
 
-        .badge-phd {
-            background-color: var(--primary-brown-subtle);
-            color: var(--primary-brown);
+        .badge-ug {
+            background-color: var(--primary-green-subtle);
+            color: var(--primary-green);
         }
 
-        .badge-fellow {
+        .badge-pg {
             background-color: #e3f2fd;
             color: #1e88e5;
+        }
+
+        .badge-dip {
+            background-color: var(--primary-brown-subtle);
+            color: var(--primary-brown);
         }
 
         .course-duration {
@@ -139,21 +148,19 @@
             display: flex;
             flex-direction: column;
             gap: 0.4rem;
-            flex-grow: 1;
         }
 
         .course-careers {
-            background-color: var(--bg-light);
-            border-radius: var(--radius-sm);
-            padding: 0.8rem 1rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+            margin-top: auto;
             font-size: 0.85rem;
-            color: var(--text-muted);
-            border-left: 3px solid var(--primary-brown);
+            color: var(--text-dark);
         }
 
         .sticky-sidebar {
             position: sticky;
-            top: 110px;
+            top: 100px;
         }
 
         .form-message {
@@ -245,15 +252,15 @@
                 <i class="fa-solid fa-chevron-right"></i>
                 <a href="universities.html">Universities</a>
                 <i class="fa-solid fa-chevron-right"></i>
-                <a href="mk-university.html">MK University</a>
+                <a href="ganpat-university.html">Ganpat University</a>
                 <i class="fa-solid fa-chevron-right"></i>
-                <span>School of Philosophy & Research</span>
+                <span>Engineering & Technology</span>
             </div>
             
-            <span class="section-tag"><i class="fa-solid fa-microscope"></i> Philosophy & Advanced Research</span>
+            <span class="section-tag"><i class="fa-solid fa-laptop-code"></i> U.V. Patel College of Engineering (UVPCE)</span>
             <h1 style="font-size: 2.8rem; margin-top: 0.5rem; color: var(--primary-green);">Academic Programs & Offerings</h1>
             <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 800px; margin-top: 0.8rem; line-height: 1.6;">
-                Strictly conforming to UGC guidelines, coordinating doctoral research projects, peer-reviewed publications, and advanced research fellowships.
+                Explore top-tier technical degrees certified by AICTE, offered in collaborative association with global industry leaders like IBM, SAS, and Bosch.
             </p>
         </div>
     </section>
@@ -269,113 +276,154 @@
                     
                     <div class="courses-grid">
                         
-                        <!-- Card 1: PhD Eng -->
+                        <!-- Card 1: B.Tech CSE -->
                         <div class="course-card">
                             <div>
                                 <div class="course-card-header">
-                                    <span class="course-badge badge-phd">Doctoral (Ph.D.)</span>
-                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 3 - 6 Years</span>
+                                    <span class="course-badge badge-ug">UG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 4 Years</span>
                                 </div>
-                                <h3 class="course-title">Ph.D. in Engineering & Computer Science</h3>
+                                <h3 class="course-title">B.Tech - Computer Science & Engineering (CSE)</h3>
                                 <ul class="course-syllabus-list">
-                                    <li>Available domains: CSE, ME, Civil, Electrical, EC and Information Technology.</li>
-                                    <li>Structure: Direct thesis research, research seminars, publication counts.</li>
-                                    <li>Both Full-Time and Part-Time tracks are available.</li>
+                                    <li>Focus areas: Software Development, Full Stack Web Engineering, and Networking.</li>
+                                    <li>Industry specializations: Artificial Intelligence, Machine Learning, Cyber Security, and Cloud Computing.</li>
+                                    <li>Supported by academic collaborations with IBM & SAS for real-world projects.</li>
                                 </ul>
                             </div>
                             <div class="course-careers">
-                                <strong>Careers:</strong> Director R&D, Senior Principal Scientist, Chief Engineer.
+                                <strong>Careers:</strong> Software Engineer, Systems Architect, AI Specialist, Cloud Consultant.
                             </div>
                         </div>
 
-                        <!-- Card 2: PhD Commerce -->
+                        <!-- Card 2: B.Tech IT -->
                         <div class="course-card">
                             <div>
                                 <div class="course-card-header">
-                                    <span class="course-badge badge-phd">Doctoral (Ph.D.)</span>
-                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 3 - 6 Years</span>
+                                    <span class="course-badge badge-ug">UG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 4 Years</span>
                                 </div>
-                                <h3 class="course-title">Ph.D. in Commerce & Management Studies</h3>
+                                <h3 class="course-title">B.Tech - Information Technology (IT)</h3>
                                 <ul class="course-syllabus-list">
-                                    <li>Available domains: Strategic Finance, HR planning, Consumer Analytics.</li>
-                                    <li>Focus areas: Corporate behavior, auditing trends, statistical modeling.</li>
-                                    <li>Both Full-Time and Part-Time tracks are available.</li>
+                                    <li>Focus areas: Software Development, Database Management, and Mobile Application design.</li>
+                                    <li>Advanced streams: Cyber Security, Network Administration, and Big Data Analytics.</li>
+                                    <li>Features real-time projects and rigorous industry-aligned internships.</li>
                                 </ul>
                             </div>
                             <div class="course-careers">
-                                <strong>Careers:</strong> University Dean, Policy Consultant, Corporate Advisor.
+                                <strong>Careers:</strong> IT Analyst, Systems Administrator, Web Developer, Database Architect.
                             </div>
                         </div>
 
-                        <!-- Card 3: PhD Sciences -->
+                        <!-- Card 3: B.Tech Mech -->
                         <div class="course-card">
                             <div>
                                 <div class="course-card-header">
-                                    <span class="course-badge badge-phd">Doctoral (Ph.D.)</span>
-                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 3 - 6 Years</span>
+                                    <span class="course-badge badge-ug">UG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 4 Years</span>
                                 </div>
-                                <h3 class="course-title">Ph.D. in Basic & Applied Sciences</h3>
+                                <h3 class="course-title">B.Tech - Mechanical Engineering (ME)</h3>
                                 <ul class="course-syllabus-list">
-                                    <li>Available domains: Organic Chemistry, Analytical Chemistry, Physics, Math, Botany.</li>
-                                    <li>Focus areas: Laboratory experimental setups, chemical profiling, bio-diversity.</li>
+                                    <li>Focus areas: Advanced Thermodynamics, Fluid Mechanics, and Design of Machines.</li>
+                                    <li>Special tracks: CAD/CAM setups, Mechatronics, and Robotics Lab integrations.</li>
+                                    <li>Features active practical training in advanced manufacturing design.</li>
                                 </ul>
                             </div>
                             <div class="course-careers">
-                                <strong>Careers:</strong> Research Scientist, Laboratory Director, Academic Scholar.
+                                <strong>Careers:</strong> Design Engineer, Automotive Specialist, Production Manager, Robotics Tech.
                             </div>
                         </div>
 
-                        <!-- Card 4: PhD Law -->
+                        <!-- Card 4: B.Tech Civil -->
                         <div class="course-card">
                             <div>
                                 <div class="course-card-header">
-                                    <span class="course-badge badge-phd">Doctoral (Ph.D.)</span>
-                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 3 - 6 Years</span>
+                                    <span class="course-badge badge-ug">UG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 4 Years</span>
                                 </div>
-                                <h3 class="course-title">Ph.D. in Law & Legal Studies</h3>
+                                <h3 class="course-title">B.Tech - Civil Engineering (CE)</h3>
                                 <ul class="course-syllabus-list">
-                                    <li>Available domains: Constitutional Law, Corporate Governance, Judicial Reforms.</li>
-                                    <li>Focus areas: Criminology, human rights treaties, international arbitration codes.</li>
+                                    <li>Focus areas: Structural Design, Geotechnical, and Environmental Engineering.</li>
+                                    <li>Advanced modules: GIS Mapping, Concrete Laboratory, and Construction Planning.</li>
+                                    <li>Features real-world field surveys and structural safety analyses.</li>
                                 </ul>
                             </div>
                             <div class="course-careers">
-                                <strong>Careers:</strong> Judicial Adviser, Policy Architect, Law Professor.
+                                <strong>Careers:</strong> Structural Consultant, Site Supervisor, Town Planner, Quantity Surveyor.
                             </div>
                         </div>
 
-                        <!-- Card 5: Post Doc -->
-                        <div class="course-card postdoc">
+                        <!-- Card 5: B.Tech Marine -->
+                        <div class="course-card">
                             <div>
                                 <div class="course-card-header">
-                                    <span class="course-badge badge-fellow">Fellowship</span>
-                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 1 - 2 Years</span>
+                                    <span class="course-badge badge-ug">UG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 4 Years</span>
                                 </div>
-                                <h3 class="course-title">Post-Doctoral Research Fellowship (PDF)</h3>
+                                <h3 class="course-title">B.Tech - Marine Engineering</h3>
                                 <ul class="course-syllabus-list">
-                                    <li>Designed for Ph.D. graduates to perform independent scholarly research.</li>
-                                    <li>Focus areas: Grant writing, patent registrations, and international journals.</li>
+                                    <li>Fully residential program conforming to Directorate General of Shipping standards.</li>
+                                    <li>Focus: Ship Mechanics, Marine Propulsion, Electrical Systems, and Safety Drills.</li>
+                                    <li>Practical training inside real Ship Engine Room simulator systems.</li>
                                 </ul>
                             </div>
                             <div class="course-careers">
-                                <strong>Careers:</strong> Lead Scientist, Project Investigator, Principal Academic.
+                                <strong>Careers:</strong> Marine Engineer, Marine Surveyor, Shipping Chief Technical Officer.
                             </div>
                         </div>
 
-                        <!-- Card 6: Pre PhD -->
-                        <div class="course-card postdoc">
+                        <!-- Card 6: B.Tech Biomedical -->
+                        <div class="course-card">
                             <div>
                                 <div class="course-card-header">
-                                    <span class="course-badge badge-fellow">UGC Credits</span>
-                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 6 Months</span>
+                                    <span class="course-badge badge-ug">UG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 4 Years</span>
                                 </div>
-                                <h3 class="course-title">Pre-Ph.D. Research Course Work</h3>
+                                <h3 class="course-title">B.Tech - Biomedical Engineering</h3>
                                 <ul class="course-syllabus-list">
-                                    <li>Mandatory credit program covering Research Methodology and ethics.</li>
-                                    <li>Focus areas: Literature reviews, computer tools, statistical analysis.</li>
+                                    <li>Focus: Medical Diagnostics Equipment, Bio-sensors, and Rehabilitation Engineering.</li>
+                                    <li>Streams: Medical Imaging, Biomaterials, and Physiological Modeling.</li>
+                                    <li>Combines engineering analysis with physical human healthcare practices.</li>
                                 </ul>
                             </div>
                             <div class="course-careers">
-                                <strong>Careers:</strong> Essential for Doctor of Philosophy (Ph.D.) registration.
+                                <strong>Careers:</strong> Biomedical Analyst, Medical Equipment Manager, Clinical Research Lead.
+                            </div>
+                        </div>
+
+                        <!-- Card 7: M.Tech CSE -->
+                        <div class="course-card postgrad">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-pg">PG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 2 Years</span>
+                                </div>
+                                <h3 class="course-title">M.Tech - Computer Engineering (CSE)</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Focus areas: Advanced Algorithm Analysis, Deep Learning, and Cloud Systems.</li>
+                                    <li>Requires a comprehensive thesis and industry research internship projects.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Senior Software Lead, R&D Engineer, Database Administrator.
+                            </div>
+                        </div>
+
+                        <!-- Card 8: Polytechnic Diploma -->
+                        <div class="course-card diploma">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-dip">Diploma</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 3 Years</span>
+                                </div>
+                                <h3 class="course-title">Polytechnic Diploma (CS / Mech / Civil / EE)</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Focus: Fundamental engineering principles, drafting, and workshops.</li>
+                                    <li>Emphasizes laboratory operations, machinery assembly, and repairs.</li>
+                                    <li>Direct vertical entry route to B.Tech program (2nd year lateral entry).</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Junior Engineer, Technical Assistant, Workshop Supervisor.
                             </div>
                         </div>
 
@@ -389,7 +437,7 @@
                             <i class="fa-solid fa-headset"></i> Counseling Desk
                         </h3>
                         <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5;">
-                            JB Siksha Institute manages the counseling, choice filling, registration, and seat coordinates for Research at MK University.
+                            JB Siksha Institute assists you in counseling, choice filling, and secure seat registration for engineering courses at UVPCE, Ganpat University.
                         </p>
                         
                         <div style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.9rem;">
@@ -422,9 +470,9 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="counsel-school">Preferred School *</label>
+                                <label for="counsel-school">Preferred Faculty *</label>
                                 <select id="counsel-school" required>
-                                    <option value="Research (Ph.D.)" selected>Philosophy & Research (Ph.D.)</option>
+                                    <option value="UVPCE - Engineering" selected>U.V. Patel College of Engineering (UVPCE)</option>
                                 </select>
                             </div>
 
@@ -537,7 +585,7 @@
 
                     // Simulate email routing trigger
                     setTimeout(() => {
-                        responseDiv.innerHTML = `<strong>Request Received!</strong> Thank you ${name}. We have logged your request for the <strong>${school}</strong> at MK University. Admissions specialist will contact you on <strong>${phone}</strong> or send details to <strong>${email}</strong>. (Lead sent to prathamyatharoop@gmail.com)`;
+                        responseDiv.innerHTML = `<strong>Request Received!</strong> Thank you ${name}. We have logged your request for the <strong>${school}</strong>. Admissions specialist will contact you on <strong>${phone}</strong> or send details to <strong>${email}</strong>. (Lead sent to prathamyatharoop@gmail.com)`;
                         responseDiv.className = 'form-message success';
                         form.reset();
                     }, 1200);

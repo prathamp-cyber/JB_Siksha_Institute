@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School of Philosophy & Research - MK University | JB Siksha Institute</title>
-    <meta name="description" content="Explore UGC conforming Ph.D. programs and Post-Doctoral fellowships offered by the School of Philosophy & Research, MK University Patan.">
+    <title>Department of Computer Applications - Ganpat University | JB Siksha Institute</title>
+    <meta name="description" content="Explore BCA, B.Sc (CA & IT), and MCA programs, specializations, approvals, eligibility, and fees at Ganpat University.">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Custom Styles for Research Course Page */
+        /* Custom Styles for Computer Applications Page */
         .school-hero {
             padding: calc(var(--header-height) + 2rem) 0 3rem;
             background-image: linear-gradient(to bottom, rgba(27, 83, 56, 0.1), rgba(255, 255, 255, 1));
@@ -72,10 +72,14 @@
             left: 0;
             width: 100%;
             height: 4px;
+            background-color: var(--primary-green);
+        }
+
+        .course-card.diploma::before {
             background-color: var(--primary-brown);
         }
 
-        .course-card.postdoc::before {
+        .course-card.postgrad::before {
             background-color: #1e88e5;
         }
 
@@ -102,14 +106,19 @@
             letter-spacing: 0.5px;
         }
 
-        .badge-phd {
-            background-color: var(--primary-brown-subtle);
-            color: var(--primary-brown);
+        .badge-ug {
+            background-color: var(--primary-green-subtle);
+            color: var(--primary-green);
         }
 
-        .badge-fellow {
+        .badge-pg {
             background-color: #e3f2fd;
             color: #1e88e5;
+        }
+
+        .badge-dip {
+            background-color: var(--primary-brown-subtle);
+            color: var(--primary-brown);
         }
 
         .course-duration {
@@ -139,21 +148,19 @@
             display: flex;
             flex-direction: column;
             gap: 0.4rem;
-            flex-grow: 1;
         }
 
         .course-careers {
-            background-color: var(--bg-light);
-            border-radius: var(--radius-sm);
-            padding: 0.8rem 1rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+            margin-top: auto;
             font-size: 0.85rem;
-            color: var(--text-muted);
-            border-left: 3px solid var(--primary-brown);
+            color: var(--text-dark);
         }
 
         .sticky-sidebar {
             position: sticky;
-            top: 110px;
+            top: 100px;
         }
 
         .form-message {
@@ -245,15 +252,15 @@
                 <i class="fa-solid fa-chevron-right"></i>
                 <a href="universities.html">Universities</a>
                 <i class="fa-solid fa-chevron-right"></i>
-                <a href="mk-university.html">MK University</a>
+                <a href="ganpat-university.html">Ganpat University</a>
                 <i class="fa-solid fa-chevron-right"></i>
-                <span>School of Philosophy & Research</span>
+                <span>Computer Applications</span>
             </div>
             
-            <span class="section-tag"><i class="fa-solid fa-microscope"></i> Philosophy & Advanced Research</span>
-            <h1 style="font-size: 2.8rem; margin-top: 0.5rem; color: var(--primary-green);">Academic Programs & Offerings</h1>
+            <span class="section-tag"><i class="fa-solid fa-laptop"></i> Department of Computer Applications</span>
+            <h1 style="font-size: 2.8rem; margin-top: 0.5rem; color: var(--primary-green);">Computer Applications & IT</h1>
             <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 800px; margin-top: 0.8rem; line-height: 1.6;">
-                Strictly conforming to UGC guidelines, coordinating doctoral research projects, peer-reviewed publications, and advanced research fellowships.
+                Master application development, databases, and IT networks under custom industry-oriented syllabus cycles. Link directly to top placement centers in software development.
             </p>
         </div>
     </section>
@@ -269,113 +276,60 @@
                     
                     <div class="courses-grid">
                         
-                        <!-- Card 1: PhD Eng -->
+                        <!-- Card 1: BCA -->
                         <div class="course-card">
                             <div>
                                 <div class="course-card-header">
-                                    <span class="course-badge badge-phd">Doctoral (Ph.D.)</span>
-                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 3 - 6 Years</span>
+                                    <span class="course-badge badge-ug">UG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 3 Years</span>
                                 </div>
-                                <h3 class="course-title">Ph.D. in Engineering & Computer Science</h3>
+                                <h3 class="course-title">Bachelor of Computer Applications (BCA)</h3>
                                 <ul class="course-syllabus-list">
-                                    <li>Available domains: CSE, ME, Civil, Electrical, EC and Information Technology.</li>
-                                    <li>Structure: Direct thesis research, research seminars, publication counts.</li>
-                                    <li>Both Full-Time and Part-Time tracks are available.</li>
+                                    <li>Focus areas: Object-Oriented Programming (Java/C++), Data Structures, and Web Development.</li>
+                                    <li>Specialization tracks: Data Science, Cyber Security, and Mobile Applications.</li>
+                                    <li>Focuses on web development stacks and custom databases.</li>
                                 </ul>
                             </div>
                             <div class="course-careers">
-                                <strong>Careers:</strong> Director R&D, Senior Principal Scientist, Chief Engineer.
+                                <strong>Careers:</strong> Application Developer, Web Designer, Technical Specialist, System Operator.
                             </div>
                         </div>
 
-                        <!-- Card 2: PhD Commerce -->
+                        <!-- Card 2: B.Sc CA & IT -->
                         <div class="course-card">
                             <div>
                                 <div class="course-card-header">
-                                    <span class="course-badge badge-phd">Doctoral (Ph.D.)</span>
-                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 3 - 6 Years</span>
+                                    <span class="course-badge badge-ug">UG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 3 Years</span>
                                 </div>
-                                <h3 class="course-title">Ph.D. in Commerce & Management Studies</h3>
+                                <h3 class="course-title">B.Sc (Computer Applications & IT)</h3>
                                 <ul class="course-syllabus-list">
-                                    <li>Available domains: Strategic Finance, HR planning, Consumer Analytics.</li>
-                                    <li>Focus areas: Corporate behavior, auditing trends, statistical modeling.</li>
-                                    <li>Both Full-Time and Part-Time tracks are available.</li>
+                                    <li>Focus areas: Systems Architecture, Internet Technologies, and Operating Systems.</li>
+                                    <li>Studies cover data structures, network security, and cloud deployment principles.</li>
+                                    <li>Provides solid fundamentals in data communication and programming stacks.</li>
                                 </ul>
                             </div>
                             <div class="course-careers">
-                                <strong>Careers:</strong> University Dean, Policy Consultant, Corporate Advisor.
+                                <strong>Careers:</strong> Systems Analyst, Network Support Engineer, Web Developer, IT Consultant.
                             </div>
                         </div>
 
-                        <!-- Card 3: PhD Sciences -->
-                        <div class="course-card">
+                        <!-- Card 3: MCA -->
+                        <div class="course-card postgrad">
                             <div>
                                 <div class="course-card-header">
-                                    <span class="course-badge badge-phd">Doctoral (Ph.D.)</span>
-                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 3 - 6 Years</span>
+                                    <span class="course-badge badge-pg">PG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 2 Years</span>
                                 </div>
-                                <h3 class="course-title">Ph.D. in Basic & Applied Sciences</h3>
+                                <h3 class="course-title">Master of Computer Applications (MCA)</h3>
                                 <ul class="course-syllabus-list">
-                                    <li>Available domains: Organic Chemistry, Analytical Chemistry, Physics, Math, Botany.</li>
-                                    <li>Focus areas: Laboratory experimental setups, chemical profiling, bio-diversity.</li>
+                                    <li>Focus: Enterprise Computing, Advanced Software Architectures, and Machine Learning.</li>
+                                    <li>Features real-world enterprise projects, UI/UX designs, and mobile API structures.</li>
+                                    <li>Designed for students targeting premium software placements.</li>
                                 </ul>
                             </div>
                             <div class="course-careers">
-                                <strong>Careers:</strong> Research Scientist, Laboratory Director, Academic Scholar.
-                            </div>
-                        </div>
-
-                        <!-- Card 4: PhD Law -->
-                        <div class="course-card">
-                            <div>
-                                <div class="course-card-header">
-                                    <span class="course-badge badge-phd">Doctoral (Ph.D.)</span>
-                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 3 - 6 Years</span>
-                                </div>
-                                <h3 class="course-title">Ph.D. in Law & Legal Studies</h3>
-                                <ul class="course-syllabus-list">
-                                    <li>Available domains: Constitutional Law, Corporate Governance, Judicial Reforms.</li>
-                                    <li>Focus areas: Criminology, human rights treaties, international arbitration codes.</li>
-                                </ul>
-                            </div>
-                            <div class="course-careers">
-                                <strong>Careers:</strong> Judicial Adviser, Policy Architect, Law Professor.
-                            </div>
-                        </div>
-
-                        <!-- Card 5: Post Doc -->
-                        <div class="course-card postdoc">
-                            <div>
-                                <div class="course-card-header">
-                                    <span class="course-badge badge-fellow">Fellowship</span>
-                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 1 - 2 Years</span>
-                                </div>
-                                <h3 class="course-title">Post-Doctoral Research Fellowship (PDF)</h3>
-                                <ul class="course-syllabus-list">
-                                    <li>Designed for Ph.D. graduates to perform independent scholarly research.</li>
-                                    <li>Focus areas: Grant writing, patent registrations, and international journals.</li>
-                                </ul>
-                            </div>
-                            <div class="course-careers">
-                                <strong>Careers:</strong> Lead Scientist, Project Investigator, Principal Academic.
-                            </div>
-                        </div>
-
-                        <!-- Card 6: Pre PhD -->
-                        <div class="course-card postdoc">
-                            <div>
-                                <div class="course-card-header">
-                                    <span class="course-badge badge-fellow">UGC Credits</span>
-                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 6 Months</span>
-                                </div>
-                                <h3 class="course-title">Pre-Ph.D. Research Course Work</h3>
-                                <ul class="course-syllabus-list">
-                                    <li>Mandatory credit program covering Research Methodology and ethics.</li>
-                                    <li>Focus areas: Literature reviews, computer tools, statistical analysis.</li>
-                                </ul>
-                            </div>
-                            <div class="course-careers">
-                                <strong>Careers:</strong> Essential for Doctor of Philosophy (Ph.D.) registration.
+                                <strong>Careers:</strong> Software Lead Developer, Systems Architect, Project Manager, Database Administrator.
                             </div>
                         </div>
 
@@ -389,7 +343,7 @@
                             <i class="fa-solid fa-headset"></i> Counseling Desk
                         </h3>
                         <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5;">
-                            JB Siksha Institute manages the counseling, choice filling, registration, and seat coordinates for Research at MK University.
+                            JB Siksha Institute assists you in admission procedures, choice list creations, and lateral entry counseling for Computer Applications at Ganpat University.
                         </p>
                         
                         <div style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.9rem;">
@@ -422,9 +376,9 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="counsel-school">Preferred School *</label>
+                                <label for="counsel-school">Preferred Faculty *</label>
                                 <select id="counsel-school" required>
-                                    <option value="Research (Ph.D.)" selected>Philosophy & Research (Ph.D.)</option>
+                                    <option value="Computer Applications" selected>Department of Computer Applications</option>
                                 </select>
                             </div>
 
@@ -537,7 +491,7 @@
 
                     // Simulate email routing trigger
                     setTimeout(() => {
-                        responseDiv.innerHTML = `<strong>Request Received!</strong> Thank you ${name}. We have logged your request for the <strong>${school}</strong> at MK University. Admissions specialist will contact you on <strong>${phone}</strong> or send details to <strong>${email}</strong>. (Lead sent to prathamyatharoop@gmail.com)`;
+                        responseDiv.innerHTML = `<strong>Request Received!</strong> Thank you ${name}. We have logged your request for the <strong>${school}</strong>. Admissions specialist will contact you on <strong>${phone}</strong> or send details to <strong>${email}</strong>. (Lead sent to prathamyatharoop@gmail.com)`;
                         responseDiv.className = 'form-message success';
                         form.reset();
                     }, 1200);

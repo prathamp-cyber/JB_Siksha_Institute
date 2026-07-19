@@ -210,6 +210,62 @@
                 gap: 3rem;
             }
         }
+
+        /* Custom Table Styles */
+        .table-responsive {
+            overflow-x: auto;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .catalog-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            text-align: left;
+            background-color: var(--bg-white);
+        }
+
+        .catalog-table th {
+            background-color: var(--primary-green);
+            color: var(--bg-white);
+            padding: 0.9rem 1.2rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .catalog-table td {
+            padding: 0.9rem 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-dark);
+        }
+
+        .catalog-table tr:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        .catalog-table tr:hover {
+            background-color: rgba(27, 83, 56, 0.05);
+        }
+        
+        .catalog-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .dept-title {
+            font-family: var(--font-serif);
+            color: var(--primary-green);
+            font-size: 1.4rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-green-subtle);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -265,7 +321,7 @@
                 
                 <!-- Left: Attractive Cards List -->
                 <div>
-                    <h2 style="font-family: var(--font-serif); color: var(--primary-green); margin-bottom: 1.5rem;">Allotted Courses Directory</h2>
+                    <h2 style="font-family: var(--font-serif); color: var(--primary-green); margin-bottom: 1.5rem;">Featured Programs</h2>
                     
                     <div class="courses-grid">
                         
@@ -398,6 +454,97 @@
                             </div>
                         </div>
 
+                    </div>
+
+                    <!-- Complete Program Catalog Section -->
+                    <div style="margin-top: 4rem;">
+                        <h2 style="font-family: var(--font-serif); color: var(--primary-green); margin-bottom: 0.5rem;">Complete Program Catalog</h2>
+                        <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 2rem; line-height: 1.6;">
+                            Browse the complete list of science and agricultural programs offered under the School of Basic & Applied Science at MK University.
+                        </p>
+
+                        <!-- Dept 1: Basic & Applied Science -->
+                        <div class="dept-title">
+                            <i class="fa-solid fa-flask"></i> Department of Science
+                        </div>
+                        <div class="table-responsive">
+                            <table class="catalog-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 45%;">Program Name</th>
+                                        <th style="width: 15%;">Duration</th>
+                                        <th style="width: 40%;">Eligibility</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>B.Sc. (Hons.) Physics</td><td>3 Years</td><td>10+2 with Science</td></tr>
+                                    <tr><td>B.Sc. (Hons.) Chemistry</td><td>3 Years</td><td>10+2 with Science</td></tr>
+                                    <tr><td>B.Sc. (Hons.) Mathematics</td><td>3 Years</td><td>10+2 with Science</td></tr>
+                                    <tr><td>B.Sc. (Hons.) Botany</td><td>3 Years</td><td>10+2 with Science</td></tr>
+                                    <tr><td>B.Sc. (Hons.) Zoology</td><td>3 Years</td><td>10+2 with Science</td></tr>
+                                    <tr><td>B.Sc. (Hons.) Microbiology</td><td>3 Years</td><td>10+2 with Science</td></tr>
+                                    <tr><td>B.Sc. (Hons.) Biotechnology</td><td>3 Years</td><td>10+2 with Science</td></tr>
+                                    <tr><td>B.Sc. (Hons.) Biochemistry</td><td>3 Years</td><td>10+2 with Science</td></tr>
+                                    <tr><td>B.Sc. (Hons.) Environmental Science</td><td>3 Years</td><td>10+2 with Science</td></tr>
+                                    <tr><td>B.Sc. (General)</td><td>3 Years</td><td>10+2 with Science</td></tr>
+                                    <tr><td>B.Sc. (IT / Computer Science / Electronics)</td><td>3 Years</td><td>12th With PCM</td></tr>
+                                    <tr><td>M.Sc. (Physics)</td><td>2 Years</td><td>B.Sc. in relevant discipline</td></tr>
+                                    <tr><td>M.Sc. (Chemistry)</td><td>2 Years</td><td>B.Sc. in relevant discipline</td></tr>
+                                    <tr><td>M.Sc. (Mathematics)</td><td>2 Years</td><td>B.Sc. in relevant discipline</td></tr>
+                                    <tr><td>M.Sc. (Botany)</td><td>2 Years</td><td>B.Sc. in relevant discipline</td></tr>
+                                    <tr><td>M.Sc. (Zoology)</td><td>2 Years</td><td>B.Sc. in relevant discipline</td></tr>
+                                    <tr><td>M.Sc. (Microbiology)</td><td>2 Years</td><td>B.Sc. in relevant discipline</td></tr>
+                                    <tr><td>M.Sc. (Biotechnology)</td><td>2 Years</td><td>B.Sc. in relevant discipline</td></tr>
+                                    <tr><td>M.Sc. (Biochemistry)</td><td>2 Years</td><td>B.Sc. in relevant discipline</td></tr>
+                                    <tr><td>M.Sc. (Environmental Science)</td><td>2 Years</td><td>B.Sc. in relevant discipline</td></tr>
+                                    <tr><td>M.Sc. (IT / Computer Science / Electronics)</td><td>2 Years</td><td>B.Sc with relevant discipline</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Dept 2: Agriculture & Veterinary Science -->
+                        <div class="dept-title">
+                            <i class="fa-solid fa-seedling"></i> Department of Agriculture & Veterinary Science
+                        </div>
+                        <div class="table-responsive">
+                            <table class="catalog-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 45%;">Program Name</th>
+                                        <th style="width: 15%;">Duration</th>
+                                        <th style="width: 40%;">Eligibility</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>B.Sc. (Hons.) Agriculture</td><td>4 Years</td><td>10+2 with Science (PCB/PCM)</td></tr>
+                                    <tr><td>M.Sc. (Agriculture)</td><td>2 Years</td><td>B.Sc. (Agriculture) or equivalent</td></tr>
+                                    <tr><td>Diploma in Agriculture</td><td>1 Year</td><td>10th / 10+2 Pass</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Dept 3: Yoga & Naturopathy -->
+                        <div class="dept-title">
+                            <i class="fa-solid fa-spa"></i> Department of Yoga and Naturopathy
+                        </div>
+                        <div class="table-responsive">
+                            <table class="catalog-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 45%;">Program Name</th>
+                                        <th style="width: 15%;">Duration</th>
+                                        <th style="width: 40%;">Eligibility</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>B.A. (Yoga & Naturopathy)</td><td>3 Years</td><td>10+2 Pass</td></tr>
+                                    <tr><td>M.A. (Yoga & Naturopathy)</td><td>2 Years</td><td>Graduation in any discipline</td></tr>
+                                    <tr><td>MD (Yoga)</td><td>3 Years</td><td>Bachelor’s degree in Yoga / Allied field</td></tr>
+                                    <tr><td>PG Diploma in Yoga & Naturopathy</td><td>1 Year</td><td>Graduation in any discipline</td></tr>
+                                    <tr><td>UG Diploma in Yoga & Naturopathy</td><td>1 Year</td><td>10+2 Pass</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 

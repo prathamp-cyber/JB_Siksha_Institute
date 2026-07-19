@@ -219,6 +219,62 @@
                 gap: 3rem;
             }
         }
+
+        /* Custom Table Styles */
+        .table-responsive {
+            overflow-x: auto;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .catalog-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            text-align: left;
+            background-color: var(--bg-white);
+        }
+
+        .catalog-table th {
+            background-color: var(--primary-green);
+            color: var(--bg-white);
+            padding: 0.9rem 1.2rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .catalog-table td {
+            padding: 0.9rem 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-dark);
+        }
+
+        .catalog-table tr:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        .catalog-table tr:hover {
+            background-color: rgba(27, 83, 56, 0.05);
+        }
+        
+        .catalog-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .dept-title {
+            font-family: var(--font-serif);
+            color: var(--primary-green);
+            font-size: 1.4rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-green-subtle);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -274,7 +330,7 @@
                 
                 <!-- Left: Attractive Cards List -->
                 <div>
-                    <h2 style="font-family: var(--font-serif); color: var(--primary-green); margin-bottom: 1.5rem;">Allotted Courses Directory</h2>
+                    <h2 style="font-family: var(--font-serif); color: var(--primary-green); margin-bottom: 1.5rem;">Featured Programs</h2>
                     
                     <div class="courses-grid">
                         
@@ -409,6 +465,90 @@
                             </div>
                         </div>
 
+                    </div>
+
+                    <!-- Complete Program Catalog Section -->
+                    <div style="margin-top: 4rem;">
+                        <h2 style="font-family: var(--font-serif); color: var(--primary-green); margin-bottom: 0.5rem;">Complete Program Catalog</h2>
+                        <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 2rem; line-height: 1.6;">
+                            Browse the complete list of commerce, management, and hotel management programs offered under the School of Commerce & Management Studies at MK University.
+                        </p>
+
+                        <!-- Dept 1: Commerce -->
+                        <div class="dept-title">
+                            <i class="fa-solid fa-coins"></i> Department of Commerce
+                        </div>
+                        <div class="table-responsive">
+                            <table class="catalog-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 45%;">Program Name</th>
+                                        <th style="width: 15%;">Duration</th>
+                                        <th style="width: 40%;">Eligibility</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>B.Com (General)</td><td>3 Years</td><td>10+2 (Commerce preferred)</td></tr>
+                                    <tr><td>B.Com (Hons.) Accountancy</td><td>3 Years</td><td>10+2 (Commerce preferred)</td></tr>
+                                    <tr><td>B.Com (Hons.) Finance</td><td>3 Years</td><td>10+2 (Commerce preferred)</td></tr>
+                                    <tr><td>B.Com (Hons.) ABST</td><td>3 Years</td><td>10+2 (Commerce preferred)</td></tr>
+                                    <tr><td>M.Com (Accountancy)</td><td>2 Years</td><td>B.Com or equivalent</td></tr>
+                                    <tr><td>M.Com (Finance)</td><td>2 Years</td><td>B.Com or equivalent</td></tr>
+                                    <tr><td>M.Com (ABST – Accounting, Business Statistics & Taxation)</td><td>2 Years</td><td>B.Com or equivalent</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Dept 2: Management -->
+                        <div class="dept-title">
+                            <i class="fa-solid fa-briefcase"></i> Department of Management
+                        </div>
+                        <div class="table-responsive">
+                            <table class="catalog-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 45%;">Program Name</th>
+                                        <th style="width: 15%;">Duration</th>
+                                        <th style="width: 40%;">Eligibility</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>BBA (Bachelor of Business Administration)</td><td>3 Years</td><td>10+2 Pass</td></tr>
+                                    <tr><td>BBA+MBA (Integrated)</td><td>5 Years</td><td>12th Pass</td></tr>
+                                    <tr><td>MBA (General / HR / Finance / Operations / Marketing / International Business / Criminology / Insurance / Banking / Rural / Agri-Business / Fashion Designing)</td><td>2 Years</td><td>Graduation in any discipline</td></tr>
+                                    <tr><td>MBA (Executive)</td><td>1 Year</td><td>Minimum 2 years of work experience</td></tr>
+                                    <tr><td>Master of Valuation (Real Estate)</td><td>2 Years</td><td>Graduation in any discipline</td></tr>
+                                    <tr><td>Diploma in Oil & Gas Management</td><td>1 Year</td><td>10+2 Pass</td></tr>
+                                    <tr><td>Diploma in Logistics & Production Management</td><td>1 Year</td><td>10+2 Pass</td></tr>
+                                    <tr><td>Diploma in Logistics Management</td><td>1 Year</td><td>10+2 Pass</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Dept 3: Hotel Management -->
+                        <div class="dept-title">
+                            <i class="fa-solid fa-hotel"></i> Department of Hotel Management
+                        </div>
+                        <div class="table-responsive">
+                            <table class="catalog-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 45%;">Program Name</th>
+                                        <th style="width: 15%;">Duration</th>
+                                        <th style="width: 40%;">Eligibility</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>BHM (Bachelor of Hotel Management)</td><td>4 Years</td><td>10+2 Pass</td></tr>
+                                    <tr><td>B.A. (Hotel Management)</td><td>3 Years</td><td>10+2 Pass</td></tr>
+                                    <tr><td>B.Sc. (Hotel Management)</td><td>3 Years</td><td>10+2 Pass</td></tr>
+                                    <tr><td>MHM (Master of Hotel Management)</td><td>2 Years</td><td>Graduation in any discipline</td></tr>
+                                    <tr><td>M.A. (Hotel Management)</td><td>2 Years</td><td>Graduation in any discipline</td></tr>
+                                    <tr><td>M.Sc. (Hotel Management)</td><td>2 Years</td><td>Graduation in any discipline</td></tr>
+                                    <tr><td>DHM (Diploma in Hotel Management)</td><td>1 Year</td><td>10+2 Pass</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 

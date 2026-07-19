@@ -219,6 +219,62 @@
                 gap: 3rem;
             }
         }
+
+        /* Custom Table Styles */
+        .table-responsive {
+            overflow-x: auto;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .catalog-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            text-align: left;
+            background-color: var(--bg-white);
+        }
+
+        .catalog-table th {
+            background-color: var(--primary-green);
+            color: var(--bg-white);
+            padding: 0.9rem 1.2rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .catalog-table td {
+            padding: 0.9rem 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-dark);
+        }
+
+        .catalog-table tr:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        .catalog-table tr:hover {
+            background-color: rgba(27, 83, 56, 0.05);
+        }
+        
+        .catalog-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .dept-title {
+            font-family: var(--font-serif);
+            color: var(--primary-green);
+            font-size: 1.4rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-green-subtle);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -274,7 +330,7 @@
                 
                 <!-- Left: Attractive Cards List -->
                 <div>
-                    <h2 style="font-family: var(--font-serif); color: var(--primary-green); margin-bottom: 1.5rem;">Allotted Courses Directory</h2>
+                    <h2 style="font-family: var(--font-serif); color: var(--primary-green); margin-bottom: 1.5rem;">Featured Programs</h2>
                     
                     <div class="courses-grid">
                         
@@ -467,6 +523,112 @@
                             </div>
                         </div>
 
+                    </div>
+
+                    <!-- Complete Program Catalog Section -->
+                    <div style="margin-top: 4rem;">
+                        <h2 style="font-family: var(--font-serif); color: var(--primary-green); margin-bottom: 0.5rem;">Complete Program Catalog</h2>
+                        <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 2rem; line-height: 1.6;">
+                            Browse the complete list of academic courses offered under the School of Engineering, Technology & Computer Science at MK University.
+                        </p>
+
+                        <!-- Dept 1: Engineering & Technology -->
+                        <div class="dept-title">
+                            <i class="fa-solid fa-gears"></i> Department of Engineering & Technology
+                        </div>
+                        <div class="table-responsive">
+                            <table class="catalog-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 45%;">Program Name</th>
+                                        <th style="width: 15%;">Duration</th>
+                                        <th style="width: 40%;">Eligibility</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>B.Tech (Mechanical Engineering – ME)</td><td>4 Years</td><td>10+2 with PCM</td></tr>
+                                    <tr><td>B.Tech (Civil Engineering – CE)</td><td>4 Years</td><td>10+2 with PCM</td></tr>
+                                    <tr><td>B.Tech (Electrical Engineering – EE)</td><td>4 Years</td><td>10+2 with PCM</td></tr>
+                                    <tr><td>B.Tech (Artificial Intelligence – AI)</td><td>4 Years</td><td>10+2 with PCM</td></tr>
+                                    <tr><td>B.Tech (Computer Science Engineering – CSE)</td><td>4 Years</td><td>10+2 with PCM</td></tr>
+                                    <tr><td>B.Tech (Information Technology – IT)</td><td>4 Years</td><td>10+2 with PCM</td></tr>
+                                    <tr><td>B.Tech (Electronics & Communication Engineering – ECE)</td><td>4 Years</td><td>10+2 with PCM</td></tr>
+                                    <tr><td>B.Tech (Aeronautical Engineering)</td><td>4 Years</td><td>10+2 with PCM</td></tr>
+                                    <tr><td>B.Tech (Data Science)</td><td>4 Years</td><td>10+2 with PCM</td></tr>
+                                    <tr><td>B.Tech (Fire and Safety)</td><td>4 Years</td><td>10+2 with PCM</td></tr>
+                                    <tr><td>B.Tech (Environmental Engineering)</td><td>4 Years</td><td>10+2 with PCM</td></tr>
+                                    <tr><td>B.Tech (Chemical Engineering)</td><td>4 Years</td><td>10+2 with PCM</td></tr>
+                                    <tr><td>M.Tech (Mechanical Engineering – ME)</td><td>2 Years</td><td>B.E./B.Tech in relevant discipline</td></tr>
+                                    <tr><td>M.Tech (Civil Engineering – CE)</td><td>2 Years</td><td>B.E./B.Tech in relevant discipline</td></tr>
+                                    <tr><td>M.Tech (Electrical Engineering – EE)</td><td>2 Years</td><td>B.E./B.Tech in relevant discipline</td></tr>
+                                    <tr><td>M.Tech (Artificial Intelligence – AI)</td><td>2 Years</td><td>B.E./B.Tech in relevant discipline</td></tr>
+                                    <tr><td>M.Tech (Computer Science Engineering – CSE)</td><td>2 Years</td><td>B.E./B.Tech in relevant discipline</td></tr>
+                                    <tr><td>M.Tech (Information Technology – IT)</td><td>2 Years</td><td>B.E./B.Tech in relevant discipline</td></tr>
+                                    <tr><td>M.Tech (Electronics & Communication Engineering – ECE)</td><td>2 Years</td><td>B.E./B.Tech in relevant discipline</td></tr>
+                                    <tr><td>M.Tech (Aeronautical Engineering)</td><td>2 Years</td><td>B.E./B.Tech in relevant discipline</td></tr>
+                                    <tr><td>M.Tech (Data Science)</td><td>2 Years</td><td>B.E./B.Tech in relevant discipline</td></tr>
+                                    <tr><td>M.Tech (Environmental Engineering)</td><td>2 Years</td><td>B.E./B.Tech in relevant discipline</td></tr>
+                                    <tr><td>M.Tech (Chemical Engineering)</td><td>2 Years</td><td>B.E./B.Tech in relevant discipline</td></tr>
+                                    <tr><td>Polytechnic (Mechanical Engineering – ME)</td><td>3 Years</td><td>10th Pass</td></tr>
+                                    <tr><td>Polytechnic (Civil Engineering – CE)</td><td>3 Years</td><td>10th Pass</td></tr>
+                                    <tr><td>Polytechnic (Electrical Engineering – EE)</td><td>3 Years</td><td>10th Pass</td></tr>
+                                    <tr><td>Polytechnic (Artificial Intelligence – AI)</td><td>3 Years</td><td>10th Pass</td></tr>
+                                    <tr><td>Polytechnic (Computer Science Engineering – CSE)</td><td>3 Years</td><td>10th Pass</td></tr>
+                                    <tr><td>Polytechnic (Information Technology – IT)</td><td>3 Years</td><td>10th Pass</td></tr>
+                                    <tr><td>Polytechnic (Data Science)</td><td>3 Years</td><td>10th Pass</td></tr>
+                                    <tr><td>Polytechnic (Aeronautical Engineering)</td><td>3 Years</td><td>10th Pass</td></tr>
+                                    <tr><td>Polytechnic (Environmental Engineering)</td><td>3 Years</td><td>10th Pass</td></tr>
+                                    <tr><td>Polytechnic (Chemical Engineering)</td><td>3 Years</td><td>10th Pass</td></tr>
+                                    <tr><td>Polytechnic (Instrumentation And Control)</td><td>3 Years</td><td>10th Pass</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Dept 2: Computer Science & IT -->
+                        <div class="dept-title">
+                            <i class="fa-solid fa-code"></i> Department of Computer Science & IT
+                        </div>
+                        <div class="table-responsive">
+                            <table class="catalog-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 45%;">Program Name</th>
+                                        <th style="width: 15%;">Duration</th>
+                                        <th style="width: 40%;">Eligibility</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>BCA (Bachelor of Computer Applications)</td><td>3 Years</td><td>10+2 (Any Stream, preferably with Math)</td></tr>
+                                    <tr><td>B.Sc (Cyber Security)</td><td>3 Years</td><td>10+2 with 60% Marks</td></tr>
+                                    <tr><td>MCA (Master of Computer Applications)</td><td>2 Years</td><td>Bachelor’s Degree with Mathematics</td></tr>
+                                    <tr><td>M.Sc (Cyber Security)</td><td>2 Years</td><td>B.Sc. Cybersecurity or Relevant Field</td></tr>
+                                    <tr><td>DCA (Diploma in Computer Applications)</td><td>1 Year</td><td>10+2 Pass</td></tr>
+                                    <tr><td>PGDCA (Post Graduate Diploma in Computer Applications)</td><td>1 Year</td><td>Graduation in any discipline</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Dept 3: Fire & Safety -->
+                        <div class="dept-title">
+                            <i class="fa-solid fa-fire-extinguisher"></i> Department of Fire and Safety
+                        </div>
+                        <div class="table-responsive">
+                            <table class="catalog-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 45%;">Program Name</th>
+                                        <th style="width: 15%;">Duration</th>
+                                        <th style="width: 40%;">Eligibility</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>B.Sc. (Fire & Safety)</td><td>3 Years</td><td>10+2 (Science preferred)</td></tr>
+                                    <tr><td>M.Sc. (Fire & Safety)</td><td>2 Years</td><td>Graduation in relevant discipline</td></tr>
+                                    <tr><td>Diploma in Fire & Safety</td><td>1 Year</td><td>10th / 10+2 Pass</td></tr>
+                                    <tr><td>Certificate in Fire & Safety</td><td>6 Months</td><td>10th Pass</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 

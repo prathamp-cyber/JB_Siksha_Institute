@@ -219,6 +219,62 @@
                 gap: 3rem;
             }
         }
+
+        /* Custom Table Styles */
+        .table-responsive {
+            overflow-x: auto;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .catalog-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            text-align: left;
+            background-color: var(--bg-white);
+        }
+
+        .catalog-table th {
+            background-color: var(--primary-green);
+            color: var(--bg-white);
+            padding: 0.9rem 1.2rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .catalog-table td {
+            padding: 0.9rem 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-dark);
+        }
+
+        .catalog-table tr:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        .catalog-table tr:hover {
+            background-color: rgba(27, 83, 56, 0.05);
+        }
+        
+        .catalog-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .dept-title {
+            font-family: var(--font-serif);
+            color: var(--primary-green);
+            font-size: 1.4rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-green-subtle);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -274,7 +330,7 @@
                 
                 <!-- Left: Attractive Cards List -->
                 <div>
-                    <h2 style="font-family: var(--font-serif); color: var(--primary-green); margin-bottom: 1.5rem;">Allotted Courses Directory</h2>
+                    <h2 style="font-family: var(--font-serif); color: var(--primary-green); margin-bottom: 1.5rem;">Featured Programs</h2>
                     
                     <div class="courses-grid">
                         
@@ -406,6 +462,76 @@
                             </div>
                         </div>
 
+                    </div>
+
+                    <!-- Complete Program Catalog Section -->
+                    <div style="margin-top: 4rem;">
+                        <h2 style="font-family: var(--font-serif); color: var(--primary-green); margin-bottom: 0.5rem;">Complete Program Catalog</h2>
+                        <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 2rem; line-height: 1.6;">
+                            Browse the complete list of vocational programs offered under the School of Vocational Studies at MK University.
+                        </p>
+
+                        <!-- Dept 1: Vocational Studies -->
+                        <div class="dept-title">
+                            <i class="fa-solid fa-gears"></i> Department of Vocational Studies
+                        </div>
+                        <div class="table-responsive">
+                            <table class="catalog-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 45%;">Program Name</th>
+                                        <th style="width: 15%;">Duration</th>
+                                        <th style="width: 40%;">Eligibility</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>M.Voc (Air Conditioning and Refrigeration - HVAC)</td><td>4 Semesters</td><td>Graduation</td></tr>
+                                    <tr><td>M.Voc (Banking and Insurance)</td><td>4 Semesters</td><td>Graduation</td></tr>
+                                    <tr><td>M.Voc (Electrical Technology)</td><td>4 Semesters</td><td>Graduation</td></tr>
+                                    <tr><td>M.Voc (Electronics Technology)</td><td>4 Semesters</td><td>Graduation</td></tr>
+                                    <tr><td>M.Voc (Hospital Management)</td><td>4 Semesters</td><td>Graduation</td></tr>
+                                    <tr><td>M.Voc (Real Estate)</td><td>4 Semesters</td><td>Graduation</td></tr>
+                                    <tr><td>M.Voc (Optometry)</td><td>4 Semesters</td><td>Graduation</td></tr>
+                                    <tr><td>M.Voc (Radio Imaging Technology)</td><td>4 Semesters</td><td>Graduation</td></tr>
+                                    <tr><td>M.Voc (Computer Science / IT Application)</td><td>4 Semesters</td><td>Graduation</td></tr>
+                                    <tr><td>M.Voc (Hospitality & Tourism / Travel)</td><td>4 Semesters</td><td>Graduation</td></tr>
+                                    <tr><td>M.Voc (Office Management / Secretaryship)</td><td>4 Semesters</td><td>Graduation</td></tr>
+                                    <tr><td>M.Voc (Physiotherapy)</td><td>4 Semesters</td><td>Graduation</td></tr>
+                                    <tr><td>M.Voc (Textile Design)</td><td>4 Semesters</td><td>Graduation</td></tr>
+                                    <tr><td>M.Voc (Yoga and Naturopathy)</td><td>4 Semesters</td><td>Graduation</td></tr>
+                                    <tr><td>M.Voc (Marketing & Salesmanship)</td><td>4 Semesters</td><td>Graduation</td></tr>
+                                    <tr><td>B.Voc (Air Conditioning and Refrigeration - HVAC)</td><td>6 Semesters</td><td>12th</td></tr>
+                                    <tr><td>B.Voc (Banking and Insurance)</td><td>6 Semesters</td><td>12th</td></tr>
+                                    <tr><td>B.Voc (Electrical Technology)</td><td>6 Semesters</td><td>12th</td></tr>
+                                    <tr><td>B.Voc (Electronics Technology)</td><td>6 Semesters</td><td>12th</td></tr>
+                                    <tr><td>B.Voc (Hospital Management)</td><td>6 Semesters</td><td>12th</td></tr>
+                                    <tr><td>B.Voc (Optometry)</td><td>8 Semesters</td><td>12th</td></tr>
+                                    <tr><td>B.Voc (Radio Imaging Technology)</td><td>6 Semesters</td><td>12th</td></tr>
+                                    <tr><td>B.Voc (Computer Science / IT Application)</td><td>6 Semesters</td><td>12th</td></tr>
+                                    <tr><td>B.Voc (Hospitality & Tourism / Travel)</td><td>6 Semesters</td><td>12th</td></tr>
+                                    <tr><td>B.Voc (Office Management / Secretaryship)</td><td>6 Semesters</td><td>12th</td></tr>
+                                    <tr><td>B.Voc (Physiotherapy)</td><td>6 Semesters</td><td>12th</td></tr>
+                                    <tr><td>B.Voc (Textile Design)</td><td>6 Semesters</td><td>12th</td></tr>
+                                    <tr><td>B.Voc (Yoga and Naturopathy)</td><td>6 Semesters</td><td>12th</td></tr>
+                                    <tr><td>B.Voc (Marketing & Salesmanship)</td><td>6 Semesters</td><td>12th</td></tr>
+                                    <tr><td>D.Voc (Sanitary Inspector)</td><td>4 Semesters</td><td>12th</td></tr>
+                                    <tr><td>D.Voc (Air Conditioning and Refrigeration - HVAC)</td><td>4 Semesters</td><td>12th</td></tr>
+                                    <tr><td>D.Voc (Banking and Insurance)</td><td>4 Semesters</td><td>12th</td></tr>
+                                    <tr><td>D.Voc (Electrical Technology)</td><td>4 Semesters</td><td>12th</td></tr>
+                                    <tr><td>D.Voc (Electronics Technology)</td><td>4 Semesters</td><td>12th</td></tr>
+                                    <tr><td>D.Voc (Hospital Management)</td><td>4 Semesters</td><td>12th</td></tr>
+                                    <tr><td>D.Voc (Optometry)</td><td>4 Semesters</td><td>12th</td></tr>
+                                    <tr><td>D.Voc (Radio Imaging Technology)</td><td>4 Semesters</td><td>12th</td></tr>
+                                    <tr><td>D.Voc (Computer Science / IT Application)</td><td>4 Semesters</td><td>12th</td></tr>
+                                    <tr><td>D.Voc (Hospitality & Tourism / Travel)</td><td>4 Semesters</td><td>12th</td></tr>
+                                    <tr><td>D.Voc (Office Management / Secretaryship)</td><td>4 Semesters</td><td>12th</td></tr>
+                                    <tr><td>D.Voc (Physiotherapy)</td><td>4 Semesters</td><td>12th</td></tr>
+                                    <tr><td>D.Voc (Textile Design)</td><td>4 Semesters</td><td>12th</td></tr>
+                                    <tr><td>D.Voc (Yoga and Naturopathy)</td><td>4 Semesters</td><td>12th</td></tr>
+                                    <tr><td>D.Voc (Marketing & Salesmanship)</td><td>4 Semesters</td><td>12th</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 

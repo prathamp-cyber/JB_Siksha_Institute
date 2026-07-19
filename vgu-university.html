@@ -328,48 +328,36 @@
                         </div>
                     </div>
 
-                    <!-- Section 3: Schools and Specializations -->
+                    <!-- Section 3: Modes of Study and Programs -->
                     <div class="details-section" id="schools-section">
-                        <h2>Academic Divisions & Programs</h2>
+                        <h2>Academic divisions & Study Modes</h2>
                         <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem; margin-bottom: 1.5rem;">
-                            Explore specialized degree programs categorized by specific schools at CDOE VGU, optimized for professional career scaling and digital learning flexibility:
+                            Explore specialized degree programs categorized by learning mode at CDOE VGU, optimized for professional flexibility and career scaling:
                         </p>
                         
                         <div class="schools-list">
-                            <!-- School 1 -->
+                            <!-- Division 1 -->
                             <div class="school-item">
                                 <div class="school-icon-wrapper">
-                                    <i class="fa-solid fa-chart-line"></i>
+                                    <i class="fa-solid fa-book-open"></i>
                                 </div>
-                                <h3 class="school-name">School of Commerce & Management Studies</h3>
-                                <a href="vgu-management.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                                <h3 class="school-name">Open & Distance Learning (ODL) Programs</h3>
+                                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5; min-height: 80px;">
+                                    UGC-DEB approved courses featuring self-learning materials (printed/digital), offline contact centers, and offline examinations in Rajasthan.
+                                </p>
+                                <a href="vgu-odl.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore ODL Courses <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
 
-                            <!-- School 2 -->
+                            <!-- Division 2 -->
                             <div class="school-item">
                                 <div class="school-icon-wrapper">
-                                    <i class="fa-solid fa-laptop-code"></i>
+                                    <i class="fa-solid fa-globe"></i>
                                 </div>
-                                <h3 class="school-name">School of Computer Applications & IT</h3>
-                                <a href="vgu-computer-applications.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-
-                            <!-- School 3 -->
-                            <div class="school-item">
-                                <div class="school-icon-wrapper">
-                                    <i class="fa-solid fa-palette"></i>
-                                </div>
-                                <h3 class="school-name">School of Humanities, Social Sciences & Journalism</h3>
-                                <a href="vgu-humanities.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-
-                            <!-- School 4 -->
-                            <div class="school-item">
-                                <div class="school-icon-wrapper">
-                                    <i class="fa-solid fa-microscope"></i>
-                                </div>
-                                <h3 class="school-name">School of Science & Mathematics</h3>
-                                <a href="vgu-science.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                                <h3 class="school-name">Online Learning (OL) Programs</h3>
+                                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5; min-height: 80px;">
+                                    100% online programs featuring virtual classes, digital e-content, and online remote-proctored examinations from anywhere in the world.
+                                </p>
+                                <a href="vgu-ol.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore OL Courses <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -428,13 +416,31 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="counsel-school">Preferred School *</label>
-                                <select id="counsel-school" required>
-                                    <option value="" disabled selected>-- Select School --</option>
-                                    <option value="Commerce & Management">Commerce & Management</option>
-                                    <option value="Computer Applications">Computer Applications & IT</option>
-                                    <option value="Humanities">Humanities & Social Sciences</option>
-                                    <option value="Science">Science & Mathematics</option>
+                                <label for="counsel-program">Preferred Study Mode & Program *</label>
+                                <select id="counsel-program" required>
+                                    <option value="" disabled selected>-- Select Program --</option>
+                                    <optgroup label="Open & Distance Learning (ODL) Mode">
+                                        <option value="ODL - MBA">MBA - Distance (ODL)</option>
+                                        <option value="ODL - MCA">MCA - Distance (ODL)</option>
+                                        <option value="ODL - BCA">BCA - Distance (ODL)</option>
+                                        <option value="ODL - BBA">BBA - Distance (ODL)</option>
+                                        <option value="ODL - BA">B.A. - Distance (ODL)</option>
+                                        <option value="ODL - B.Sc">B.Sc. - Distance (ODL)</option>
+                                        <option value="ODL - B.Com">B.Com - Distance (ODL)</option>
+                                        <option value="ODL - M.Sc Math">M.Sc. Mathematics - Distance (ODL)</option>
+                                        <option value="ODL - MAJMC">MAJMC - Distance (ODL)</option>
+                                        <option value="ODL - PGDCA">PGDCA - Distance (ODL)</option>
+                                    </optgroup>
+                                    <optgroup label="Online Learning (OL) Mode">
+                                        <option value="OL - MBA">MBA - Online (OL)</option>
+                                        <option value="OL - MCA">MCA - Online (OL)</option>
+                                        <option value="OL - BCA">BCA - Online (OL)</option>
+                                        <option value="OL - BBA">BBA - Online (OL)</option>
+                                        <option value="OL - BA">B.A. - Online (OL)</option>
+                                        <option value="OL - M.A. English">M.A. English - Online (OL)</option>
+                                        <option value="OL - MAJMC">MAJMC - Online (OL)</option>
+                                        <option value="OL - M.Sc Math">M.Sc. Mathematics - Online (OL)</option>
+                                    </optgroup>
                                 </select>
                             </div>
 
@@ -533,9 +539,9 @@
                     const name = document.getElementById('counsel-name').value.trim();
                     const email = document.getElementById('counsel-email').value.trim();
                     const phone = document.getElementById('counsel-phone').value.trim();
-                    const school = document.getElementById('counsel-school').value;
+                    const program = document.getElementById('counsel-program').value;
 
-                    if (!name || !email || !phone || !school) {
+                    if (!name || !email || !phone || !program) {
                         responseDiv.textContent = 'Please fill out all required fields.';
                         responseDiv.className = 'form-message error';
                         responseDiv.style.display = 'block';
@@ -548,7 +554,7 @@
 
                     // Simulate email routing trigger
                     setTimeout(() => {
-                        responseDiv.innerHTML = `<strong>Request Received!</strong> Thank you ${name}. We have logged your interest in the <strong>${school}</strong> programs at CDOE VGU. An admissions counselor will call you on <strong>${phone}</strong> or email details to <strong>${email}</strong>. (Lead details routed to prathamyatharoop@gmail.com)`;
+                        responseDiv.innerHTML = `<strong>Request Received!</strong> Thank you ${name}. We have logged your interest in the <strong>${program}</strong> program at CDOE VGU. An admissions counselor will call you on <strong>${phone}</strong> or email details to <strong>${email}</strong>. (Lead details routed to prathamyatharoop@gmail.com)`;
                         responseDiv.className = 'form-message success';
                         form.reset();
                     }, 1200);

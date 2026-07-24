@@ -206,6 +206,18 @@ ul {
     box-shadow: 0 4px 10px rgba(14, 58, 36, 0.15);
 }
 
+.logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-normal);
+}
+
+.logo:hover .logo-img {
+    transform: scale(1.05);
+}
+
 .nav-menu {
     display: flex;
     align-items: center;

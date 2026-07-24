@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Program - Andijan State Medical Institute | JB Siksha Institute</title>
+    <meta name="description" content="Explore MBBS program duration, fee structures, clinical facilities, and eligibility at Andijan State Medical Institute. Get direct counselor guidance.">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Custom Styles for Healthcare Course Page */
+        .school-hero {
+            padding: calc(var(--header-height) + 2rem) 0 3rem;
+            background-image: linear-gradient(to bottom, rgba(27, 83, 56, 0.1), rgba(255, 255, 255, 1));
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb i {
+            font-size: 0.75rem;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 3.2fr 1.3fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .course-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--primary-green);
+        }
+
+        .course-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(27, 83, 56, 0.2);
+        }
+
+        .course-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.2rem;
+            gap: 0.5rem;
+        }
+
+        .course-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--radius-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-ug {
+            background-color: var(--primary-green-subtle);
+            color: var(--primary-green);
+        }
+
+        .course-duration {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .course-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+            font-family: var(--font-serif);
+        }
+
+        .course-details-list {
+            list-style-type: none;
+            padding: 0;
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .course-details-list li {
+            position: relative;
+            padding-left: 1.8rem;
+        }
+
+        .course-details-list li i {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: var(--primary-brown);
+        }
+
+        .course-careers {
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.2rem;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .fee-table th, .fee-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .fee-table th {
+            background-color: var(--primary-green-subtle);
+            color: var(--primary-green);
+            font-weight: 700;
+        }
+
+        .sticky-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .form-message {
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: var(--primary-green-subtle);
+            color: var(--primary-green);
+            border: 1px solid rgba(14, 58, 36, 0.1);
+        }
+
+        .form-message.error {
+            background-color: #fce4ec;
+            color: var(--accent-red);
+            border: 1px solid rgba(192, 57, 43, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition-normal);
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px var(--primary-green-subtle);
+        }
+
+        @media (max-width: 1024px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.jpeg" alt="JB Logo" class="logo-img">
+                JB Siksha <span>Institute</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="universities.html" class="nav-link">Universities</a></li>
+                <li><a href="mous.html" class="nav-link">Our MOUs</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li><a href="contact.html" class="btn btn-primary btn-sm">Get Counseling</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- School Hero Section -->
+    <section class="school-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="universities.html">Universities</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="andijan-state-medical-institute.html">Andijan State Medical Institute</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>MBBS Program</span>
+            </div>
+            
+            <span class="section-tag"><i class="fa-solid fa-user-doctor"></i> Medical Program</span>
+            <h1 style="font-size: 2.8rem; margin-top: 0.5rem; color: var(--primary-green);">MBBS Program</h1>
+            <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 800px; margin-top: 0.8rem; line-height: 1.6;">
+                Get direct clinical training at government-approved hospitals. Learn in a fully English medium program, structured as per the latest WHO and ECFMG standards.
+            </p>
+        </div>
+    </section>
+
+    <!-- Courses Grid Section -->
+    <section class="section" style="padding-top: 3rem;">
+        <div class="container">
+            <div class="grid-layout">
+                
+                <!-- Left Content -->
+                <div>
+                    <h2 style="font-family: var(--font-serif); color: var(--primary-green); margin-bottom: 1.5rem;">Program Specifications</h2>
+                    
+                    <div class="courses-grid">
+                        
+                        <div class="course-card">
+                            <div class="course-card-header">
+                                <span class="course-badge badge-ug">MBBS Degree</span>
+                                <span class="course-duration"><i class="fa-solid fa-clock"></i> 6 Years</span>
+                            </div>
+                            <h3 class="course-title">Bachelor of Medicine, Bachelor of Surgery (MBBS)</h3>
+                            
+                            <ul class="course-details-list">
+                                <li><i class="fa-solid fa-check"></i> <strong>Medium:</strong> 100% English medium instruction throughout the 6-year duration.</li>
+                                <li><i class="fa-solid fa-check"></i> <strong>Global Recognition:</strong> Internationally recognized by the WHO, ECFMG, and FAIMER, enabling graduates to qualify for licensing examinations in India (FMGE/NEXT), the USA (USMLE), and the UK (PLAB).</li>
+                                <li><i class="fa-solid fa-check"></i> <strong>Dual Clinical Exposure:</strong> Hands-on training modules and clinical practice in both India and Uzbekistan.</li>
+                                <li><i class="fa-solid fa-check"></i> <strong>FMGE/NEXT Exam Coaching:</strong> In-built coaching from Year 1 led by experienced doctors from Tamil Nadu.</li>
+                                <li><i class="fa-solid fa-check"></i> <strong>Loan & Scholarship Support:</strong> 100% education loan support with zero middlemen, plus scholarships up to ₹1,00,000 for eligible students.</li>
+                                <li><i class="fa-solid fa-check"></i> <strong>Embassy Visits:</strong> Strong official government ties, including visits from the Indian Embassy.</li>
+                            </ul>
+
+                            <h4 style="margin-top: 2rem; color: var(--primary-green); font-size: 1.2rem; font-family: var(--font-serif);">Fee Schedule Details (in USD)</h4>
+                            <table class="fee-table">
+                                <thead>
+                                    <tr>
+                                        <th>Academic Period</th>
+                                        <th>Tuition Fee</th>
+                                        <th>Boarding & Support Expenses</th>
+                                        <th>Yearly Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Year 1</strong></td>
+                                        <td colspan="2">All-inclusive Package (Tuition, Hostel, Registration, Activity fee & OTC)</td>
+                                        <td><strong>$7,000</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Year 2–6</strong></td>
+                                        <td>$3,500 / year</td>
+                                        <td>$1,450 / year ($350 activity + $600 hostel + $500 visa/reg)</td>
+                                        <td><strong>$4,950 / year</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div style="margin-top: 1.5rem; padding: 1.2rem; border-left: 4px solid var(--primary-brown); background-color: var(--bg-light); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
+                                <h4 style="color: var(--primary-green); margin-bottom: 0.3rem;">India Consultancy Charges</h4>
+                                <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.5;">
+                                    <strong>₹1,00,000</strong> (Covers documentation, visa processing, NEXT/PLAB coaching guidance, and summer clinical observation).
+                                </p>
+                            </div>
+
+                            <div class="course-careers">
+                                <strong>Prospective Career Paths:</strong> Registered Medical Practitioner, Clinical Consultant, Hospital Administrator, Medical Officer, Public Health Professional.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right: Sidebar Counseling Form -->
+                <div class="sticky-sidebar">
+                    <div class="card" style="padding: 2.2rem 1.8rem; border-color: var(--primary-brown);">
+                        <h3 style="font-size: 1.35rem; margin-bottom: 0.6rem; color: var(--primary-green); display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-solid fa-headset"></i> Counseling Desk
+                        </h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5;">
+                            JB Siksha Institute manages counseling, documentation verification, student visa processing, and travel coordinates for Andijan State Medical Institute.
+                        </p>
+                        
+                        <div style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.9rem;">
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-phone" style="color: var(--primary-brown); width: 16px;"></i>
+                                <a href="tel:+918780459636" style="font-weight: 700; color: var(--text-dark);">+91 87804 59636</a>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-envelope" style="color: var(--primary-brown); width: 16px;"></i>
+                                <a href="mailto:prathamyatharoop@gmail.com" style="font-weight: 700; color: var(--text-dark); word-break: break-all;">prathamyatharoop@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: var(--primary-green);">Request Admission Guidance</h4>
+                        
+                        <form id="university-counseling-form">
+                            <div class="form-group">
+                                <label for="counsel-name">Full Name *</label>
+                                <input type="text" id="counsel-name" placeholder="Your Name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="counsel-email">Email Address *</label>
+                                <input type="email" id="counsel-email" placeholder="Your Email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="counsel-phone">Mobile Number *</label>
+                                <input type="tel" id="counsel-phone" placeholder="Your Phone Number" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="counsel-school">Preferred School *</label>
+                                <select id="counsel-school" required>
+                                    <option value="Faculty of Medicine (MBBS Program)" selected>Faculty of Medicine (MBBS Program)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="counsel-message">Your Message</label>
+                                <textarea id="counsel-message" rows="3" placeholder="Describe your background or questions..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                                Submit Request <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        
+                        <div id="counsel-form-response" class="form-message"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    JB Siksha <span>Institute</span>
+                </a>
+                <p>A trusted educational admission consultancy helping students choose appropriate degree paths and secure seats in leading colleges across Gujarat and India.</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html">Home</a></li>
+                    <li class="footer-link-item"><a href="about.html">About Us</a></li>
+                    <li class="footer-link-item"><a href="universities.html">Universities</a></li>
+                    <li class="footer-link-item"><a href="mous.html">Our MOUs</a></li>
+                    <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Our Services</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="#">Career Profiling</a></li>
+                    <li class="footer-link-item"><a href="#">ACPC Counselling</a></li>
+                    <li class="footer-link-item"><a href="#">Management Seats</a></li>
+                    <li class="footer-link-item"><a href="#">NRI Sponsorship</a></li>
+                    <li class="footer-link-item"><a href="#">Hostel Coordination</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Contact Office</h3>
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>302, Premium Plaza, Near University Circle, University Road, Ahmedabad, Gujarat - 380009</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 87804 59636</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>prathamyatharoop@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 JB Siksha Institute. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript & Form Handler Script -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('university-counseling-form');
+            const responseDiv = document.getElementById('counsel-form-response');
+
+            if (form && responseDiv) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const name = document.getElementById('counsel-name').value.trim();
+                    const email = document.getElementById('counsel-email').value.trim();
+                    const phone = document.getElementById('counsel-phone').value.trim();
+                    const school = document.getElementById('counsel-school').value;
+
+                    if (!name || !email || !phone || !school) {
+                        responseDiv.textContent = 'Please fill out all required fields.';
+                        responseDiv.className = 'form-message error';
+                        responseDiv.style.display = 'block';
+                        return;
+                    }
+
+                    responseDiv.textContent = 'Submitting counseling request...';
+                    responseDiv.className = 'form-message';
+                    responseDiv.style.display = 'block';
+
+                    // Simulate email routing trigger
+                    setTimeout(() => {
+                        responseDiv.innerHTML = `<strong>Request Received!</strong> Thank you ${name}. We have logged your request for the <strong>${school}</strong> at Andijan State Medical Institute. Admissions specialist will contact you on <strong>${phone}</strong> or send details to <strong>${email}</strong>. (Lead sent to prathamyatharoop@gmail.com)`;
+                        responseDiv.className = 'form-message success';
+                        form.reset();
+                    }, 1200);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

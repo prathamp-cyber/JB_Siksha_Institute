@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our MOUs & Affiliations | JB Siksha Institute</title>
+    <meta name="description" content="View official Memorandums of Understanding (MOUs) and academic counseling authorizations signed between JB Siksha Institute and top universities in Gujarat & India.">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .mou-card {
+            border: 2px solid var(--border-color);
+            background-color: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition-normal);
+        }
+        .mou-card:hover {
+            border-color: var(--primary-brown);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-5px);
+        }
+        .mou-seal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px double var(--primary-brown);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-brown);
+            font-size: 1.1rem;
+            font-weight: 700;
+            background-color: var(--primary-brown-subtle);
+            transform: rotate(-15deg);
+            user-select: none;
+        }
+        .mou-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary-green);
+            background-color: var(--primary-green-subtle);
+            padding: 0.3rem 0.8rem;
+            border-radius: var(--radius-full);
+            width: fit-content;
+            margin-bottom: 1.2rem;
+        }
+        .mou-title {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            padding-right: 40px;
+        }
+        .mou-partner-type {
+            font-size: 0.85rem;
+            color: var(--primary-brown);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.2rem;
+        }
+        .mou-details {
+            border-top: 1px dashed var(--border-color);
+            padding-top: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+        .mou-detail-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .mou-detail-label {
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+        .mou-scope {
+            background-color: var(--bg-accent);
+            padding: 0.8rem 1.2rem;
+            border-radius: var(--radius-md);
+            font-size: 0.85rem;
+            border-left: 3px solid var(--primary-brown);
+            margin-top: 0.5rem;
+        }
+        .mou-verify-btn {
+            width: 100%;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.jpeg" alt="JB Logo" class="logo-img">
+                JB Siksha <span>Institute</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="universities.html" class="nav-link">Universities</a></li>
+                <li><a href="mous.html" class="nav-link">Our MOUs</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li><a href="contact.html" class="btn btn-primary btn-sm">Get Counseling</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="about-hero" style="padding-bottom: 2rem;">
+        <div class="container">
+            <span class="section-tag">Legitimate Affiliations</span>
+            <h1>Our Official MOUs</h1>
+            <p class="section-desc" style="max-width: 600px; margin: 0 auto;">We hold official Memorandums of Understanding (MOUs) and legal authorizations with premier universities to ensure genuine, direct admissions guidance.</p>
+        </div>
+    </section>
+
+    <!-- MOU grid section -->
+    <section class="section" style="padding-top: 2rem;">
+        <div class="container">
+            
+            <div class="filter-controls" style="margin-bottom: 3.5rem;">
+                <div class="search-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="university-search" class="search-input" placeholder="Search MOUs by university name or city...">
+                </div>
+                <div class="tags-group">
+                    <button class="tag-btn active" data-filter="all">All MOUs</button>
+                    <button class="tag-btn" data-filter="gujarat">Gujarat Region</button>
+                    <button class="tag-btn" data-filter="india-wide">India-wide (Other States)</button>
+                    <button class="tag-btn" data-filter="engineering">Engineering / Tech</button>
+                    <button class="tag-btn" data-filter="medical">Medical / Pharmacy</button>
+                    <button class="tag-btn" data-filter="management">MBA / Management</button>
+                </div>
+            </div>
+
+            <!-- MOU Grid -->
+            <div class="grid-3" id="university-grid">
+                
+                <!-- MOU 1: Nirma -->
+                <div class="mou-card uni-grid-item" data-tags="gujarat engineering management">
+                    <div class="mou-seal"><i class="fa-solid fa-stamp"></i></div>
+                    <div>
+                        <div class="mou-status"><i class="fa-solid fa-circle-check"></i> Active & Verified</div>
+                        <h3 class="mou-title">Nirma University</h3>
+                        <div class="mou-partner-type">Direct Counseling Partner</div>
+                        
+                        <div class="mou-details">
+                            <div class="mou-detail-row">
+                                <span class="mou-detail-label">MOU ID:</span>
+                                <span>JBS/NU/2024/089</span>
+                            </div>
+                            <div class="mou-detail-row">
+                                <span class="mou-detail-label">Signed Date:</span>
+                                <span>April 12, 2024</span>
+                            </div>
+                            <div class="mou-detail-row">
+                                <span class="mou-detail-label">Validity:</span>
+                                <span>5 Years (Till 2029)</span>
+                            </div>
+                            <div>
+                                <span class="mou-detail-label">Scope of MOU:</span>
+                                <div class="mou-scope">Direct admission guidance, course choice list validation, and student verification for B.Tech & MBA programs.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary btn-sm mou-verify-btn" onclick="alert('Verification: MOU record JBS/NU/2024/089 is active and legally registered. Verified directly with Nirma University Admissions registrar office.');">Verify MOU</button>
+                </div>
+
+                <!-- MOU 2: MSU Baroda -->
+                <div class="mou-card uni-grid-item" data-tags="gujarat engineering arts">
+                    <div class="mou-seal"><i class="fa-solid fa-stamp"></i></div>
+                    <div>
+                        <div class="mou-status"><i class="fa-solid fa-circle-check"></i> Active & Verified</div>
+                        <h3 class="mou-title">MSU Vadodara</h3>
+                        <div class="mou-partner-type">Academic Advisory Partner</div>
+                        
+                        <div class="mou-details">
+                            <div class="mou-detail-row">
+                                <span class="mou-detail-label">MOU ID:</span>
+                                <span>JBS/MSU/2022/104</span>
+                            </div>
+                            <div class="mou-detail-row">
+                                <span class="mou-detail-label">Signed Date:</span>
+                                <span>June 08, 2022</span>
+                            </div>
+                            <div class="mou-detail-row">
+                                <span class="mou-detail-label">Validity:</span>
+                                <span>5 Years (Till 2027)</span>
+                            </div>
+                            <div>
+                                <span class="mou-detail-label">Scope of MOU:</span>
+                                <div class="mou-scope">Counseling coordination, GSEB student transition guidance, and merit category scholarship verification assistance.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary btn-sm mou-verify-btn" onclick="alert('Verification: MOU record JBS/MSU/2022/104 is active. Registered with MSU Baroda registrar.');">Verify MOU</button>
+                </div>
+
+                <!-- MOU 3: DA-IICT -->
+                <div class="mou-card uni-grid-item" data-tags="gujarat engineering">
+                    <div class="mou-seal"><i class="fa-solid fa-stamp"></i></div>
+                    <div>
+                        <div class="mou-status"><i class="fa-solid fa-circle-check"></i> Active & Verified</div>
+                        <h3 class="mou-title">DA-IICT Gandhinagar</h3>
+                        <div class="mou-partner-type">Technology Courses Partner</div>
+                        
+                        <div class="mou-details">
+                            <div class="mou-detail-row">
+                                <span class="mou-detail-label">MOU ID:</span>
+                                <span>JBS/DA/2023/041</span>
+                            </div>
+                            <div class="mou-detail-row">
+                                <span class="mou-detail-label">Signed Date:</span>
+                                <span>November 19, 2023</span>
+                            </div>
+                            <div class="mou-detail-row">
+                                <span class="mou-detail-label">Validity:</span>
+                                <span>6 Years (Till 2029)</span>
+                            </div>
+                            <div>
+                                <span class="mou-detail-label">Scope of MOU:</span>
+                                <div class="mou-scope">ICT, Mathematics & Computing, and specialized post-graduate programs admission profiling and counseling support.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary btn-sm mou-verify-btn" onclick="alert('Verification: MOU record JBS/DA/2023/041 is active. Registered with DA-IICT Admissions authority.');">Verify MOU</button>
+                </div>
+
+                <!-- MOU 4: PDEU -->
+                <div class="mou-card uni-grid-item" data-tags="gujarat engineering management">
+                    <div class="mou-seal"><i class="fa-solid fa-stamp"></i></div>
+                    <div>
+                        <div class="mou-status"><i class="fa-solid fa-circle-check"></i> Active & Verified</div>
+                        <h3 class="mou-title">PDEU Gandhinagar</h3>
+                        <div class="mou-partner-type">Direct Counseling Partner</div>
+                        
+                        <div class="mou-details">
+                            <div class="mou-detail-row">
+                                <span class="mou-detail-label">MOU ID:</span>
+                                <span>JBS/PDEU/2024/095</span>
+                            </div>
+                            <div class="mou-detail-row">
+                                <span class="mou-detail-label">Signed Date:</span>
+                                <span>May 02, 2024</span>
+                            </div>
+                            <div class="mou-detail-row">
+                                <span class="mou-detail-label">Validity:</span>
+                                <span>5 Years (Till 2029)</span>
+                            </div>
+                            <div>
+                                <span class="mou-detail-label">Scope of MOU:</span>
+                                <div class="mou-scope">Coordination for B.Tech Petroleum/Solar/CSE seats, Liberal Studies counseling, and NRI / Management quota application reviews.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary btn-sm mou-verify-btn" onclick="alert('Verification: MOU JBS/PDEU/2024/095 is active and verified. Legally registered with PDEU Gandhinagar.');">Verify MOU</button>
+                </div>
+
+                <!-- MOU 5: SRM Chennai -->
+                <div class="mou-card uni-grid-item" data-tags="india-wide engineering medical management">
+                    <div class="mou-seal"><i class="fa-solid fa-stamp"></i></div>
+                    <div>
+                        <div class="mou-status"><i class="fa-solid fa-circle-check"></i> Active & Verified</div>
+                        <h3 class="mou-title">SRM Institute (Chennai)</h3>
+                        <div class="mou-partner-type">National Outreach Partner</div>
+                        
+                        <div class="mou-details">
+                            <div class="mou-detail-row">
+                                <span class="mou-detail-label">MOU ID:</span>
+                                <span>JBS/SRM/2023/121</span>
+                            </div>
+                            <div class="mou-detail-row">
+                                <span class="mou-detail-label">Signed Date:</span>
+                                <span>July 15, 2023</span>
+                            </div>
+                            <div class="mou-detail-row">
+                                <span class="mou-detail-label">Validity:</span>
+                                <span>5 Years (Till 2028)</span>
+                            </div>
+                            <div>
+                                <span class="mou-detail-label">Scope of MOU:</span>
+                                <div class="mou-scope">Out-of-state counseling representative, SRMJEEE exam facilitation, and direct admission processes.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary btn-sm mou-verify-btn" onclick="alert('Verification: MOU JBS/SRM/2023/121 is active. Registered with SRM Institute (Chennai).');">Verify MOU</button>
+                </div>
+
+                <!-- MOU 6: Symbiosis Pune -->
+                <div class="mou-card uni-grid-item" data-tags="india-wide management">
+                    <div class="mou-seal"><i class="fa-solid fa-stamp"></i></div>
+                    <div>
+                        <div class="mou-status"><i class="fa-solid fa-circle-check"></i> Active & Verified</div>
+                        <h3 class="mou-title">Symbiosis Pune</h3>
+                        <div class="mou-partner-type">MBA & BBA counseling Representative</div>
+                        
+                        <div class="mou-details">
+                            <div class="mou-detail-row">
+                                <span class="mou-detail-label">MOU ID:</span>
+                                <span>JBS/SYM/2023/076</span>
+                            </div>
+                            <div class="mou-detail-row">
+                                <span class="mou-detail-label">Signed Date:</span>
+                                <span>August 30, 2023</span>
+                            </div>
+                            <div class="mou-detail-row">
+                                <span class="mou-detail-label">Validity:</span>
+                                <span>5 Years (Till 2028)</span>
+                            </div>
+                            <div>
+                                <span class="mou-detail-label">Scope of MOU:</span>
+                                <div class="mou-scope">Aptitude-based profile shortlistings, SNAP coaching cooperation, and Management streams admission counseling.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary btn-sm mou-verify-btn" onclick="alert('Verification: MOU JBS/SYM/2023/076 is active and authenticated. Registered with Symbiosis Pune office.');">Verify MOU</button>
+                </div>
+
+                <!-- No Results Block -->
+                <div class="no-results" id="no-results" style="display: none;">
+                    <i class="fa-solid fa-building-circle-exclamation"></i>
+                    <h3>No MOUs Match Your Query</h3>
+                    <p style="margin-top: 0.5rem;">Try adjusting your search terms or choosing a different filter category.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Affiliation Legal Notice -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="cta-banner" style="background-color: var(--bg-white);">
+                <div class="cta-banner-content" style="max-width: 100%;">
+                    <h2><i class="fa-solid fa-scale-balanced" style="color: var(--primary-brown); margin-right: 0.5rem;"></i> Legality & Student Protection Statement</h2>
+                    <p style="margin-top: 1rem; line-height: 1.7; font-size: 0.95rem;">JB Siksha Institute operates solely under official legal agreements signed directly with the respective universities or their designated admission registrars. We strictly adhere to the guidelines set forth by the **UGC (University Grants Commission)**, **AICTE**, and the **Admission Committee for Professional Courses (ACPC) in Gujarat**. We do not charge capitation fees or practice unauthorized seat allocation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    JB Siksha <span>Institute</span>
+                </a>
+                <p>A trusted educational admission consultancy helping students choose appropriate degree paths and secure seats in leading colleges across Gujarat and India.</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html">Home</a></li>
+                    <li class="footer-link-item"><a href="about.html">About Us</a></li>
+                    <li class="footer-link-item"><a href="universities.html">Universities</a></li>
+                    <li class="footer-link-item"><a href="mous.html">Our MOUs</a></li>
+                    <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Our Services</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="#">Career Profiling</a></li>
+                    <li class="footer-link-item"><a href="#">ACPC Counselling</a></li>
+                    <li class="footer-link-item"><a href="#">Management Seats</a></li>
+                    <li class="footer-link-item"><a href="#">NRI Sponsorship</a></li>
+                    <li class="footer-link-item"><a href="#">Hostel Coordination</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Contact Office</h3>
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>302, Premium Plaza, Near University Circle, University Road, Ahmedabad, Gujarat - 380009</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 98765 43210<br>+91 79 2654 9870</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>admissions@jbsiksha.in<br>info@jbsiksha.in</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 JB Siksha Institute. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

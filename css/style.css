@@ -405,6 +405,7 @@ ul {
     position: relative;
     min-height: 100vh;
     padding-top: var(--header-height);
+    padding-bottom: 6rem;
     display: flex;
     align-items: center;
     background: radial-gradient(circle at 80% 20%, var(--primary-green-subtle) 0%, rgba(255, 255, 255, 0) 50%),
@@ -466,6 +467,7 @@ ul {
 
 .hero-btns {
     display: flex;
+    flex-wrap: wrap;
     gap: 1.2rem;
     margin-top: 1rem;
 }

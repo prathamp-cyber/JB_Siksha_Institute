@@ -269,8 +269,13 @@
             <p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 600;">
                 Centre for Distance and Online Education &bull; NAAC A+ Accredited &bull; UGC-DEB Entitled &bull; AICTE Approved
             </p>
-            <div style="margin-top: 1.8rem; display: flex; justify-content: center; gap: 1rem;">
-                <a href="#schools-section" class="btn btn-primary btn-sm" style="background-color: var(--vgu-maroon); border-color: var(--vgu-maroon);">Explore ODL & OL Programs <i class="fa-solid fa-arrow-down"></i></a>
+            <div style="margin-top: 1.8rem; display: flex; flex-direction: column; align-items: center; gap: 1.2rem;">
+                <a href="#schools-section" class="btn btn-primary btn-sm" style="background-color: var(--vgu-maroon); border-color: var(--vgu-maroon);">Explore Courses & Specializations <i class="fa-solid fa-arrow-down"></i></a>
+                
+                <div class="search-wrapper" style="max-width: 500px; width: 100%;">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="offering-search" class="search-input" placeholder="Search courses, faculties or degrees (e.g. BBA, Nursing, B.Tech)..." style="box-shadow: var(--shadow-md); border-color: var(--border-color);">
+                </div>
             </div>
         </div>
     </section>
@@ -335,15 +340,6 @@
                         </div>
                     </div>
 
-                    <!-- Program Offerings Search -->
-                    <div class="details-section" style="margin-bottom: 2rem;">
-                        <h2>Search VGU Programs</h2>
-                        <div class="search-wrapper" style="margin-top: 1rem; max-width: 100%;">
-                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                            <input type="text" id="offering-search" class="search-input" placeholder="Search VGU faculties or divisions (e.g. Engineering, Law, ODL)..." style="box-shadow: none; border-color: var(--border-color);">
-                        </div>
-                    </div>
-
                     <!-- Section A: On-Campus Programs (Offline) -->
                     <div class="details-section" id="oncampus-section">
                         <h2>On-Campus Programs (Offline)</h2>
@@ -353,7 +349,7 @@
                         
                         <div class="schools-list">
                             <!-- Card 1 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="B.Tech M.Tech CSE IT Mechanical Civil Electrical Engineering">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-laptop-code"></i>
                                 </div>
@@ -362,7 +358,7 @@
                             </div>
 
                             <!-- Card 2 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="BCA MCA B.Sc-IT PGDCA Computer Science Applications">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-laptop"></i>
                                 </div>
@@ -371,7 +367,7 @@
                             </div>
 
                             <!-- Card 3 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="MBA BBA B.Com M.Com Management Business">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-chart-line"></i>
                                 </div>
@@ -380,7 +376,7 @@
                             </div>
 
                             <!-- Card 4 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="B.Pharm D.Pharm GNM B.Sc Nursing Pharmacy Nurse">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-user-nurse"></i>
                                 </div>
@@ -389,7 +385,7 @@
                             </div>
 
                             <!-- Card 5 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="B.Sc M.Sc Science Physics Chemistry Mathematics Botany Zoology">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-flask"></i>
                                 </div>
@@ -398,7 +394,7 @@
                             </div>
 
                             <!-- Card 6 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="B.Arch M.Arch B.Plan Architecture Planning">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-compass-drafting"></i>
                                 </div>
@@ -407,7 +403,7 @@
                             </div>
 
                             <!-- Card 7 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="B.Des M.Des Design UI/UX Fashion Product">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-palette"></i>
                                 </div>
@@ -416,7 +412,7 @@
                             </div>
 
                             <!-- Card 8 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="LLB BA-LLB BBA-LLB LLM Law Legal">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-scale-balanced"></i>
                                 </div>
@@ -425,7 +421,7 @@
                             </div>
 
                             <!-- Card 9 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="BA MA MSW Humanities Arts Social Sciences">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-users"></i>
                                 </div>
@@ -434,7 +430,7 @@
                             </div>
 
                             <!-- Card 10 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="BJMC MJMC Journalism Media Mass Communication">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-newspaper"></i>
                                 </div>
@@ -443,7 +439,7 @@
                             </div>
 
                             <!-- Card 11 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="BHMCT Hotel Management Hospitality Travel Tourism">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-hotel"></i>
                                 </div>
@@ -452,7 +448,7 @@
                             </div>
 
                             <!-- Card 12 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="B.Sc Agriculture M.Sc Agriculture">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-seedling"></i>
                                 </div>
@@ -461,7 +457,7 @@
                             </div>
 
                             <!-- Card 13 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="BPT MPT Physiotherapy Occupational Rehab">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-hand-holding-medical"></i>
                                 </div>
@@ -470,7 +466,7 @@
                             </div>
 
                             <!-- Card 14 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="B.Sc MLT B.Optom Healthcare Allied Optometry Lab">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-stethoscope"></i>
                                 </div>
@@ -489,7 +485,7 @@
                         
                         <div class="schools-list">
                             <!-- Division 1 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="MBA MCA BCA BBA BA B.Sc B.Com M.Sc Math MAJMC PGDCA Distance CDOE ODL">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-book-open"></i>
                                 </div>
@@ -501,7 +497,7 @@
                             </div>
 
                             <!-- Division 2 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="MBA MCA BCA BBA BA M.A. English MAJMC M.Sc Math Online CDOE OL">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-globe"></i>
                                 </div>
@@ -703,15 +699,72 @@
 
             if (searchInput) {
                 searchInput.addEventListener('input', (e) => {
-                    const query = e.target.value.toLowerCase().trim();
+                    const rawQuery = e.target.value.toLowerCase().trim();
+                    const normalize = (str) => str.replace(/[\s\.\-\(\)\&]/g, '').toLowerCase();
+                    const queryNormalized = normalize(rawQuery);
                     let onCampusVisible = 0;
                     let cdoeVisible = 0;
 
                     schoolItems.forEach(item => {
-                        const name = item.querySelector('.school-name').textContent.toLowerCase();
-                        const isVisible = name.includes(query);
-                        
-                        if (isVisible) {
+                        const name = item.querySelector('.school-name').textContent;
+                        const nameNormalized = normalize(name);
+                        const coursesAttr = item.getAttribute('data-courses') || '';
+                        const coursesNormalized = normalize(coursesAttr);
+
+                        let isMatch = nameNormalized.includes(queryNormalized) || coursesNormalized.includes(queryNormalized);
+
+                        if (!isMatch && queryNormalized.length > 1) {
+                            const synonyms = {
+                                'nurse': ['nursing', 'gnm'],
+                                'nursing': ['nurse', 'gnm'],
+                                'gnm': ['nursing', 'nurse'],
+                                'medicine': ['mbbs', 'medical', 'healthcare'],
+                                'mbbs': ['medicine', 'medical'],
+                                'medical': ['mbbs', 'medicine', 'healthcare', 'pharmacy', 'optom', 'physio', 'bpt'],
+                                'physiotherapy': ['bpt', 'physio', 'rehab'],
+                                'bpt': ['physiotherapy', 'physio'],
+                                'pharmacy': ['pharm', 'skpcper', 'druganalyst'],
+                                'pharm': ['pharmacy'],
+                                'bpharm': ['pharmacy'],
+                                'dpharm': ['pharmacy'],
+                                'law': ['llb', 'legal'],
+                                'legal': ['law', 'llb'],
+                                'llb': ['law', 'legal'],
+                                'computer': ['bca', 'mca', 'cse', 'it', 'software', 'laptop', 'developer'],
+                                'bca': ['computer', 'software', 'developer'],
+                                'mca': ['computer', 'software'],
+                                'cse': ['computer', 'engineering', 'laptop'],
+                                'it': ['computer', 'information', 'software'],
+                                'management': ['mba', 'bba', 'business'],
+                                'mba': ['management', 'business'],
+                                'bba': ['management', 'business'],
+                                'commerce': ['bcom', 'mcom', 'accounts'],
+                                'bcom': ['commerce', 'mcom'],
+                                'mcom': ['commerce', 'bcom'],
+                                'design': ['des', 'arch', 'fashion', 'uiux'],
+                                'bdes': ['design'],
+                                'mdes': ['design'],
+                                'architecture': ['arch', 'design'],
+                                'barch': ['architecture'],
+                                'agriculture': ['agri', 'seedling', 'farming'],
+                                'agri': ['agriculture'],
+                                'naturopathy': ['yoga', 'spa', 'naturopathy']
+                            };
+
+                            for (const [key, values] of Object.entries(synonyms)) {
+                                if (queryNormalized === key || queryNormalized.includes(key) || key.includes(queryNormalized)) {
+                                    const hasAny = [key, ...values].some(val => 
+                                        nameNormalized.includes(normalize(val)) || coursesNormalized.includes(normalize(val))
+                                    );
+                                    if (hasAny) {
+                                        isMatch = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (isMatch) {
                             item.style.display = 'flex';
                             if (item.closest('#oncampus-section')) {
                                 onCampusVisible++;

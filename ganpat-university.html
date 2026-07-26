@@ -257,8 +257,13 @@
             <p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 600;">
                 State Private University &bull; UGC Recognized &bull; AICTE, PCI & COA Approved
             </p>
-            <div style="margin-top: 1.8rem; display: flex; justify-content: center; gap: 1rem;">
+            <div style="margin-top: 1.8rem; display: flex; flex-direction: column; align-items: center; gap: 1.2rem;">
                 <a href="#schools-section" class="btn btn-primary btn-sm">Explore Courses & Specializations <i class="fa-solid fa-arrow-down"></i></a>
+                
+                <div class="search-wrapper" style="max-width: 500px; width: 100%;">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="offering-search" class="search-input" placeholder="Search courses, faculties or degrees (e.g. BBA, Nursing, B.Tech)..." style="box-shadow: var(--shadow-md); border-color: var(--border-color);">
+                </div>
             </div>
         </div>
     </section>
@@ -327,14 +332,9 @@
                             Ganpat University is organized into major faculties providing advanced learning and practical training:
                         </p>
                         
-                        <div class="search-wrapper" style="margin-bottom: 2rem; margin-top: 1rem; max-width: 100%;">
-                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                            <input type="text" id="offering-search" class="search-input" placeholder="Search faculties or departments (e.g. Engineering, Nursing, Design)..." style="box-shadow: none; border-color: var(--border-color);">
-                        </div>
-                        
                         <div class="schools-list">
                             <!-- School 1 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="B.Tech M.Tech CSE IT Mechanical Civil Marine Biomedical Polytechnic Diploma Engineering">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-laptop-code"></i>
                                 </div>
@@ -343,7 +343,7 @@
                             </div>
 
                             <!-- School 2 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="B.Pharm Pharm.D B.Sc Optometry B.Sc-MLT B.Sc Microbiology B.Sc Biotech Pharmacy Healthcare Medical">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-capsules"></i>
                                 </div>
@@ -352,7 +352,7 @@
                             </div>
 
                             <!-- School 3 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="MBA BBA B.Com M.Com Management Business">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-chart-line"></i>
                                 </div>
@@ -361,7 +361,7 @@
                             </div>
 
                             <!-- School 4 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="BCA MCA B.Sc-IT M.Sc-IT PGDCA Computer Applications Software">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-laptop"></i>
                                 </div>
@@ -370,7 +370,7 @@
                             </div>
 
                             <!-- School 5 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="B.Sc M.Sc Science Physics Chemistry Maths Botany Zoology">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-flask"></i>
                                 </div>
@@ -379,7 +379,7 @@
                             </div>
 
                             <!-- School 6 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="B.Des M.Des B.Arch M.Arch B.Plan Design Architecture Planning">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-compass-drafting"></i>
                                 </div>
@@ -388,7 +388,7 @@
                             </div>
 
                             <!-- School 7 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="BBA B.Com Liberal Studies M.Com MSW Humanities Arts Social Work">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-users"></i>
                                 </div>
@@ -397,7 +397,7 @@
                             </div>
 
                             <!-- School 8 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="GNM B.Sc Nursing Nurse Healthcare Medical">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-user-nurse"></i>
                                 </div>
@@ -406,7 +406,7 @@
                             </div>
 
                             <!-- School 9 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="BPT B.Optom Physiotherapy Optometry Healthcare Rehab">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-hand-holding-medical"></i>
                                 </div>
@@ -415,7 +415,7 @@
                             </div>
 
                             <!-- School 10 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="B.Sc Agriculture M.Sc Food Science Nutrition Dietetics Biotech Organic Farming Urban Farming">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-seedling"></i>
                                 </div>
@@ -424,7 +424,7 @@
                             </div>
 
                             <!-- School 11 -->
-                            <div class="school-item">
+                            <div class="school-item" data-courses="B.Voc Skill Technician Certificate Diploma">
                                 <div class="school-icon-wrapper">
                                     <i class="fa-solid fa-screwdriver-wrench"></i>
                                 </div>
@@ -595,14 +595,70 @@
             const schoolItems = document.querySelectorAll('.school-item');
             if (searchInput) {
                 searchInput.addEventListener('input', (e) => {
-                    const query = e.target.value.toLowerCase().trim();
+                    const rawQuery = e.target.value.toLowerCase().trim();
+                    const normalize = (str) => str.replace(/[\s\.\-\(\)\&]/g, '').toLowerCase();
+                    const queryNormalized = normalize(rawQuery);
+
                     schoolItems.forEach(item => {
-                        const name = item.querySelector('.school-name').textContent.toLowerCase();
-                        if (name.includes(query)) {
-                            item.style.display = 'flex';
-                        } else {
-                            item.style.display = 'none';
+                        const name = item.querySelector('.school-name').textContent;
+                        const nameNormalized = normalize(name);
+                        const coursesAttr = item.getAttribute('data-courses') || '';
+                        const coursesNormalized = normalize(coursesAttr);
+
+                        let isMatch = nameNormalized.includes(queryNormalized) || coursesNormalized.includes(queryNormalized);
+
+                        if (!isMatch && queryNormalized.length > 1) {
+                            const synonyms = {
+                                'nurse': ['nursing', 'gnm'],
+                                'nursing': ['nurse', 'gnm'],
+                                'gnm': ['nursing', 'nurse'],
+                                'medicine': ['mbbs', 'medical', 'healthcare'],
+                                'mbbs': ['medicine', 'medical'],
+                                'medical': ['mbbs', 'medicine', 'healthcare', 'pharmacy', 'optom', 'physio', 'bpt'],
+                                'physiotherapy': ['bpt', 'physio', 'rehab'],
+                                'bpt': ['physiotherapy', 'physio'],
+                                'pharmacy': ['pharm', 'skpcper', 'druganalyst'],
+                                'pharm': ['pharmacy'],
+                                'bpharm': ['pharmacy'],
+                                'dpharm': ['pharmacy'],
+                                'law': ['llb', 'legal'],
+                                'legal': ['law', 'llb'],
+                                'llb': ['law', 'legal'],
+                                'computer': ['bca', 'mca', 'cse', 'it', 'software', 'laptop', 'developer'],
+                                'bca': ['computer', 'software', 'developer'],
+                                'mca': ['computer', 'software'],
+                                'cse': ['computer', 'engineering', 'laptop'],
+                                'it': ['computer', 'information', 'software'],
+                                'management': ['mba', 'bba', 'business'],
+                                'mba': ['management', 'business'],
+                                'bba': ['management', 'business'],
+                                'commerce': ['bcom', 'mcom', 'accounts'],
+                                'bcom': ['commerce', 'mcom'],
+                                'mcom': ['commerce', 'bcom'],
+                                'design': ['des', 'arch', 'fashion', 'uiux'],
+                                'bdes': ['design'],
+                                'mdes': ['design'],
+                                'architecture': ['arch', 'design'],
+                                'barch': ['architecture'],
+                                'agriculture': ['agri', 'seedling', 'farming'],
+                                'agri': ['agriculture'],
+                                'naturopathy': ['yoga', 'spa', 'naturopathy']
+                            };
+
+                            for (const [key, values] of Object.entries(synonyms)) {
+                                if (queryNormalized === key || queryNormalized.includes(key) || key.includes(queryNormalized)) {
+                                    const hasAny = [key, ...values].some(val => 
+                                        nameNormalized.includes(normalize(val)) || coursesNormalized.includes(normalize(val))
+                                    );
+                                    if (hasAny) {
+                                        isMatch = true;
+                                        break;
+                                    }
+                                }
+                            }
                         }
+
+                        item.style.display = isMatch ? 'flex' : 'none';
                     });
                 });
             }

@@ -212,4 +212,56 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, true);
+
+    // 9. Client-Side Copy & Inspection Protection
+    // Disable Right-Click Context Menu
+    document.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+    });
+
+    // Disable Common Inspection/Developer Tool Shortcuts
+    document.addEventListener('keydown', (e) => {
+        // F12
+        if (e.key === 'F12') {
+            e.preventDefault();
+            return false;
+        }
+        
+        // Ctrl+Shift+I or Cmd+Opt+I (Developer Tools)
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'i') {
+            e.preventDefault();
+            return false;
+        }
+
+        // Ctrl+Shift+C or Cmd+Opt+C (Inspect Element)
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'c') {
+            e.preventDefault();
+            return false;
+        }
+
+        // Ctrl+Shift+J or Cmd+Opt+J (Console)
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'j') {
+            e.preventDefault();
+            return false;
+        }
+
+        // Ctrl+U or Cmd+Opt+U (View Source)
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'u') {
+            e.preventDefault();
+            return false;
+        }
+
+        // Ctrl+S or Cmd+S (Save Page)
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    // Disable Image Dragging
+    document.addEventListener('dragstart', (e) => {
+        if (e.target.nodeName === 'IMG') {
+            e.preventDefault();
+        }
+    });
 });

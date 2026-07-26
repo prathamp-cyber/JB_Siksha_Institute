@@ -260,9 +260,12 @@
             <div style="margin-top: 1.8rem; display: flex; flex-direction: column; align-items: center; gap: 1.2rem;">
                 <a href="#schools-section" class="btn btn-primary btn-sm">Explore Courses & Specializations <i class="fa-solid fa-arrow-down"></i></a>
                 
-                <div class="search-wrapper" style="max-width: 500px; width: 100%;">
-                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="text" id="offering-search" class="search-input" placeholder="Search courses, faculties or degrees (e.g. BBA, Nursing, B.Tech)..." style="box-shadow: var(--shadow-md); border-color: var(--border-color);">
+                <div class="search-wrapper" style="max-width: 500px; width: 100%; position: relative; box-shadow: 0 8px 30px rgba(0,0,0,0.15); border-radius: var(--radius-full); background: #ffffff;">
+                    <i class="fa-solid fa-magnifying-glass search-icon" style="position: absolute; left: 1.5rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 1.1rem; z-index: 10;"></i>
+                    <input type="text" id="offering-search" class="search-input" placeholder="Search courses, faculties or degrees (e.g. BBA, Nursing, B.Tech)..." style="width: 100%; padding: 1.1rem 8.5rem 1.1rem 3.5rem; border-radius: var(--radius-full); border: 1px solid var(--border-color); outline: none; background: transparent; transition: var(--transition-normal);">
+                    <button id="search-action-btn" class="btn btn-primary" style="position: absolute; right: 0.4rem; top: 50%; transform: translateY(-50%); padding: 0.7rem 1.5rem; border-radius: var(--radius-full); font-size: 0.9rem; display: none; align-items: center; gap: 0.5rem; cursor: pointer; border: none; height: calc(100% - 0.8rem); z-index: 10;">
+                        Search <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -562,10 +565,30 @@
         document.addEventListener('DOMContentLoaded', () => {
             // Offering Search Filter
             const searchInput = document.getElementById('offering-search');
+            const searchBtn = document.getElementById('search-action-btn');
             const schoolItems = document.querySelectorAll('.school-item');
+
+            const performScroll = () => {
+                const firstVisible = Array.from(schoolItems).find(item => item.style.display !== 'none');
+                if (firstVisible) {
+                    firstVisible.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    const fallbackSec = document.getElementById('schools-section');
+                    if (fallbackSec) {
+                        fallbackSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            };
+
             if (searchInput) {
                 searchInput.addEventListener('input', (e) => {
                     const rawQuery = e.target.value.toLowerCase().trim();
+                    
+                    // Show/hide Search button
+                    if (searchBtn) {
+                        searchBtn.style.display = rawQuery.length > 0 ? 'inline-flex' : 'none';
+                    }
+
                     const normalize = (str) => str.replace(/[\s\.\-\(\)\&]/g, '').toLowerCase();
                     const queryNormalized = normalize(rawQuery);
 
@@ -630,6 +653,19 @@
 
                         item.style.display = isMatch ? 'flex' : 'none';
                     });
+                });
+
+                // Listen for Enter key press
+                searchInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        performScroll();
+                    }
+                });
+            }
+
+            if (searchBtn) {
+                searchBtn.addEventListener('click', () => {
+                    performScroll();
                 });
             }
 

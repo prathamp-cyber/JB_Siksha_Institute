@@ -179,4 +179,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1200);
         });
     }
+
+    // 8. Global Form Submission Rate Limiter & XSS Sanitizer (Capture Phase)
+    document.addEventListener('submit', (e) => {
+        const form = e.target;
+        
+        // Skip validation check if form is not standard
+        if (form.checkValidity && !form.checkValidity()) {
+            return;
+        }
+
+        // Client-side Rate Limiting (max 3 submissions per minute)
+        const now = Date.now();
+        const submissions = JSON.parse(localStorage.getItem('form_submissions') || '[]');
+        const recentSubmissions = submissions.filter(time => now - time < 60000);
+        
+        if (recentSubmissions.length >= 3) {
+            e.preventDefault();
+            e.stopPropagation();
+            alert("Too many requests. Please wait a minute before submitting another inquiry.");
+            return;
+        }
+        
+        recentSubmissions.push(now);
+        localStorage.setItem('form_submissions', JSON.stringify(recentSubmissions));
+
+        // Input Sanitization (Strip HTML tags to prevent XSS)
+        const inputs = form.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            if (input.type === 'text' || input.type === 'email' || input.type === 'tel' || input.tagName === 'TEXTAREA') {
+                input.value = input.value.replace(/<\/?[^>]+(>|$)/g, "").trim();
+            }
+        });
+    }, true);
 });

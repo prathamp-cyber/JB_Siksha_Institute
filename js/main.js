@@ -60,9 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
             universityCards.forEach(card => {
                 const title = card.querySelector('.uni-title').textContent.toLowerCase();
                 const location = card.querySelector('.uni-location').textContent.toLowerCase();
+                const courses = card.getAttribute('data-courses') ? card.getAttribute('data-courses').toLowerCase() : '';
                 const tags = card.getAttribute('data-tags').toLowerCase().split(' ');
                 
-                const matchesSearch = title.includes(searchQuery) || location.includes(searchQuery);
+                const matchesSearch = title.includes(searchQuery) || location.includes(searchQuery) || courses.includes(searchQuery);
                 const matchesTag = activeTag === 'all' || tags.includes(activeTag);
 
                 if (matchesSearch && matchesTag) {

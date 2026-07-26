@@ -327,6 +327,11 @@
                             Ganpat University is organized into major faculties providing advanced learning and practical training:
                         </p>
                         
+                        <div class="search-wrapper" style="margin-bottom: 2rem; margin-top: 1rem; max-width: 100%;">
+                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                            <input type="text" id="offering-search" class="search-input" placeholder="Search faculties or departments (e.g. Engineering, Nursing, Design)..." style="box-shadow: none; border-color: var(--border-color);">
+                        </div>
+                        
                         <div class="schools-list">
                             <!-- School 1 -->
                             <div class="school-item">
@@ -585,6 +590,23 @@
     <script src="js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Offering Search Filter
+            const searchInput = document.getElementById('offering-search');
+            const schoolItems = document.querySelectorAll('.school-item');
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase().trim();
+                    schoolItems.forEach(item => {
+                        const name = item.querySelector('.school-name').textContent.toLowerCase();
+                        if (name.includes(query)) {
+                            item.style.display = 'flex';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
             const form = document.getElementById('university-counseling-form');
             const responseDiv = document.getElementById('counsel-form-response');
 

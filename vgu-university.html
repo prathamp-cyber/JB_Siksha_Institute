@@ -224,7 +224,12 @@
             .stat-badge-grid {
                 grid-template-columns: 1fr;
                 margin-top: -1rem;
-            }
+        }
+
+        /* Search Overrides for VGU */
+        .search-input:focus {
+            border-color: var(--vgu-maroon) !important;
+            box-shadow: 0 0 0 4px var(--vgu-maroon-subtle) !important;
         }
     </style>
 </head>
@@ -327,6 +332,15 @@
                                 <h3><i class="fa-solid fa-check-double"></i> AICTE Approved</h3>
                                 <p style="font-size: 0.85rem; color: var(--text-muted);">All professional technical courses like MBA & MCA are approved by AICTE.</p>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Program Offerings Search -->
+                    <div class="details-section" style="margin-bottom: 2rem;">
+                        <h2>Search VGU Programs</h2>
+                        <div class="search-wrapper" style="margin-top: 1rem; max-width: 100%;">
+                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                            <input type="text" id="offering-search" class="search-input" placeholder="Search VGU faculties or divisions (e.g. Engineering, Law, ODL)..." style="box-shadow: none; border-color: var(--border-color);">
                         </div>
                     </div>
 
@@ -681,6 +695,44 @@
     <script src="js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Offering Search Filter
+            const searchInput = document.getElementById('offering-search');
+            const schoolItems = document.querySelectorAll('.school-item');
+            const onCampusSection = document.getElementById('oncampus-section');
+            const cdoeSection = document.getElementById('schools-section');
+
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase().trim();
+                    let onCampusVisible = 0;
+                    let cdoeVisible = 0;
+
+                    schoolItems.forEach(item => {
+                        const name = item.querySelector('.school-name').textContent.toLowerCase();
+                        const isVisible = name.includes(query);
+                        
+                        if (isVisible) {
+                            item.style.display = 'flex';
+                            if (item.closest('#oncampus-section')) {
+                                onCampusVisible++;
+                            } else if (item.closest('#schools-section')) {
+                                cdoeVisible++;
+                            }
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+
+                    // Hide/show sections based on visibility of their child cards
+                    if (onCampusSection) {
+                        onCampusSection.style.display = onCampusVisible > 0 ? 'block' : 'none';
+                    }
+                    if (cdoeSection) {
+                        cdoeSection.style.display = cdoeVisible > 0 ? 'block' : 'none';
+                    }
+                });
+            }
+
             const form = document.getElementById('university-counseling-form');
             const responseDiv = document.getElementById('counsel-form-response');
 

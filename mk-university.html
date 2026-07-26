@@ -327,6 +327,11 @@
                             MK University comprises several specialized divisions designed for state-of-the-art academic training and practical industry readiness:
                         </p>
                         
+                        <div class="search-wrapper" style="margin-bottom: 2rem; margin-top: 1rem; max-width: 100%;">
+                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                            <input type="text" id="offering-search" class="search-input" placeholder="Search schools or departments (e.g. Engineering, Law, Commerce)..." style="box-shadow: none; border-color: var(--border-color);">
+                        </div>
+                        
                         <div class="schools-list">
                             <!-- School 1 -->
                             <div class="school-item">
@@ -555,6 +560,23 @@
     <script src="js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Offering Search Filter
+            const searchInput = document.getElementById('offering-search');
+            const schoolItems = document.querySelectorAll('.school-item');
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase().trim();
+                    schoolItems.forEach(item => {
+                        const name = item.querySelector('.school-name').textContent.toLowerCase();
+                        if (name.includes(query)) {
+                            item.style.display = 'flex';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
             // 1. Schools Accordion (Removed: School details are now on a separate page mk-courses.html)
 
             // 2. Counseling Form Submission Handler

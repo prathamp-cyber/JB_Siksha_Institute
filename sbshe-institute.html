@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaheed Bhagat Singh Health and Education (SBSHE) | Skill Development & Vocational Institute</title>
+    <meta name="description" content="Official admission counseling and course details for Shaheed Bhagat Singh Health and Education (SBSHE), Delhi. Explore vocational, agriculture certificate & diploma programs.">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/Logo/jb-siksha-favicon-512.png">
+    
+    <style>
+        /* Dedicated Page Custom Styles */
+        .university-details-grid {
+            display: grid;
+            grid-template-columns: 2fr 1.2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .details-section {
+            margin-bottom: 3rem;
+        }
+
+        .details-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .details-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-brown);
+            border-radius: var(--radius-full);
+        }
+
+        .details-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .details-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .details-card h3 i {
+            color: var(--primary-brown);
+        }
+
+        .sticky-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .form-message {
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: var(--primary-green-subtle);
+            color: var(--primary-green);
+            border: 1px solid rgba(14, 58, 36, 0.1);
+        }
+
+        .form-message.error {
+            background-color: #fce4ec;
+            color: var(--accent-red);
+            border: 1px solid rgba(192, 57, 43, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition-normal);
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px var(--primary-green-subtle);
+        }
+
+        /* Custom Table Styles */
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+        }
+        .catalog-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+        .catalog-table th {
+            background-color: var(--primary-green);
+            color: var(--bg-white);
+            padding: 1.2rem 1.5rem;
+            font-weight: 600;
+        }
+        .catalog-table td {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-dark);
+        }
+        .catalog-table tr:nth-child(even) {
+            background-color: var(--bg-accent);
+        }
+        .catalog-table tr:hover {
+            background-color: var(--primary-brown-subtle);
+        }
+        .catalog-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        @media (max-width: 1024px) {
+            .university-details-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/Logo/jb-siksha-emblem.png" alt="JB Logo" class="logo-img">
+                JB Siksha <span>Institute</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="universities.html" class="nav-link">Universities</a></li>
+                <li><a href="mous.html" class="nav-link">Our MOUs</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li><a href="contact.html" class="btn btn-primary btn-sm">Get Counseling</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Header -->
+    <section class="about-hero" style="padding-bottom: 6rem; background-image: linear-gradient(to bottom, rgba(27, 83, 56, 0.15), rgba(255, 255, 255, 1));">
+        <div class="container">
+            <span class="section-tag"><i class="fa-solid fa-handshake"></i> Skill Development Partner</span>
+            <h1 style="font-size: 3.2rem; margin-top: 0.5rem; line-height: 1.2;">Shaheed Bhagat Singh Health and Education (SBSHE)</h1>
+            <p class="section-desc" style="max-width: 700px; margin: 1rem auto 0; font-size: 1.25rem;">
+                <i class="fa-solid fa-location-dot" style="color: var(--primary-brown);"></i> Delhi, India
+            </p>
+            <p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 600;">
+                NGO-Registered Skill Development Institute &bull; ISO 9001:2015 Certified &bull; Est. under Trust Act 1882
+            </p>
+            <div style="margin-top: 1.8rem; display: flex; flex-direction: column; align-items: center; gap: 1.2rem;">
+                <a href="#schools-section" class="btn btn-primary btn-sm">Explore Vocational Programs <i class="fa-solid fa-arrow-down"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+
+            <!-- Two-Column Grid Layout -->
+            <div class="university-details-grid">
+                
+                <!-- Left Column: Detailed Profile -->
+                <div>
+                    
+                    <!-- Section 1: Overview -->
+                    <div class="details-section">
+                        <h2>Institute Profile</h2>
+                        <p style="font-size: 1.05rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.7;">
+                            Shaheed Bhagat Singh Health and Education (SBSHE) is a Delhi-based skill development and vocational training institute, inspired by the ideals of freedom fighter Bhagat Singh. Registered as an autonomous trust under the Societies Registration Act 1882 and certified ISO 9001:2015, SBSHE focuses on bridging the gap between education and employment through practical, industry-oriented certificate and diploma programs across health, agriculture, paramedical, vocational, and technical fields, with special emphasis on rural and semi-urban accessibility.
+                        </p>
+                    </div>
+
+                    <!-- Section 2: Recognition & Approvals -->
+                    <div class="details-section">
+                        <h2>Approvals & Recognitions</h2>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-top: 1rem;">
+                            <div class="details-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <h3><i class="fa-solid fa-square-check"></i> ISO 9001:2015 Certified</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Certified for Quality Management System covering IT, vocational, yoga & naturopathy, paramedical, veterinary, safety, teaching, agriculture, apparel, and sports courses.</p>
+                            </div>
+                            <div class="details-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <h3><i class="fa-solid fa-circle-nodes"></i> NITI Aayog NGO-Darpan</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Registered NGO with a unique ID on the Government of India's NGO Darpan portal.</p>
+                            </div>
+                            <div class="details-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <h3><i class="fa-solid fa-city"></i> MSME Registered</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Registered under the Ministry of Micro, Small & Medium Enterprises, Government of India.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: School Offered -->
+                    <div class="details-section" id="schools-section">
+                        <h2>School Offered</h2>
+                        
+                        <div class="details-card" style="margin-top: 1.5rem; background: var(--bg-white);">
+                            <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                <i class="fa-solid fa-wheat-awn"></i> SCHOOL OF AGRICULTURE
+                            </h3>
+                            <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.2rem;">
+                                Agriculture is the science and practice of cultivating crops, raising livestock, and producing food and raw materials for human use. SBSHE's Agriculture programs combine traditional farming knowledge with modern practices like organic farming and agricultural extension services, preparing students for diverse roles in India's growing agri-sector.
+                            </p>
+                            
+                            <h4 style="font-size: 1rem; color: var(--primary-green); margin-bottom: 0.5rem; font-weight: 700;">Career Opportunities:</h4>
+                            <p style="font-size: 0.95rem; color: var(--text-dark); line-height: 1.5; margin-bottom: 1.5rem;">
+                                Farmer/Agribusiness Owner, Agricultural Scientist, Agronomist, Horticulturist, Dairy & Poultry Farm Manager, Agricultural Engineer, Food Processing & Quality Control Expert, Agricultural Extension Officer
+                            </p>
+
+                            <div class="table-responsive">
+                                <table class="catalog-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 35%;">Program Name</th>
+                                            <th style="width: 15%;">Course Code</th>
+                                            <th style="width: 15%;">Duration</th>
+                                            <th style="width: 20%;">Eligibility</th>
+                                            <th style="width: 15%;">Total Fee</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Certificate in Agriculture</td>
+                                            <td>AGRCA</td>
+                                            <td>1 Year</td>
+                                            <td>10th / 12th / Grad</td>
+                                            <td>₹25,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Certificate in Organic Farming</td>
+                                            <td>AGRCOF</td>
+                                            <td>2 Years</td>
+                                            <td>10th / 12th / Grad</td>
+                                            <td>₹25,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Diploma in Agriculture</td>
+                                            <td>AGRDA</td>
+                                            <td>1 Year</td>
+                                            <td>10th / 12th / Grad</td>
+                                            <td>₹25,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Diploma in Organic Farming</td>
+                                            <td>AGRDOF</td>
+                                            <td>2 Years</td>
+                                            <td>10th / 12th / Grad</td>
+                                            <td>₹40,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Diploma in Horticulture</td>
+                                            <td>AGRDH</td>
+                                            <td>2 Years</td>
+                                            <td>10th / 12th / Grad</td>
+                                            <td>₹40,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Diploma in Agricultural Extension Services for Input Dealers</td>
+                                            <td>AGRDAESID</td>
+                                            <td>2 Years</td>
+                                            <td>10th / 12th / Grad</td>
+                                            <td>₹40,000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <p style="font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin-top: 1rem;">
+                                <strong>Note:</strong> Additional schools (Paramedical, Vocational, IT, Veterinary, Teaching, Apparel, Sports, Yoga & Naturopathy) are part of SBSHE's certified scope but detailed course prospectuses for these are pending — to be added once available.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Admission Sessions -->
+                    <div class="details-section">
+                        <h2>Admission Sessions</h2>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                            <div class="details-card" style="margin-bottom: 0;">
+                                <h3 style="font-size: 1.15rem; color: var(--primary-green);"><i class="fa-solid fa-calendar-days"></i> Session 1: April Intake</h3>
+                                <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 0.5rem; line-height: 1.5;">
+                                    <strong>Applications:</strong> Feb-March<br>
+                                    <strong>Session Starts:</strong> April 1
+                                </p>
+                            </div>
+                            <div class="details-card" style="margin-bottom: 0;">
+                                <h3 style="font-size: 1.15rem; color: var(--primary-green);"><i class="fa-solid fa-calendar-days"></i> Session 2: November Intake</h3>
+                                <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 0.5rem; line-height: 1.5;">
+                                    <strong>Applications:</strong> Sept-Oct<br>
+                                    <strong>Session Starts:</strong> November 1
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 5: Scholarships -->
+                    <div class="details-section">
+                        <h2>Scholarship Programs</h2>
+                        <ul style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; padding-left: 1.2rem; list-style-type: square; margin-top: 1rem;">
+                            <li><strong>Merit-Based Scholarship</strong> (based on academic performance, minimum % as decided by the institute)</li>
+                            <li><strong>Economic (EWS) Category</strong> (income certificate required)</li>
+                            <li><strong>Girl Student Scholarship</strong></li>
+                            <li><strong>SC/ST/OBC Reserved Category Scholarship</strong> (caste certificate required)</li>
+                            <li><strong>Minority & Divyang Scholarship</strong> (disability certificate required)</li>
+                        </ul>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); font-style: italic; margin-top: 0.8rem; border-left: 3px solid var(--primary-brown); padding-left: 0.8rem;">
+                            <strong>Note:</strong> Only one scholarship can be availed at a time; minimum 75% attendance is required to remain eligible.
+                        </p>
+                    </div>
+
+                    <!-- Section 6: Required Documents -->
+                    <div class="details-section">
+                        <h2>Required Documents for Admission</h2>
+                        <ul style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; padding-left: 1.2rem; list-style-type: check; margin-top: 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.4rem;">
+                            <li>10th Marksheet & Certificate (Mandatory)</li>
+                            <li>12th Marksheet & Certificate</li>
+                            <li>Graduation Certificate (for advanced courses)</li>
+                            <li>Aadhaar Card (Mandatory)</li>
+                            <li>Transfer / School Leaving Certificate</li>
+                            <li>Character Certificate</li>
+                            <li>Migration Certificate (if applicable)</li>
+                            <li>Caste Certificate (if applicable)</li>
+                            <li>4-6 Passport Size Photographs</li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 7: Refund Policy & Correction Charges -->
+                    <div class="details-section">
+                        <h2>Refund & Correction Policies</h2>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                            <div class="details-card" style="margin-bottom: 0;">
+                                <h3 style="font-size: 1.15rem; color: var(--primary-green);"><i class="fa-solid fa-hand-holding-dollar"></i> Refund Policy</h3>
+                                <ul style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem; padding-left: 1rem; line-height: 1.4;">
+                                    <li><strong>Before course starts:</strong> Refund possible after deducting registration/processing charges.</li>
+                                    <li><strong>After course starts:</strong> No refund under any circumstances.</li>
+                                    <li><strong>If institute cancels course:</strong> Full (100%) refund of fees paid.</li>
+                                </ul>
+                            </div>
+                            <div class="details-card" style="margin-bottom: 0;">
+                                <h3 style="font-size: 1.15rem; color: var(--primary-green);"><i class="fa-solid fa-screwdriver-wrench"></i> Administrative Charges</h3>
+                                <ul style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem; padding-left: 1rem; line-height: 1.4;">
+                                    <li><strong>Minor corrections:</strong> ₹200 (e.g. spelling errors)</li>
+                                    <li><strong>Major corrections:</strong> ₹500 (Name/DOB/Course changes)</li>
+                                    <li><strong>Re-issue of certificate:</strong> ₹500</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 8: Placement Support -->
+                    <div class="details-section">
+                        <h2>Placement & Internship Support</h2>
+                        <p style="font-size: 1.05rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.6;">
+                            SBSHE provides structured placement assistance to bridge the transition from vocational training to employment:
+                        </p>
+                        <ul style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; padding-left: 1.2rem; list-style-type: square; margin-top: 0.8rem;">
+                            <li><strong>100% placement assistance</strong> based on academic and training performance.</li>
+                            <li><strong>Corporate Tie-ups</strong> with clinics, laboratories, hospitals, and agro-companies.</li>
+                            <li><strong>Career Readiness Programs</strong> covering interview preparation, resume building, and practical internship placement support.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 9: Official Contact (Reference/Transparency) -->
+                    <div class="details-section">
+                        <h2>Official Institute Contact</h2>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+                            For transparency and direct verification, the official administrative details of Shaheed Bhagat Singh Health and Education are listed below:
+                        </p>
+                        <div class="details-card" style="background-color: var(--bg-accent); border-left: 4px solid var(--primary-brown); padding: 1.5rem; margin-bottom: 0;">
+                            <ul style="font-size: 0.95rem; color: var(--text-dark); display: flex; flex-direction: column; gap: 0.6rem; list-style: none; padding-left: 0;">
+                                <li><i class="fa-solid fa-envelope" style="color: var(--primary-green); width: 20px;"></i> <strong>Email:</strong> <a href="mailto:admission@shaheedbhagatsinghhealthandeducation.com" style="color: var(--primary-brown); font-weight: 600;">admission@shaheedbhagatsinghhealthandeducation.com</a></li>
+                                <li><i class="fa-solid fa-phone" style="color: var(--primary-green); width: 20px;"></i> <strong>Phone:</strong> +91 7082013213, +91 7082013215</li>
+                                <li><i class="fa-solid fa-location-dot" style="color: var(--primary-green); width: 20px;"></i> <strong>Office:</strong> 21/30-31 Trilok Puri East, Delhi-110091, India</li>
+                                <li><i class="fa-solid fa-globe" style="color: var(--primary-green); width: 20px;"></i> <strong>Website:</strong> <a href="http://www.shaheedbhagatsinghhealthandeducation.com" target="_blank" rel="noopener noreferrer" style="color: var(--primary-brown); font-weight: 600; text-decoration: underline;">www.shaheedbhagatsinghhealthandeducation.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Sidebar Counseling Form -->
+                <div class="sticky-sidebar">
+                    <div class="card" style="padding: 2.2rem 1.8rem; border-color: var(--primary-brown);">
+                        <h3 style="font-size: 1.35rem; margin-bottom: 0.6rem; color: var(--primary-green); display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-solid fa-headset"></i> Counseling Desk
+                        </h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5;">
+                            JB Siksha Institute assists with admission guidance, documentation, and enrollment support for SBSHE's certificate and diploma programs.
+                        </p>
+                        
+                        <div style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.9rem;">
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-phone" style="color: var(--primary-brown); width: 16px;"></i>
+                                <a href="tel:+918780459636" style="font-weight: 700; color: var(--text-dark);">+91 87804 59636</a>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-envelope" style="color: var(--primary-brown); width: 16px;"></i>
+                                <a href="mailto:jbsikshainstitute@gmail.com" style="font-weight: 700; color: var(--text-dark); word-break: break-all;">jbsikshainstitute@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: var(--primary-green);">Request Admission Guidance</h4>
+                        
+                        <form id="university-counseling-form">
+                            <div class="form-group">
+                                <label for="counsel-name">Full Name *</label>
+                                <input type="text" id="counsel-name" placeholder="Your Name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="counsel-email">Email Address *</label>
+                                <input type="email" id="counsel-email" placeholder="Your Email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="counsel-phone">Mobile Number *</label>
+                                <input type="tel" id="counsel-phone" placeholder="Your Phone Number" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="counsel-school">Preferred Program *</label>
+                                <select id="counsel-school" required>
+                                    <option value="" disabled selected>-- Select Program --</option>
+                                    <option value="Certificate in Agriculture (AGRCA)">Certificate in Agriculture (AGRCA)</option>
+                                    <option value="Certificate in Organic Farming (AGRCOF)">Certificate in Organic Farming (AGRCOF)</option>
+                                    <option value="Diploma in Agriculture (AGRDA)">Diploma in Agriculture (AGRDA)</option>
+                                    <option value="Diploma in Organic Farming (AGRDOF)">Diploma in Organic Farming (AGRDOF)</option>
+                                    <option value="Diploma in Horticulture (AGRDH)">Diploma in Horticulture (AGRDH)</option>
+                                    <option value="Diploma in Agricultural Extension Services (AGRDAESID)">Diploma in Agricultural Extension Services (AGRDAESID)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="counsel-message">Your Message</label>
+                                <textarea id="counsel-message" rows="3" placeholder="Describe your academic goals..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                                Submit Request <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        
+                        <div id="counsel-form-response" class="form-message"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    JB Siksha <span>Institute</span>
+                </a>
+                <p>A trusted educational admission consultancy helping students choose appropriate degree paths and secure seats in leading colleges across Gujarat and India.</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html">Home</a></li>
+                    <li class="footer-link-item"><a href="about.html">About Us</a></li>
+                    <li class="footer-link-item"><a href="universities.html">Universities</a></li>
+                    <li class="footer-link-item"><a href="mous.html">Our MOUs</a></li>
+                    <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Our Services</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="#">Career Profiling</a></li>
+                    <li class="footer-link-item"><a href="#">ACPC Counselling</a></li>
+                    <li class="footer-link-item"><a href="#">Management Seats</a></li>
+                    <li class="footer-link-item"><a href="#">NRI Sponsorship</a></li>
+                    <li class="footer-link-item"><a href="#">Hostel Coordination</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Contact Office</h3>
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>02, Mani Complex, Plot No. 84, Sector 8, Gandhidham, Kachchh, Gujarat. 370201</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 87804 59636</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>jbsikshainstitute@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 JB Siksha Institute. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript & Form Handler Script -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('university-counseling-form');
+            const responseDiv = document.getElementById('counsel-form-response');
+
+            if (form && responseDiv) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const name = document.getElementById('counsel-name').value.trim();
+                    const email = document.getElementById('counsel-email').value.trim();
+                    const phone = document.getElementById('counsel-phone').value.trim();
+                    const school = document.getElementById('counsel-school').value;
+
+                    if (!name || !email || !phone || !school) {
+                        responseDiv.textContent = 'Please fill out all required fields.';
+                        responseDiv.className = 'form-message error';
+                        responseDiv.style.display = 'block';
+                        return;
+                    }
+
+                    responseDiv.textContent = 'Submitting counseling request...';
+                    responseDiv.className = 'form-message';
+                    responseDiv.style.display = 'block';
+
+                    // Simulate email routing trigger
+                    setTimeout(() => {
+                        responseDiv.innerHTML = `<strong>Request Received!</strong> Thank you ${name}. We have logged your request for <strong>${school}</strong> at SBSHE. Admissions specialist will contact you on <strong>${phone}</strong> or send details to <strong>${email}</strong>. (Lead sent to jbsikshainstitute@gmail.com)`;
+                        responseDiv.className = 'form-message success';
+                        form.reset();
+                    }, 1200);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

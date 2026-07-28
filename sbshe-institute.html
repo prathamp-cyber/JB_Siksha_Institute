@@ -290,6 +290,14 @@
             </p>
             <div style="margin-top: 1.8rem; display: flex; flex-direction: column; align-items: center; gap: 1.2rem;">
                 <a href="#schools-section" class="btn btn-primary btn-sm">Explore Vocational Programs <i class="fa-solid fa-arrow-down"></i></a>
+                
+                <div class="search-wrapper" style="max-width: 500px; width: 100%; position: relative; box-shadow: 0 8px 30px rgba(0,0,0,0.15); border-radius: var(--radius-full); background: #ffffff;">
+                    <i class="fa-solid fa-magnifying-glass search-icon" style="position: absolute; left: 1.5rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 1.1rem; z-index: 10;"></i>
+                    <input type="text" id="offering-search" class="search-input" placeholder="Search courses, schools or programs (e.g. Paramedical, Yoga, Tally)..." style="width: 100%; padding: 1.1rem 8.5rem 1.1rem 3.5rem; border-radius: var(--radius-full); border: 1px solid var(--border-color); outline: none; background: transparent; transition: var(--transition-normal); color: var(--text-dark);">
+                    <button id="search-action-btn" class="btn btn-primary" style="position: absolute; right: 0.4rem; top: 50%; transform: translateY(-50%); padding: 0.7rem 1.5rem; border-radius: var(--radius-full); font-size: 0.9rem; display: none; align-items: center; gap: 0.5rem; cursor: pointer; border: none; height: calc(100% - 0.8rem); z-index: 10;">
+                        Search <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -337,50 +345,50 @@
                         
                         <!-- School Directory Navigation Grid -->
                         <div class="directory-grid">
-                            <div class="directory-card">
+                            <div class="directory-card" data-courses="Agriculture Organic Farming Horticulture AGRCA AGRCOF AGRDA AGRDOF AGRDH AGRDAESID">
                                 <h4><i class="fa-solid fa-wheat-awn"></i> School of Agriculture</h4>
                                 <a href="#school-agriculture" class="explore-link">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
-                            <div class="directory-card">
+                            <div class="directory-card" data-courses="Paramedical First Aid Medical Dresser EMT Emergency Medical Technician Community Health Acupuncture Cath Lab Technology Anesthesia Critical Care Audio Speech Therapy BCG Tuberculosis Blood Transfusion Burn Plastic Surgery CSSD CT Scan Cardiology Clinical Therapeutic Nutrition CMS ED Dental Hygienist Dialysis Trauma Hospital Domiciliary Record Keeping Interventional Radiology Lab MRI Medical Transcription Typing Minimal Access Surgical Multipurpose Health Worker Neonatal OT Operation Theatre Occupational Therapy Optometry Orthopaedic Plaster Orthotic Prosthetic Physiotherapy Radiotherapy Ophthalmic Assistant Respiratory Sanitation Ultrasonography X-Ray PMCFA PMCMD PMCEMT PMCCH PMDA PMDCLT PMDACCT PMDASTT PMDBTTPM PMDBTT PMDBPST PMDCT PMDCST PMDCT2 PMDCTN PMDCE PMDCH PMDDHT PMDDT PMDETCT PMDHDCA PMDHRK PMDIR PMDLT PMDMT PMDMLT2 PMDMTT PMDMAST PMDMHW PMDNCT PMDOT PMDOT2 PMDO PMDOPT PMDOPT2 PMDP PMDRT PMDOA PMDRT2 PMDS PMDUT PMDXRT">
                                 <h4><i class="fa-solid fa-kit-medical"></i> School of Paramedical</h4>
                                 <a href="#school-paramedical" class="explore-link">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
-                            <div class="directory-card">
+                            <div class="directory-card" data-courses="Sports Fitness Trainer Personal Fitness Yoga Sports Nutrition Fitness Training Sports Management Gym Instructor SPCFT SPCPFT SPCYF SPCSN SPDFT SPDSM SPDGI">
                                 <h4><i class="fa-solid fa-dumbbell"></i> School of Sports</h4>
                                 <a href="#school-sports" class="explore-link">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
-                            <div class="directory-card">
+                            <div class="directory-card" data-courses="Yoga Naturopathy Natural Therapy Yoga Therapy Naturopathy Yoga Meditation Yogic Science Holistic Health YNCNT YNCYT YNCN YNCYM YNCYS YNDYT YNDN YNDYM YNDHHY YNDNYS">
                                 <h4><i class="fa-solid fa-spa"></i> School of Yoga & Naturopathy</h4>
                                 <a href="#school-yoga-naturopathy" class="explore-link">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
-                            <div class="directory-card">
+                            <div class="directory-card" data-courses="Veterinary Assistant Animal Health Worker Livestock Management Animal Husbandry VETCVA VETCAHW VETCLM VETCAH VETDVA VETDAHW VETDLM VETDAH">
                                 <h4><i class="fa-solid fa-paw"></i> School of Veterinary</h4>
                                 <a href="#school-veterinary" class="explore-link">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
-                            <div class="directory-card">
+                            <div class="directory-card" data-courses="Education Nursery Teacher Training NTT Primary Teacher Training PTT Montessori Early Childhood Care Education ECCE Art Craft Computer Teacher Training DCTT Yoga Teacher Training YTT EDUCNTT EDUCPTT EDUCMTT EDUCECCE EDUCACTT EDUDNTT EDUDPTT EDUDMTT EDUDECCE EDUDACTT EDUDCTT EDUDYTT">
                                 <h4><i class="fa-solid fa-graduation-cap"></i> School of Education</h4>
                                 <a href="#school-education" class="explore-link">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
-                            <div class="directory-card">
+                            <div class="directory-card" data-courses="Information Technology IT Basic Computer Course BCC Data Entry Operator Tally GST Desktop Publishing DTP Web Designing Computer Hardware Graphic Designing Computer Application DCA Computer Science Computer Hardware Networking Financial Accounting Advanced Diploma ADCA Post Graduate Diploma PGDCA ITCBCC ITCDEO ITCTG ITCDP ITCWD ITCCH ITCGD ITDCA ITDWD ITDCHN ITDGD ITDFA ITADCA ITPGDCA">
                                 <h4><i class="fa-solid fa-laptop-code"></i> School of IT</h4>
                                 <a href="#school-it" class="explore-link">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
-                            <div class="directory-card">
+                            <div class="directory-card" data-courses="Fire Safety Industrial Safety Fire Safety Management Disaster Management First Aid Emergency Care Fire Safety Engineering Fireman Fire Industrial Safety FSCIS FSCFSM FSCDM FSCFAEC FSDFSE FSDIS FSDF FSDDM FSDFISM">
                                 <h4><i class="fa-solid fa-fire-extinguisher"></i> School of Fire & Safety</h4>
                                 <a href="#school-fire-safety" class="explore-link">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
-                            <div class="directory-card">
+                            <div class="directory-card" data-courses="Beauty Wellness Spa Wellness Management Assistant Beauty Therapist Make-Up Artist Beauty Therapist Cosmetology Beautician Nail Art Extension Skin Care Therapy Professional Makeup Hair Styling Beauty Culture Hair Dressing Spa Therapy Aesthetic Beauty Therapy BWCSWM BWCABT BWCMUA BWCBT BWCC BWCB BWCNA BWCSCT BWCPM BWCHS BWDBT BWDC BWDBC BWDHD BWDST BWDABT BWDBWM BWDPMA">
                                 <h4><i class="fa-solid fa-scissors"></i> School of Beauty & Wellness</h4>
                                 <a href="#school-beauty-wellness" class="explore-link">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
-                            <div class="directory-card">
+                            <div class="directory-card" data-courses="Vocational Refrigeration Air Conditioning Mobile Repairing TV LED Repairing CCTV Installation Solar Panel Technician Automobile Mechanic Sewing Machine Operator Fashion Design Fitter Welder Electrician CCTV Technology Solar Energy Technician Automobile Engineering Mechanical Technician Electrical Technician Fashion Design Labour Law Hotel Management VOCCRAC VOCCMR VOCCTLR VOCCCI VOCCSPT VOCCAM VOCCSMO VOCFD VOCDF VOCDW VOCDE VOCDRAC VOCDMR VOCDCCTVT VOCDSET VOCDAE VOCDMT VOCDET VOCDFD VOCDLL VOCDHM">
                                 <h4><i class="fa-solid fa-screwdriver-wrench"></i> School of Vocational</h4>
                                 <a href="#school-vocational" class="explore-link">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
 
                         <!-- School of Agriculture -->
-                        <div class="details-card" id="school-agriculture" style="margin-top: 1.5rem; background: var(--bg-white);">
+                        <div class="details-card school-section" id="school-agriculture" data-courses="Agriculture Organic Farming Horticulture AGRCA AGRCOF AGRDA AGRDOF AGRDH AGRDAESID" style="margin-top: 1.5rem; background: var(--bg-white);">
                             <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
                                 <i class="fa-solid fa-wheat-awn"></i> SCHOOL OF AGRICULTURE
                             </h3>
@@ -453,7 +461,7 @@
                         </div>
 
                         <!-- School of Paramedical -->
-                        <div class="details-card" id="school-paramedical" style="margin-top: 1.5rem; background: var(--bg-white);">
+                        <div class="details-card school-section" id="school-paramedical" data-courses="Paramedical First Aid Medical Dresser EMT Emergency Medical Technician Community Health Acupuncture Cath Lab Technology Anesthesia Critical Care Audio Speech Therapy BCG Tuberculosis Blood Transfusion Burn Plastic Surgery CSSD CT Scan Cardiology Clinical Therapeutic Nutrition CMS ED Dental Hygienist Dialysis Trauma Hospital Domiciliary Record Keeping Interventional Radiology Lab MRI Medical Transcription Typing Minimal Access Surgical Multipurpose Health Worker Neonatal OT Operation Theatre Occupational Therapy Optometry Orthopaedic Plaster Orthotic Prosthetic Physiotherapy Radiotherapy Ophthalmic Assistant Respiratory Sanitation Ultrasonography X-Ray PMCFA PMCMD PMCEMT PMCCH PMDA PMDCLT PMDACCT PMDASTT PMDBTTPM PMDBTT PMDBPST PMDCT PMDCST PMDCT2 PMDCTN PMDCE PMDCH PMDDHT PMDDT PMDETCT PMDHDCA PMDHRK PMDIR PMDLT PMDMT PMDMLT2 PMDMTT PMDMAST PMDMHW PMDNCT PMDOT PMDOT2 PMDO PMDOPT PMDOPT2 PMDP PMDRT PMDOA PMDRT2 PMDS PMDUT PMDXRT" style="margin-top: 1.5rem; background: var(--bg-white);">
                             <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
                                 <i class="fa-solid fa-kit-medical"></i> SCHOOL OF PARAMEDICAL
                             </h3>
@@ -526,7 +534,7 @@
                         </div>
 
                         <!-- School of Sports -->
-                        <div class="details-card" id="school-sports" style="margin-top: 1.5rem; background: var(--bg-white);">
+                        <div class="details-card school-section" id="school-sports" data-courses="Sports Fitness Trainer Personal Fitness Yoga Sports Nutrition Fitness Training Sports Management Gym Instructor SPCFT SPCPFT SPCYF SPCSN SPDFT SPDSM SPDGI" style="margin-top: 1.5rem; background: var(--bg-white);">
                             <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
                                 <i class="fa-solid fa-dumbbell"></i> SCHOOL OF SPORTS
                             </h3>
@@ -564,7 +572,7 @@
                         </div>
 
                         <!-- School of Yoga & Naturopathy -->
-                        <div class="details-card" id="school-yoga-naturopathy" style="margin-top: 1.5rem; background: var(--bg-white);">
+                        <div class="details-card school-section" id="school-yoga-naturopathy" data-courses="Yoga Naturopathy Natural Therapy Yoga Therapy Naturopathy Yoga Meditation Yogic Science Holistic Health YNCNT YNCYT YNCN YNCYM YNCYS YNDYT YNDN YNDYM YNDHHY YNDNYS" style="margin-top: 1.5rem; background: var(--bg-white);">
                             <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
                                 <i class="fa-solid fa-spa"></i> SCHOOL OF YOGA & NATUROPATHY
                             </h3>
@@ -605,7 +613,7 @@
                         </div>
 
                         <!-- School of Veterinary -->
-                        <div class="details-card" id="school-veterinary" style="margin-top: 1.5rem; background: var(--bg-white);">
+                        <div class="details-card school-section" id="school-veterinary" data-courses="Veterinary Assistant Animal Health Worker Livestock Management Animal Husbandry VETCVA VETCAHW VETCLM VETCAH VETDVA VETDAHW VETDLM VETDAH" style="margin-top: 1.5rem; background: var(--bg-white);">
                             <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
                                 <i class="fa-solid fa-paw"></i> SCHOOL OF VETERINARY
                             </h3>
@@ -644,7 +652,7 @@
                         </div>
 
                         <!-- School of Education -->
-                        <div class="details-card" id="school-education" style="margin-top: 1.5rem; background: var(--bg-white);">
+                        <div class="details-card school-section" id="school-education" data-courses="Education Nursery Teacher Training NTT Primary Teacher Training PTT Montessori Early Childhood Care Education ECCE Art Craft Computer Teacher Training DCTT Yoga Teacher Training YTT EDUCNTT EDUCPTT EDUCMTT EDUCECCE EDUCACTT EDUDNTT EDUDPTT EDUDMTT EDUDECCE EDUDACTT EDUDCTT EDUDYTT" style="margin-top: 1.5rem; background: var(--bg-white);">
                             <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
                                 <i class="fa-solid fa-graduation-cap"></i> SCHOOL OF EDUCATION
                             </h3>
@@ -687,7 +695,7 @@
                         </div>
 
                         <!-- School of Information Technology (IT) -->
-                        <div class="details-card" id="school-it" style="margin-top: 1.5rem; background: var(--bg-white);">
+                        <div class="details-card school-section" id="school-it" data-courses="Information Technology IT Basic Computer Course BCC Data Entry Operator Tally GST Desktop Publishing DTP Web Designing Computer Hardware Graphic Designing Computer Application DCA Computer Science Computer Hardware Networking Financial Accounting Advanced Diploma ADCA Post Graduate Diploma PGDCA ITCBCC ITCDEO ITCTG ITCDP ITCWD ITCCH ITCGD ITDCA ITDWD ITDCHN ITDGD ITDFA ITADCA ITPGDCA" style="margin-top: 1.5rem; background: var(--bg-white);">
                             <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
                                 <i class="fa-solid fa-laptop-code"></i> SCHOOL OF INFORMATION TECHNOLOGY (IT)
                             </h3>
@@ -736,7 +744,7 @@
                         </div>
 
                         <!-- School of Fire & Safety -->
-                        <div class="details-card" id="school-fire-safety" style="margin-top: 1.5rem; background: var(--bg-white);">
+                        <div class="details-card school-section" id="school-fire-safety" data-courses="Fire Safety Industrial Safety Fire Safety Management Disaster Management First Aid Emergency Care Fire Safety Engineering Fireman Fire Industrial Safety FSCIS FSCFSM FSCDM FSCFAEC FSDFSE FSDIS FSDF FSDDM FSDFISM" style="margin-top: 1.5rem; background: var(--bg-white);">
                             <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
                                 <i class="fa-solid fa-fire-extinguisher"></i> SCHOOL OF FIRE & SAFETY
                             </h3>
@@ -776,7 +784,7 @@
                         </div>
 
                         <!-- School of Beauty & Wellness -->
-                        <div class="details-card" id="school-beauty-wellness" style="margin-top: 1.5rem; background: var(--bg-white);">
+                        <div class="details-card school-section" id="school-beauty-wellness" data-courses="Beauty Wellness Spa Wellness Management Assistant Beauty Therapist Make-Up Artist Beauty Therapist Cosmetology Beautician Nail Art Extension Skin Care Therapy Professional Makeup Hair Styling Beauty Culture Hair Dressing Spa Therapy Aesthetic Beauty Therapy BWCSWM BWCABT BWCMUA BWCBT BWCC BWCB BWCNA BWCSCT BWCPM BWCHS BWDBT BWDC BWDBC BWDHD BWDST BWDABT BWDBWM BWDPMA" style="margin-top: 1.5rem; background: var(--bg-white);">
                             <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
                                 <i class="fa-solid fa-scissors"></i> SCHOOL OF BEAUTY & WELLNESS
                             </h3>
@@ -825,7 +833,7 @@
                         </div>
 
                         <!-- School of Vocational -->
-                        <div class="details-card" id="school-vocational" style="margin-top: 1.5rem; background: var(--bg-white);">
+                        <div class="details-card school-section" id="school-vocational" data-courses="Vocational Refrigeration Air Conditioning Mobile Repairing TV LED Repairing CCTV Installation Solar Panel Technician Automobile Mechanic Sewing Machine Operator Fashion Design Fitter Welder Electrician CCTV Technology Solar Energy Technician Automobile Engineering Mechanical Technician Electrical Technician Fashion Design Labour Law Hotel Management VOCCRAC VOCCMR VOCCTLR VOCCCI VOCCSPT VOCCAM VOCCSMO VOCFD VOCDF VOCDW VOCDE VOCDRAC VOCDMR VOCDCCTVT VOCDSET VOCDAE VOCDMT VOCDET VOCDFD VOCDLL VOCDHM" style="margin-top: 1.5rem; background: var(--bg-white);">
                             <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
                                 <i class="fa-solid fa-screwdriver-wrench"></i> SCHOOL OF VOCATIONAL
                             </h3>
@@ -1123,6 +1131,120 @@
     <script src="js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Offering Search Filter
+            const searchInput = document.getElementById('offering-search');
+            const searchBtn = document.getElementById('search-action-btn');
+            const schoolSections = document.querySelectorAll('.school-section');
+            const directoryCards = document.querySelectorAll('.directory-card');
+
+            const performScroll = () => {
+                const firstVisible = Array.from(schoolSections).find(item => item.style.display !== 'none');
+                if (firstVisible) {
+                    firstVisible.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    const fallbackSec = document.getElementById('schools-section');
+                    if (fallbackSec) {
+                        fallbackSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            };
+
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const rawQuery = e.target.value.toLowerCase().trim();
+                    
+                    // Show/hide Search button
+                    if (searchBtn) {
+                        searchBtn.style.display = rawQuery.length > 0 ? 'inline-flex' : 'none';
+                    }
+
+                    const normalize = (str) => str.replace(/[\s\.\-\(\)\&]/g, '').toLowerCase();
+                    const queryNormalized = normalize(rawQuery);
+
+                    // Filter details sections
+                    schoolSections.forEach(item => {
+                        const name = item.querySelector('h3').textContent;
+                        const nameNormalized = normalize(name);
+                        const coursesAttr = item.getAttribute('data-courses') || '';
+                        const coursesNormalized = normalize(coursesAttr);
+
+                        let isMatch = nameNormalized.includes(queryNormalized) || coursesNormalized.includes(queryNormalized);
+
+                        if (!isMatch && queryNormalized.length > 1) {
+                            // Support basic synonyms / keywords
+                            const synonyms = {
+                                'agri': ['agriculture', 'farming'],
+                                'med': ['medical', 'paramedical', 'health'],
+                                'comp': ['computer', 'it', 'software'],
+                                'fit': ['fitness', 'sports', 'gym'],
+                                'teach': ['teacher', 'education', 'nursery', 'primary']
+                            };
+
+                            for (const [key, values] of Object.entries(synonyms)) {
+                                if (queryNormalized === key || queryNormalized.includes(key) || key.includes(queryNormalized)) {
+                                    const hasAny = [key, ...values].some(val => 
+                                        nameNormalized.includes(normalize(val)) || coursesNormalized.includes(normalize(val))
+                                    );
+                                    if (hasAny) {
+                                        isMatch = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        item.style.display = isMatch ? 'block' : 'none';
+                    });
+
+                    // Filter directory cards
+                    directoryCards.forEach(card => {
+                        const name = card.querySelector('h4').textContent;
+                        const nameNormalized = normalize(name);
+                        const coursesAttr = card.getAttribute('data-courses') || '';
+                        const coursesNormalized = normalize(coursesAttr);
+
+                        let isMatch = nameNormalized.includes(queryNormalized) || coursesNormalized.includes(queryNormalized);
+
+                        if (!isMatch && queryNormalized.length > 1) {
+                            const synonyms = {
+                                'agri': ['agriculture', 'farming'],
+                                'med': ['medical', 'paramedical', 'health'],
+                                'comp': ['computer', 'it', 'software'],
+                                'fit': ['fitness', 'sports', 'gym'],
+                                'teach': ['teacher', 'education', 'nursery', 'primary']
+                            };
+
+                            for (const [key, values] of Object.entries(synonyms)) {
+                                if (queryNormalized === key || queryNormalized.includes(key) || key.includes(queryNormalized)) {
+                                    const hasAny = [key, ...values].some(val => 
+                                        nameNormalized.includes(normalize(val)) || coursesNormalized.includes(normalize(val))
+                                    );
+                                    if (hasAny) {
+                                        isMatch = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        card.style.display = isMatch ? 'flex' : 'none';
+                    });
+                });
+
+                // Listen for Enter key press
+                searchInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        performScroll();
+                    }
+                });
+            }
+
+            if (searchBtn) {
+                searchBtn.addEventListener('click', () => {
+                    performScroll();
+                });
+            }
+
             const form = document.getElementById('university-counseling-form');
             const responseDiv = document.getElementById('counsel-form-response');
 

@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDOE VGU, Jaipur Rajasthan - Admission & ODL/OL Courses | JB Siksha Institute</title>
+    <meta name="description" content="Explore distance & online programs, approvals, and admission criteria for CDOE Vivekananda Global University (VGU) Jaipur. Get expert academic and NRI counseling.">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico?v=2" sizes="any">
+    <link rel="icon" type="image/png" sizes="512x512" href="/jb-siksha-favicon-512.png?v=2">
+    <style>
+        /* Dedicated Page Custom Styles */
+        :root {
+            --vgu-maroon: #7F1B13;
+            --vgu-gold: #FFA906;
+            --vgu-maroon-subtle: rgba(127, 27, 19, 0.1);
+        }
+
+        .university-details-grid {
+            display: grid;
+            grid-template-columns: 2fr 1.2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .details-section {
+            margin-bottom: 3rem;
+        }
+
+        .details-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .details-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--vgu-maroon);
+            border-radius: var(--radius-full);
+        }
+
+        .details-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .details-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--vgu-maroon);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .details-card h3 i {
+            color: var(--vgu-gold);
+        }
+
+        .schools-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .school-item {
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2.2rem 1.8rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: space-between;
+        }
+
+        .school-item:hover {
+            border-color: var(--vgu-maroon);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .school-icon-wrapper {
+            font-size: 3rem;
+            color: var(--vgu-maroon);
+            margin-bottom: 1.2rem;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition-normal);
+        }
+
+        .school-item:hover .school-icon-wrapper {
+            transform: scale(1.1);
+            color: var(--vgu-gold);
+        }
+
+        .school-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-badge-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: -2rem auto 3rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-badge-card {
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-badge-num {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--vgu-maroon);
+            font-weight: 800;
+        }
+
+        .stat-badge-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
+
+        .sticky-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .form-message {
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: var(--primary-green-subtle);
+            color: var(--primary-green);
+            border: 1px solid rgba(14, 58, 36, 0.1);
+        }
+
+        .form-message.error {
+            background-color: #fce4ec;
+            color: var(--accent-red);
+            border: 1px solid rgba(192, 57, 43, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--vgu-maroon);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition-normal);
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--vgu-maroon);
+            box-shadow: 0 0 0 3px var(--vgu-maroon-subtle);
+        }
+
+        @media (max-width: 1024px) {
+            .university-details-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .stat-badge-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stat-badge-grid {
+                grid-template-columns: 1fr;
+                margin-top: -1rem;
+        }
+
+        /* Search Overrides for VGU */
+        .search-input:focus {
+            border-color: var(--vgu-maroon) !important;
+            box-shadow: 0 0 0 4px var(--vgu-maroon-subtle) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/Logo/jb-siksha-emblem.png" alt="JB Logo" class="logo-img">
+                JB Siksha <span>Institute</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="universities.html" class="nav-link">Universities</a></li>
+                <li><a href="mous.html" class="nav-link">Our MOUs</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li><a href="contact.html" class="btn btn-primary btn-sm">Get Counseling</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Header -->
+    <section class="about-hero" style="padding-bottom: 6rem; background-image: linear-gradient(to bottom, rgba(127, 27, 19, 0.15), rgba(255, 255, 255, 1));">
+        <div class="container">
+            <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Featured Partner University</span>
+            <h1 style="font-size: 3.5rem; margin-top: 0.5rem; color: var(--vgu-maroon);">CDOE VGU</h1>
+            <p class="section-desc" style="max-width: 700px; margin: 1rem auto 0; font-size: 1.25rem;">
+                <i class="fa-solid fa-location-dot" style="color: var(--vgu-gold);"></i> Jaipur, Rajasthan, India
+            </p>
+            <p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 600;">
+                Centre for Distance and Online Education &bull; NAAC A+ Accredited &bull; UGC-DEB Entitled &bull; AICTE Approved
+            </p>
+            <div style="margin-top: 1.8rem; display: flex; flex-direction: column; align-items: center; gap: 1.2rem;">
+                <a href="#schools-section" class="btn btn-primary btn-sm" style="background-color: var(--vgu-maroon); border-color: var(--vgu-maroon);">Explore Courses & Specializations <i class="fa-solid fa-arrow-down"></i></a>
+                
+                <div class="search-wrapper" style="max-width: 500px; width: 100%; position: relative; box-shadow: 0 8px 30px rgba(0,0,0,0.15); border-radius: var(--radius-full); background: #ffffff;">
+                    <i class="fa-solid fa-magnifying-glass search-icon" style="position: absolute; left: 1.5rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 1.1rem; z-index: 10;"></i>
+                    <input type="text" id="offering-search" class="search-input" placeholder="Search courses, faculties or degrees (e.g. BBA, Nursing, B.Tech)..." style="width: 100%; padding: 1.1rem 8.5rem 1.1rem 3.5rem; border-radius: var(--radius-full); border: 1px solid var(--border-color); outline: none; background: transparent; transition: var(--transition-normal);">
+                    <button id="search-action-btn" class="btn btn-primary" style="position: absolute; right: 0.4rem; top: 50%; transform: translateY(-50%); padding: 0.7rem 1.5rem; border-radius: var(--radius-full); font-size: 0.9rem; display: none; align-items: center; gap: 0.5rem; cursor: pointer; border: none; height: calc(100% - 0.8rem); z-index: 10; background-color: var(--vgu-maroon); border-color: var(--vgu-maroon);">
+                        Search <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            
+            <!-- Quick Stats Badges -->
+            <div class="stat-badge-grid">
+                <div class="stat-badge-card">
+                    <div class="stat-badge-num">NAAC A+</div>
+                    <div class="stat-badge-title">University Rating</div>
+                </div>
+                <div class="stat-badge-card">
+                    <div class="stat-badge-num">10,000+</div>
+                    <div class="stat-badge-title">Active Learners</div>
+                </div>
+                <div class="stat-badge-card">
+                    <div class="stat-badge-num">ODL & OL</div>
+                    <div class="stat-badge-title">Flexible Modes</div>
+                </div>
+                <div class="stat-badge-card">
+                    <div class="stat-badge-num">UGC-DEB</div>
+                    <div class="stat-badge-title">Fully Approved</div>
+                </div>
+            </div>
+
+            <!-- Two-Column Grid Layout -->
+            <div class="university-details-grid">
+                
+                <!-- Left Column: Detailed Profile -->
+                <div>
+                    
+                    <!-- Section 1: Overview -->
+                    <div class="details-section">
+                        <h2>University Profile</h2>
+                        <p style="font-size: 1.05rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.7;">
+                            Established in October 2022, the Centre for Distance and Online Education (CDOE) at Vivekananda Global University (VGU) extends the institution's academic reach through state-of-the-art Open and Distance Learning (ODL) and Online Learning (OL) programs. Guided by a student-centric learning philosophy, CDOE VGU provides flexible, affordable, and highly accessible undergraduate and postgraduate degrees.
+                        </p>
+                        <p style="font-size: 1.05rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.7;">
+                            With premium digital support systems, self-learning materials (SLM), interactive live webinars, and robust local student counseling services, VGU ensures learners and working professionals can upgrade their qualifications seamlessly while balancing existing responsibilities.
+                        </p>
+                    </div>
+
+                    <!-- Section 2: Recognition & Approvals -->
+                    <div class="details-section">
+                        <h2>Approvals & Recognitions</h2>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-top: 1rem;">
+                            <div class="details-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <h3><i class="fa-solid fa-shield-halved"></i> NAAC A+ Rated</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Accredited by National Assessment and Accreditation Council with a premium A+ grade.</p>
+                            </div>
+                            <div class="details-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <h3><i class="fa-solid fa-building-columns"></i> UGC-DEB Entitled</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Fully entitled by the UGC Distance Education Bureau (DEB) for running degree courses.</p>
+                            </div>
+                            <div class="details-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <h3><i class="fa-solid fa-check-double"></i> AICTE Approved</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">All professional technical courses like MBA & MCA are approved by AICTE.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section A: On-Campus Programs (Offline) -->
+                    <div class="details-section" id="oncampus-section">
+                        <h2>On-Campus Programs (Offline)</h2>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem; margin-bottom: 1.5rem;">
+                            Study full-time at VGU's 200+ acre Jaipur campus with hands-on labs, hostels, placements, and 75+ industry collaborations across Engineering, Management, Design, Law, Pharmacy, and more.
+                        </p>
+                        
+                        <div class="schools-list">
+                            <!-- Card 1 -->
+                            <div class="school-item" data-courses="B.Tech M.Tech CSE IT Mechanical Civil Electrical Engineering">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                </div>
+                                <h3 class="school-name">Faculty of Engineering & Technology</h3>
+                                <a href="vgu-engineering.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="school-item" data-courses="BCA MCA B.Sc-IT PGDCA Computer Science Applications">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-laptop"></i>
+                                </div>
+                                <h3 class="school-name">Faculty of Computer Science & Applications</h3>
+                                <a href="vgu-computer-applications.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="school-item" data-courses="MBA BBA B.Com M.Com Management Business">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+                                <h3 class="school-name">Faculty of Management Studies</h3>
+                                <a href="vgu-management.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="school-item" data-courses="B.Pharm D.Pharm GNM B.Sc Nursing Pharmacy Nurse">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-user-nurse"></i>
+                                </div>
+                                <h3 class="school-name">Faculty of Pharmaceutical Science & Nursing</h3>
+                                <a href="vgu-pharmacy-nursing.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Card 5 -->
+                            <div class="school-item" data-courses="B.Sc M.Sc Science Physics Chemistry Mathematics Botany Zoology">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-flask"></i>
+                                </div>
+                                <h3 class="school-name">Faculty of Basic & Applied Sciences</h3>
+                                <a href="vgu-science.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Card 6 -->
+                            <div class="school-item" data-courses="B.Arch M.Arch B.Plan Architecture Planning">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-compass-drafting"></i>
+                                </div>
+                                <h3 class="school-name">Faculty of Architecture & Planning</h3>
+                                <a href="vgu-architecture.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Card 7 -->
+                            <div class="school-item" data-courses="B.Des M.Des Design UI/UX Fashion Product">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-palette"></i>
+                                </div>
+                                <h3 class="school-name">Faculty of Design</h3>
+                                <a href="vgu-design.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Card 8 -->
+                            <div class="school-item" data-courses="LLB BA-LLB BBA-LLB LLM Law Legal">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-scale-balanced"></i>
+                                </div>
+                                <h3 class="school-name">Faculty of Law</h3>
+                                <a href="vgu-law.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Card 9 -->
+                            <div class="school-item" data-courses="BA MA MSW Humanities Arts Social Sciences">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-users"></i>
+                                </div>
+                                <h3 class="school-name">Faculty of Humanities & Social Sciences</h3>
+                                <a href="vgu-humanities.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Card 10 -->
+                            <div class="school-item" data-courses="BJMC MJMC Journalism Media Mass Communication">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-newspaper"></i>
+                                </div>
+                                <h3 class="school-name">Faculty of Journalism, Mass Comm & Media</h3>
+                                <a href="vgu-journalism.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Card 11 -->
+                            <div class="school-item" data-courses="BHMCT Hotel Management Hospitality Travel Tourism">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-hotel"></i>
+                                </div>
+                                <h3 class="school-name">Faculty of Hospitality</h3>
+                                <a href="vgu-hospitality.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Card 12 -->
+                            <div class="school-item" data-courses="B.Sc Agriculture M.Sc Agriculture">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-seedling"></i>
+                                </div>
+                                <h3 class="school-name">Faculty of Agriculture</h3>
+                                <a href="vgu-agriculture.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Card 13 -->
+                            <div class="school-item" data-courses="BPT MPT Physiotherapy Occupational Rehab">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-hand-holding-medical"></i>
+                                </div>
+                                <h3 class="school-name">Faculty of Physiotherapy & Occupational Therapy</h3>
+                                <a href="vgu-physiotherapy.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Card 14 -->
+                            <div class="school-item" data-courses="B.Sc MLT B.Optom Healthcare Allied Optometry Lab">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-stethoscope"></i>
+                                </div>
+                                <h3 class="school-name">Faculty of Allied Healthcare Professions</h3>
+                                <a href="vgu-healthcare.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section B: Distance & Online Programs (CDOE) -->
+                    <div class="details-section" id="schools-section">
+                        <h2>Distance & Online Programs (CDOE)</h2>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem; margin-bottom: 1.5rem;">
+                            Flexible UGC-DEB entitled degrees in ODL and 100% Online mode for working professionals and remote learners.
+                        </p>
+                        
+                        <div class="schools-list">
+                            <!-- Division 1 -->
+                            <div class="school-item" data-courses="MBA MCA BCA BBA BA B.Sc B.Com M.Sc Math MAJMC PGDCA Distance CDOE ODL">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-book-open"></i>
+                                </div>
+                                <h3 class="school-name">Open & Distance Learning (ODL) Programs</h3>
+                                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5; min-height: 80px;">
+                                    UGC-DEB approved courses featuring self-learning materials (printed/digital), offline contact centers, and offline examinations in Rajasthan.
+                                </p>
+                                <a href="vgu-odl.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore ODL Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Division 2 -->
+                            <div class="school-item" data-courses="MBA MCA BCA BBA BA M.A. English MAJMC M.Sc Math Online CDOE OL">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-globe"></i>
+                                </div>
+                                <h3 class="school-name">Online Learning (OL) Programs</h3>
+                                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5; min-height: 80px;">
+                                    100% online programs featuring virtual classes, digital e-content, and online remote-proctored examinations from anywhere in the world.
+                                </p>
+                                <a href="vgu-ol.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore OL Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Distance Learning Features -->
+                    <div class="details-section">
+                        <h2>Learning Support Highlights</h2>
+                        <ul style="font-size: 1rem; color: var(--text-muted); display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.8rem; margin-top: 1rem; padding-left: 1.2rem; list-style-type: square;">
+                            <li>Comprehensive Self-Learning Materials (SLM) in digital & printed formats.</li>
+                            <li>Advanced LMS portal with 24/7 access to pre-recorded video lectures and course resources.</li>
+                            <li>Personal Contact Programs (PCP) conducted on weekends to clear doubts.</li>
+                            <li>Continuous assessment through online assignments and projects.</li>
+                            <li>Widespread offline exam center network across Rajasthan for ODL students.</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Sidebar Counseling Form -->
+                <div class="sticky-sidebar">
+                    <div class="card" style="padding: 2.2rem 1.8rem; border-color: var(--vgu-maroon);">
+                        <h3 style="font-size: 1.35rem; margin-bottom: 0.6rem; color: var(--vgu-maroon); display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-solid fa-headset"></i> Counseling Desk
+                        </h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5;">
+                            JB Siksha Institute is your local guidance counselor. We handle university admissions, stream selections, application verification, and seat allocation for VGU CDOE.
+                        </p>
+                        
+                        <div style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.9rem;">
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-phone" style="color: var(--vgu-gold); width: 16px;"></i>
+                                <a href="tel:+918780459636" style="font-weight: 700; color: var(--text-dark);">+91 87804 59636</a>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-envelope" style="color: var(--vgu-gold); width: 16px;"></i>
+                                <a href="mailto:jbsikshainstitute@gmail.com" style="font-weight: 700; color: var(--text-dark); word-break: break-all;">jbsikshainstitute@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: var(--vgu-maroon);">Request CDOE Admission Guidance</h4>
+                        
+                        <form id="university-counseling-form">
+                            <div class="form-group">
+                                <label for="counsel-name">Full Name *</label>
+                                <input type="text" id="counsel-name" placeholder="Your Name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="counsel-email">Email Address *</label>
+                                <input type="email" id="counsel-email" placeholder="Your Email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="counsel-phone">Mobile Number *</label>
+                                <input type="tel" id="counsel-phone" placeholder="Your Phone Number" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="counsel-program">Preferred Faculty/Program *</label>
+                                <select id="counsel-program" required>
+                                    <option value="" disabled selected>-- Select Faculty/Program --</option>
+                                    <optgroup label="On-Campus Programs">
+                                        <option value="On-Campus - Faculty of Engineering & Technology">Faculty of Engineering & Technology</option>
+                                        <option value="On-Campus - Faculty of Computer Science & Applications">Faculty of Computer Science & Applications</option>
+                                        <option value="On-Campus - Faculty of Management Studies">Faculty of Management Studies</option>
+                                        <option value="On-Campus - Faculty of Pharmaceutical Science & Nursing">Faculty of Pharmaceutical Science & Nursing</option>
+                                        <option value="On-Campus - Faculty of Basic & Applied Sciences">Faculty of Basic & Applied Sciences</option>
+                                        <option value="On-Campus - Faculty of Architecture & Planning">Faculty of Architecture & Planning</option>
+                                        <option value="On-Campus - Faculty of Design">Faculty of Design</option>
+                                        <option value="On-Campus - Faculty of Law">Faculty of Law</option>
+                                        <option value="On-Campus - Faculty of Humanities & Social Sciences">Faculty of Humanities & Social Sciences</option>
+                                        <option value="On-Campus - Faculty of Journalism, Mass Comm & Media">Faculty of Journalism, Mass Comm & Media</option>
+                                        <option value="On-Campus - Faculty of Hospitality">Faculty of Hospitality</option>
+                                        <option value="On-Campus - Faculty of Agriculture">Faculty of Agriculture</option>
+                                        <option value="On-Campus - Faculty of Physiotherapy & Occupational Therapy">Faculty of Physiotherapy & Occupational Therapy</option>
+                                        <option value="On-Campus - Faculty of Allied Healthcare Professions">Faculty of Allied Healthcare Professions</option>
+                                    </optgroup>
+                                    <optgroup label="Distance & Online (CDOE) Programs">
+                                        <option value="ODL - MBA">MBA - Distance (ODL)</option>
+                                        <option value="ODL - MCA">MCA - Distance (ODL)</option>
+                                        <option value="ODL - BCA">BCA - Distance (ODL)</option>
+                                        <option value="ODL - BBA">BBA - Distance (ODL)</option>
+                                        <option value="ODL - BA">B.A. - Distance (ODL)</option>
+                                        <option value="ODL - B.Sc">B.Sc. - Distance (ODL)</option>
+                                        <option value="ODL - B.Com">B.Com - Distance (ODL)</option>
+                                        <option value="ODL - M.Sc Math">M.Sc. Mathematics - Distance (ODL)</option>
+                                        <option value="ODL - MAJMC">MAJMC - Distance (ODL)</option>
+                                        <option value="ODL - PGDCA">PGDCA - Distance (ODL)</option>
+                                        <option value="OL - MBA">MBA - Online (OL)</option>
+                                        <option value="OL - MCA">MCA - Online (OL)</option>
+                                        <option value="OL - BCA">BCA - Online (OL)</option>
+                                        <option value="OL - BBA">BBA - Online (OL)</option>
+                                        <option value="OL - BA">B.A. - Online (OL)</option>
+                                        <option value="OL - M.A. English">M.A. English - Online (OL)</option>
+                                        <option value="OL - MAJMC">MAJMC - Online (OL)</option>
+                                        <option value="OL - M.Sc Math">M.Sc. Mathematics - Online (OL)</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="counsel-message">Your Message</label>
+                                <textarea id="counsel-message" rows="3" placeholder="Describe your questions or study goals..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem; background-color: var(--vgu-maroon); border-color: var(--vgu-maroon);">
+                                Submit Request <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        
+                        <div id="counsel-form-response" class="form-message"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    JB Siksha <span>Institute</span>
+                </a>
+                <p>A trusted educational admission consultancy helping students choose appropriate degree paths and secure seats in leading colleges across Gujarat and India.</p>
+                <div class="social-links">
+                    <!-- TODO: add Facebook URL -->
+                    <!-- TODO: add Instagram URL -->
+                    <!-- TODO: add LinkedIn URL -->
+                    <!-- TODO: add WhatsApp URL -->
+                </div>
+            </div>
+            <div>
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html">Home</a></li>
+                    <li class="footer-link-item"><a href="about.html">About Us</a></li>
+                    <li class="footer-link-item"><a href="universities.html">Universities</a></li>
+                    <li class="footer-link-item"><a href="mous.html">Our MOUs</a></li>
+                    <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Our Services</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html#services">Career Profiling</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">ACPC Counselling</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">Management Seats</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">NRI Sponsorship</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">Hostel Coordination</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Contact Office</h3>
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>02, Mani Complex, Plot No. 84, Sector 8, Gandhidham, Kachchh, Gujarat. 370201</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 87804 59636</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>jbsikshainstitute@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 JB Siksha Institute. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-conditions.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Main JavaScript & Form Handler Script -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Offering Search Filter
+            const searchInput = document.getElementById('offering-search');
+            const searchBtn = document.getElementById('search-action-btn');
+            const schoolItems = document.querySelectorAll('.school-item');
+            const onCampusSection = document.getElementById('oncampus-section');
+            const cdoeSection = document.getElementById('schools-section');
+
+            const performScroll = () => {
+                const firstVisible = Array.from(schoolItems).find(item => item.style.display !== 'none');
+                if (firstVisible) {
+                    firstVisible.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    const fallbackSec = document.getElementById('oncampus-section') || document.getElementById('schools-section');
+                    if (fallbackSec) {
+                        fallbackSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            };
+
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const rawQuery = e.target.value.toLowerCase().trim();
+                    
+                    // Show/hide Search button
+                    if (searchBtn) {
+                        searchBtn.style.display = rawQuery.length > 0 ? 'inline-flex' : 'none';
+                    }
+
+                    const normalize = (str) => str.replace(/[\s\.\-\(\)\&]/g, '').toLowerCase();
+                    const queryNormalized = normalize(rawQuery);
+                    let onCampusVisible = 0;
+                    let cdoeVisible = 0;
+
+                    schoolItems.forEach(item => {
+                        const name = item.querySelector('.school-name').textContent;
+                        const nameNormalized = normalize(name);
+                        const coursesAttr = item.getAttribute('data-courses') || '';
+                        const coursesNormalized = normalize(coursesAttr);
+
+                        let isMatch = nameNormalized.includes(queryNormalized) || coursesNormalized.includes(queryNormalized);
+
+                        if (!isMatch && queryNormalized.length > 1) {
+                            const synonyms = {
+                                'nurse': ['nursing', 'gnm'],
+                                'nursing': ['nurse', 'gnm'],
+                                'gnm': ['nursing', 'nurse'],
+                                'medicine': ['mbbs', 'medical', 'healthcare'],
+                                'mbbs': ['medicine', 'medical'],
+                                'medical': ['mbbs', 'medicine', 'healthcare', 'pharmacy', 'optom', 'physio', 'bpt'],
+                                'physiotherapy': ['bpt', 'physio', 'rehab'],
+                                'bpt': ['physiotherapy', 'physio'],
+                                'pharmacy': ['pharm', 'skpcper', 'druganalyst'],
+                                'pharm': ['pharmacy'],
+                                'bpharm': ['pharmacy'],
+                                'dpharm': ['pharmacy'],
+                                'law': ['llb', 'legal'],
+                                'legal': ['law', 'llb'],
+                                'llb': ['law', 'legal'],
+                                'computer': ['bca', 'mca', 'cse', 'it', 'software', 'laptop', 'developer'],
+                                'bca': ['computer', 'software', 'developer'],
+                                'mca': ['computer', 'software'],
+                                'cse': ['computer', 'engineering', 'laptop'],
+                                'it': ['computer', 'information', 'software'],
+                                'management': ['mba', 'bba', 'business'],
+                                'mba': ['management', 'business'],
+                                'bba': ['management', 'business'],
+                                'commerce': ['bcom', 'mcom', 'accounts'],
+                                'bcom': ['commerce', 'mcom'],
+                                'mcom': ['commerce', 'bcom'],
+                                'design': ['des', 'arch', 'fashion', 'uiux'],
+                                'bdes': ['design'],
+                                'mdes': ['design'],
+                                'architecture': ['arch', 'design'],
+                                'barch': ['architecture'],
+                                'agriculture': ['agri', 'seedling', 'farming'],
+                                'agri': ['agriculture'],
+                                'naturopathy': ['yoga', 'spa', 'naturopathy']
+                            };
+
+                            for (const [key, values] of Object.entries(synonyms)) {
+                                if (queryNormalized === key || queryNormalized.includes(key) || key.includes(queryNormalized)) {
+                                    const hasAny = [key, ...values].some(val => 
+                                        nameNormalized.includes(normalize(val)) || coursesNormalized.includes(normalize(val))
+                                    );
+                                    if (hasAny) {
+                                        isMatch = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (isMatch) {
+                            item.style.display = 'flex';
+                            if (item.closest('#oncampus-section')) {
+                                onCampusVisible++;
+                            } else if (item.closest('#schools-section')) {
+                                cdoeVisible++;
+                            }
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+
+                    // Hide/show sections based on visibility of their child cards
+                    if (onCampusSection) {
+                        onCampusSection.style.display = onCampusVisible > 0 ? 'block' : 'none';
+                    }
+                    if (cdoeSection) {
+                        cdoeSection.style.display = cdoeVisible > 0 ? 'block' : 'none';
+                    }
+                });
+
+                // Listen for Enter key press
+                searchInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        performScroll();
+                    }
+                });
+            }
+
+            if (searchBtn) {
+                searchBtn.addEventListener('click', () => {
+                    performScroll();
+                });
+            }
+
+            const form = document.getElementById('university-counseling-form');
+            const responseDiv = document.getElementById('counsel-form-response');
+
+            if (form && responseDiv) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const name = document.getElementById('counsel-name').value.trim();
+                    const email = document.getElementById('counsel-email').value.trim();
+                    const phone = document.getElementById('counsel-phone').value.trim();
+                    const program = document.getElementById('counsel-program').value;
+
+                    if (!name || !email || !phone || !program) {
+                        responseDiv.textContent = 'Please fill out all required fields.';
+                        responseDiv.className = 'form-message error';
+                        responseDiv.style.display = 'block';
+                        return;
+                    }
+
+                    responseDiv.textContent = 'Submitting counseling request...';
+                    responseDiv.className = 'form-message';
+                    responseDiv.style.display = 'block';
+
+                    // Simulate email routing trigger
+                    setTimeout(() => {
+                        responseDiv.innerHTML = `<strong>Request Received!</strong> Thank you ${name}. We have logged your interest in the <strong>${program}</strong> program at CDOE VGU. An admissions counselor will call you on <strong>${phone}</strong> or email details to <strong>${email}</strong>. (Lead details routed to jbsikshainstitute@gmail.com)`;
+                        responseDiv.className = 'form-message success';
+                        form.reset();
+                    }, 1200);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

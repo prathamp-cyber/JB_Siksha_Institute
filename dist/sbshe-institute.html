@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaheed Bhagat Singh Health and Education (SBSHE) | Skill Development & Vocational Institute</title>
+    <meta name="description" content="Official admission counseling and course details for Shaheed Bhagat Singh Health and Education (SBSHE), Delhi. Explore vocational, agriculture certificate & diploma programs.">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico?v=2" sizes="any">
+    <link rel="icon" type="image/png" sizes="512x512" href="/jb-siksha-favicon-512.png?v=2">
+    
+    <style>
+        /* Dedicated Page Custom Styles */
+        .university-details-grid {
+            display: grid;
+            grid-template-columns: 2fr 1.2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .details-section {
+            margin-bottom: 3rem;
+        }
+
+        .details-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .details-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-brown);
+            border-radius: var(--radius-full);
+        }
+
+        .details-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .details-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .details-card h3 i {
+            color: var(--primary-brown);
+        }
+
+        .sticky-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .form-message {
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: var(--primary-green-subtle);
+            color: var(--primary-green);
+            border: 1px solid rgba(14, 58, 36, 0.1);
+        }
+
+        .form-message.error {
+            background-color: #fce4ec;
+            color: var(--accent-red);
+            border: 1px solid rgba(192, 57, 43, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition-normal);
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px var(--primary-green-subtle);
+        }
+
+        /* Custom Table Styles */
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+        }
+        .catalog-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+        .catalog-table th {
+            background-color: var(--primary-green);
+            color: var(--bg-white);
+            padding: 1.2rem 1.5rem;
+            font-weight: 600;
+        }
+        .catalog-table td {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-dark);
+        }
+        .catalog-table tr:nth-child(even) {
+            background-color: var(--bg-accent);
+        }
+        .catalog-table tr:hover {
+            background-color: var(--primary-brown-subtle);
+        }
+        .catalog-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* School Directory Styles */
+        .directory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .directory-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            transition: var(--transition-normal);
+            box-shadow: var(--shadow-sm);
+        }
+        .directory-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary-brown-light);
+            box-shadow: var(--shadow-md);
+        }
+        .directory-card h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin: 0 0 0.8rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .directory-card h4 i {
+            color: var(--primary-brown);
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
+        }
+        .directory-card .explore-link {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-brown);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: auto;
+            border-bottom: 1px dashed var(--primary-brown);
+            padding-bottom: 2px;
+        }
+        .directory-card:hover .explore-link {
+            color: var(--primary-green);
+            border-color: var(--primary-green);
+        }
+
+        /* Scrollable container for very long tables */
+        .table-scrollable-y {
+            max-height: 480px;
+            overflow-y: auto;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            margin-top: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .table-scrollable-y::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        .table-scrollable-y::-webkit-scrollbar-track {
+            background: var(--bg-accent);
+            border-radius: var(--radius-sm);
+        }
+        .table-scrollable-y::-webkit-scrollbar-thumb {
+            background: var(--border-hover);
+            border-radius: var(--radius-sm);
+        }
+        .table-scrollable-y::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+        .table-scrollable-y .catalog-table {
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            margin-top: 0;
+        }
+        .table-scrollable-y thead th {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        @media (max-width: 1024px) {
+            .university-details-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/Logo/jb-siksha-emblem.png" alt="JB Logo" class="logo-img">
+                JB Siksha <span>Institute</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="universities.html" class="nav-link">Universities</a></li>
+                <li><a href="mous.html" class="nav-link">Our MOUs</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li><a href="contact.html" class="btn btn-primary btn-sm">Get Counseling</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Header -->
+    <section class="about-hero" style="padding-bottom: 6rem; background-image: linear-gradient(to bottom, rgba(27, 83, 56, 0.15), rgba(255, 255, 255, 1));">
+        <div class="container">
+            <span class="section-tag"><i class="fa-solid fa-handshake"></i> Skill Development Partner</span>
+            <h1 style="font-size: 3.2rem; margin-top: 0.5rem; line-height: 1.2;">Shaheed Bhagat Singh Health and Education (SBSHE)</h1>
+            <p class="section-desc" style="max-width: 700px; margin: 1rem auto 0; font-size: 1.25rem;">
+                <i class="fa-solid fa-location-dot" style="color: var(--primary-brown);"></i> Delhi, India
+            </p>
+            <p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 600;">
+                NGO-Registered Skill Development Institute &bull; ISO 9001:2015 Certified &bull; Est. under Trust Act 1882
+            </p>
+            <div style="margin-top: 1.8rem; display: flex; flex-direction: column; align-items: center; gap: 1.2rem;">
+                <a href="#schools-section" class="btn btn-primary btn-sm">Explore Vocational Programs <i class="fa-solid fa-arrow-down"></i></a>
+                
+                <div class="search-wrapper" style="max-width: 500px; width: 100%; position: relative; box-shadow: 0 8px 30px rgba(0,0,0,0.15); border-radius: var(--radius-full); background: #ffffff;">
+                    <i class="fa-solid fa-magnifying-glass search-icon" style="position: absolute; left: 1.5rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 1.1rem; z-index: 10;"></i>
+                    <input type="text" id="offering-search" class="search-input" placeholder="Search courses, schools or programs (e.g. Paramedical, Yoga, Tally)..." style="width: 100%; padding: 1.1rem 8.5rem 1.1rem 3.5rem; border-radius: var(--radius-full); border: 1px solid var(--border-color); outline: none; background: transparent; transition: var(--transition-normal); color: var(--text-dark);">
+                    <button id="search-action-btn" class="btn btn-primary" style="position: absolute; right: 0.4rem; top: 50%; transform: translateY(-50%); padding: 0.7rem 1.5rem; border-radius: var(--radius-full); font-size: 0.9rem; display: none; align-items: center; gap: 0.5rem; cursor: pointer; border: none; height: calc(100% - 0.8rem); z-index: 10;">
+                        Search <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+
+            <!-- Two-Column Grid Layout -->
+            <div class="university-details-grid">
+                
+                <!-- Left Column: Detailed Profile -->
+                <div>
+                    
+                    <!-- Section 1: Overview -->
+                    <div class="details-section">
+                        <h2>Institute Profile</h2>
+                        <p style="font-size: 1.05rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.7;">
+                            Shaheed Bhagat Singh Health and Education (SBSHE) is a Delhi-based skill development and vocational training institute, inspired by the ideals of freedom fighter Bhagat Singh. Registered as an autonomous trust under the Societies Registration Act 1882 and certified ISO 9001:2015, SBSHE focuses on bridging the gap between education and employment through practical, industry-oriented certificate and diploma programs across health, agriculture, paramedical, vocational, and technical fields, with special emphasis on rural and semi-urban accessibility.
+                        </p>
+                    </div>
+
+                    <!-- Section 2: Recognition & Approvals -->
+                    <div class="details-section">
+                        <h2>Approvals & Recognitions</h2>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-top: 1rem;">
+                            <div class="details-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <h3><i class="fa-solid fa-square-check"></i> ISO 9001:2015 Certified</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Certified for Quality Management System covering IT, vocational, yoga & naturopathy, paramedical, veterinary, safety, teaching, agriculture, apparel, and sports courses.</p>
+                            </div>
+                            <div class="details-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <h3><i class="fa-solid fa-circle-nodes"></i> NITI Aayog NGO-Darpan</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Registered NGO with a unique ID on the Government of India's NGO Darpan portal.</p>
+                            </div>
+                            <div class="details-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <h3><i class="fa-solid fa-city"></i> MSME Registered</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Registered under the Ministry of Micro, Small & Medium Enterprises, Government of India.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: School Offered -->
+                    <div class="details-section" id="schools-section">
+                        <h2>School Offered</h2>
+                        
+                        <!-- School Directory Navigation Grid -->
+                        <div class="directory-grid">
+                            <div class="directory-card" data-courses="Agriculture Organic Farming Horticulture AGRCA AGRCOF AGRDA AGRDOF AGRDH AGRDAESID">
+                                <h4><i class="fa-solid fa-wheat-awn"></i> School of Agriculture</h4>
+                                <a href="#school-agriculture" class="explore-link">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                            <div class="directory-card" data-courses="Paramedical First Aid Medical Dresser EMT Emergency Medical Technician Community Health Acupuncture Cath Lab Technology Anesthesia Critical Care Audio Speech Therapy BCG Tuberculosis Blood Transfusion Burn Plastic Surgery CSSD CT Scan Cardiology Clinical Therapeutic Nutrition CMS ED Dental Hygienist Dialysis Trauma Hospital Domiciliary Record Keeping Interventional Radiology Lab MRI Medical Transcription Typing Minimal Access Surgical Multipurpose Health Worker Neonatal OT Operation Theatre Occupational Therapy Optometry Orthopaedic Plaster Orthotic Prosthetic Physiotherapy Radiotherapy Ophthalmic Assistant Respiratory Sanitation Ultrasonography X-Ray PMCFA PMCMD PMCEMT PMCCH PMDA PMDCLT PMDACCT PMDASTT PMDBTTPM PMDBTT PMDBPST PMDCT PMDCST PMDCT2 PMDCTN PMDCE PMDCH PMDDHT PMDDT PMDETCT PMDHDCA PMDHRK PMDIR PMDLT PMDMT PMDMLT2 PMDMTT PMDMAST PMDMHW PMDNCT PMDOT PMDOT2 PMDO PMDOPT PMDOPT2 PMDP PMDRT PMDOA PMDRT2 PMDS PMDUT PMDXRT">
+                                <h4><i class="fa-solid fa-kit-medical"></i> School of Paramedical</h4>
+                                <a href="#school-paramedical" class="explore-link">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                            <div class="directory-card" data-courses="Sports Fitness Trainer Personal Fitness Yoga Sports Nutrition Fitness Training Sports Management Gym Instructor SPCFT SPCPFT SPCYF SPCSN SPDFT SPDSM SPDGI">
+                                <h4><i class="fa-solid fa-dumbbell"></i> School of Sports</h4>
+                                <a href="#school-sports" class="explore-link">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                            <div class="directory-card" data-courses="Yoga Naturopathy Natural Therapy Yoga Therapy Naturopathy Yoga Meditation Yogic Science Holistic Health YNCNT YNCYT YNCN YNCYM YNCYS YNDYT YNDN YNDYM YNDHHY YNDNYS">
+                                <h4><i class="fa-solid fa-spa"></i> School of Yoga & Naturopathy</h4>
+                                <a href="#school-yoga-naturopathy" class="explore-link">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                            <div class="directory-card" data-courses="Veterinary Assistant Animal Health Worker Livestock Management Animal Husbandry VETCVA VETCAHW VETCLM VETCAH VETDVA VETDAHW VETDLM VETDAH">
+                                <h4><i class="fa-solid fa-paw"></i> School of Veterinary</h4>
+                                <a href="#school-veterinary" class="explore-link">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                            <div class="directory-card" data-courses="Education Nursery Teacher Training NTT Primary Teacher Training PTT Montessori Early Childhood Care Education ECCE Art Craft Computer Teacher Training DCTT Yoga Teacher Training YTT EDUCNTT EDUCPTT EDUCMTT EDUCECCE EDUCACTT EDUDNTT EDUDPTT EDUDMTT EDUDECCE EDUDACTT EDUDCTT EDUDYTT">
+                                <h4><i class="fa-solid fa-graduation-cap"></i> School of Education</h4>
+                                <a href="#school-education" class="explore-link">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                            <div class="directory-card" data-courses="Information Technology IT Basic Computer Course BCC Data Entry Operator Tally GST Desktop Publishing DTP Web Designing Computer Hardware Graphic Designing Computer Application DCA Computer Science Computer Hardware Networking Financial Accounting Advanced Diploma ADCA Post Graduate Diploma PGDCA ITCBCC ITCDEO ITCTG ITCDP ITCWD ITCCH ITCGD ITDCA ITDWD ITDCHN ITDGD ITDFA ITADCA ITPGDCA">
+                                <h4><i class="fa-solid fa-laptop-code"></i> School of IT</h4>
+                                <a href="#school-it" class="explore-link">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                            <div class="directory-card" data-courses="Fire Safety Industrial Safety Fire Safety Management Disaster Management First Aid Emergency Care Fire Safety Engineering Fireman Fire Industrial Safety FSCIS FSCFSM FSCDM FSCFAEC FSDFSE FSDIS FSDF FSDDM FSDFISM">
+                                <h4><i class="fa-solid fa-fire-extinguisher"></i> School of Fire & Safety</h4>
+                                <a href="#school-fire-safety" class="explore-link">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                            <div class="directory-card" data-courses="Beauty Wellness Spa Wellness Management Assistant Beauty Therapist Make-Up Artist Beauty Therapist Cosmetology Beautician Nail Art Extension Skin Care Therapy Professional Makeup Hair Styling Beauty Culture Hair Dressing Spa Therapy Aesthetic Beauty Therapy BWCSWM BWCABT BWCMUA BWCBT BWCC BWCB BWCNA BWCSCT BWCPM BWCHS BWDBT BWDC BWDBC BWDHD BWDST BWDABT BWDBWM BWDPMA">
+                                <h4><i class="fa-solid fa-scissors"></i> School of Beauty & Wellness</h4>
+                                <a href="#school-beauty-wellness" class="explore-link">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                            <div class="directory-card" data-courses="Vocational Refrigeration Air Conditioning Mobile Repairing TV LED Repairing CCTV Installation Solar Panel Technician Automobile Mechanic Sewing Machine Operator Fashion Design Fitter Welder Electrician CCTV Technology Solar Energy Technician Automobile Engineering Mechanical Technician Electrical Technician Fashion Design Labour Law Hotel Management VOCCRAC VOCCMR VOCCTLR VOCCCI VOCCSPT VOCCAM VOCCSMO VOCFD VOCDF VOCDW VOCDE VOCDRAC VOCDMR VOCDCCTVT VOCDSET VOCDAE VOCDMT VOCDET VOCDFD VOCDLL VOCDHM">
+                                <h4><i class="fa-solid fa-screwdriver-wrench"></i> School of Vocational</h4>
+                                <a href="#school-vocational" class="explore-link">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- School of Agriculture -->
+                        <div class="details-card school-section" id="school-agriculture" data-courses="Agriculture Organic Farming Horticulture AGRCA AGRCOF AGRDA AGRDOF AGRDH AGRDAESID" style="margin-top: 1.5rem; background: var(--bg-white);">
+                            <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                <i class="fa-solid fa-wheat-awn"></i> SCHOOL OF AGRICULTURE
+                            </h3>
+                            <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.2rem;">
+                                Agriculture is the science and practice of cultivating crops, raising livestock, and producing food and raw materials for human use. SBSHE's Agriculture programs combine traditional farming knowledge with modern practices like organic farming and agricultural extension services, preparing students for diverse roles in India's growing agri-sector.
+                            </p>
+                            
+                            <h4 style="font-size: 1rem; color: var(--primary-green); margin-bottom: 0.5rem; font-weight: 700;">Career Opportunities:</h4>
+                            <p style="font-size: 0.95rem; color: var(--text-dark); line-height: 1.5; margin-bottom: 1.5rem;">
+                                Farmer/Agribusiness Owner, Agricultural Scientist, Agronomist, Horticulturist, Dairy & Poultry Farm Manager, Agricultural Engineer, Food Processing & Quality Control Expert, Agricultural Extension Officer
+                            </p>
+
+                            <div class="table-responsive">
+                                <table class="catalog-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 35%;">Program Name</th>
+                                            <th style="width: 15%;">Course Code</th>
+                                            <th style="width: 15%;">Duration</th>
+                                            <th style="width: 20%;">Eligibility</th>
+                                            <th style="width: 15%;">Total Fee</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Certificate in Agriculture</td>
+                                            <td>AGRCA</td>
+                                            <td>1 Year</td>
+                                            <td>10th / 12th / Grad</td>
+                                            <td>₹25,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Certificate in Organic Farming</td>
+                                            <td>AGRCOF</td>
+                                            <td>2 Years</td>
+                                            <td>10th / 12th / Grad</td>
+                                            <td>₹25,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Diploma in Agriculture</td>
+                                            <td>AGRDA</td>
+                                            <td>1 Year</td>
+                                            <td>10th / 12th / Grad</td>
+                                            <td>₹25,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Diploma in Organic Farming</td>
+                                            <td>AGRDOF</td>
+                                            <td>2 Years</td>
+                                            <td>10th / 12th / Grad</td>
+                                            <td>₹40,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Diploma in Horticulture</td>
+                                            <td>AGRDH</td>
+                                            <td>2 Years</td>
+                                            <td>10th / 12th / Grad</td>
+                                            <td>₹40,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Diploma in Agricultural Extension Services for Input Dealers</td>
+                                            <td>AGRDAESID</td>
+                                            <td>2 Years</td>
+                                            <td>10th / 12th / Grad</td>
+                                            <td>₹40,000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- School of Paramedical -->
+                        <div class="details-card school-section" id="school-paramedical" data-courses="Paramedical First Aid Medical Dresser EMT Emergency Medical Technician Community Health Acupuncture Cath Lab Technology Anesthesia Critical Care Audio Speech Therapy BCG Tuberculosis Blood Transfusion Burn Plastic Surgery CSSD CT Scan Cardiology Clinical Therapeutic Nutrition CMS ED Dental Hygienist Dialysis Trauma Hospital Domiciliary Record Keeping Interventional Radiology Lab MRI Medical Transcription Typing Minimal Access Surgical Multipurpose Health Worker Neonatal OT Operation Theatre Occupational Therapy Optometry Orthopaedic Plaster Orthotic Prosthetic Physiotherapy Radiotherapy Ophthalmic Assistant Respiratory Sanitation Ultrasonography X-Ray PMCFA PMCMD PMCEMT PMCCH PMDA PMDCLT PMDACCT PMDASTT PMDBTTPM PMDBTT PMDBPST PMDCT PMDCST PMDCT2 PMDCTN PMDCE PMDCH PMDDHT PMDDT PMDETCT PMDHDCA PMDHRK PMDIR PMDLT PMDMT PMDMLT2 PMDMTT PMDMAST PMDMHW PMDNCT PMDOT PMDOT2 PMDO PMDOPT PMDOPT2 PMDP PMDRT PMDOA PMDRT2 PMDS PMDUT PMDXRT" style="margin-top: 1.5rem; background: var(--bg-white);">
+                            <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                <i class="fa-solid fa-kit-medical"></i> SCHOOL OF PARAMEDICAL
+                            </h3>
+                            <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.2rem;">
+                                Paramedical professionals form the backbone of the healthcare system, supporting doctors and nurses in diagnosis, treatment, and emergency care. SBSHE's paramedical programs combine theory with hands-on training to prepare students for hospitals, clinics, laboratories, and emergency services.
+                            </p>
+                            
+                            <h4 style="font-size: 1rem; color: var(--primary-green); margin-bottom: 0.5rem; font-weight: 700;">Career Opportunities:</h4>
+                            <p style="font-size: 0.95rem; color: var(--text-dark); line-height: 1.5; margin-bottom: 1.5rem;">
+                                Hospital & Clinic Staff, Diagnostic Center Technician, Emergency Services, Nursing Home Assistant, Government & Private Sector Roles, Self-Employment
+                            </p>
+
+                            <div class="table-scrollable-y">
+                                <table class="catalog-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 35%;">Program Name</th>
+                                            <th style="width: 15%;">Course Code</th>
+                                            <th style="width: 15%;">Duration</th>
+                                            <th style="width: 20%;">Eligibility</th>
+                                            <th style="width: 15%;">Total Fee</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Certificate in First Aid</td><td>PMCFA</td><td>1 Month</td><td>10th/12th Pass / Graduate</td><td>₹2,000</td></tr>
+                                        <tr><td>Certificate in Medical Dresser</td><td>PMCMD</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹25,000</td></tr>
+                                        <tr><td>Certificate in EMT (Emergency Medical Technician)</td><td>PMCEMT</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>Contact for latest fee</td></tr>
+                                        <tr><td>Certificate in Community Health</td><td>PMCCH</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹25,000</td></tr>
+                                        <tr><td>Diploma in Acupuncture</td><td>PMDA</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹25,000</td></tr>
+                                        <tr><td>Diploma in Cath Lab Technology</td><td>PMDCLT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Anesthesia and Critical Care Technician</td><td>PMDACCT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Audio and Speech Therapy Technician</td><td>PMDASTT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in BCG Technician & Tuberculosis Program Management</td><td>PMDBTTPM</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Blood Transfusion Technician</td><td>PMDBTT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Burn and Plastic Surgery Technician</td><td>PMDBPST</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in CSSD Technician</td><td>PMDCT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in CT Scan Technician</td><td>PMDCST</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Cardiology Technician</td><td>PMDCT2</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Clinical and Therapeutic Nutrition</td><td>PMDCTN</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in CMS and ED (Community Medical Services & Essential Drugs)</td><td>PMDCE</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Community Health</td><td>PMDCH</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Dental Hygienist Technician</td><td>PMDDHT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Dialysis Technician</td><td>PMDDT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>Contact for latest fee</td></tr>
+                                        <tr><td>Diploma in Emergency & Trauma Care Technician</td><td>PMDETCT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>Contact for latest fee</td></tr>
+                                        <tr><td>Diploma in Hospital and Domiciliary Care Assistant</td><td>PMDHDCA</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>Contact for latest fee</td></tr>
+                                        <tr><td>Diploma in Hospital Record Keeping</td><td>PMDHRK</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>Contact for latest fee</td></tr>
+                                        <tr><td>Diploma in Interventional Radiology</td><td>PMDIR</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>Contact for latest fee</td></tr>
+                                        <tr><td>Diploma in Lab Technician</td><td>PMDLT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>Contact for latest fee</td></tr>
+                                        <tr><td>Diploma in MRI Technician</td><td>PMDMT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>Contact for latest fee</td></tr>
+                                        <tr><td>Diploma in Medical Laboratory Technician</td><td>PMDMLT2</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>Contact for latest fee</td></tr>
+                                        <tr><td>Diploma in Medical Transcription & Typing</td><td>PMDMTT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>Contact for latest fee</td></tr>
+                                        <tr><td>Diploma in Minimal Access Surgical Technician</td><td>PMDMAST</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>Contact for latest fee</td></tr>
+                                        <tr><td>Diploma in Multipurpose Health Worker</td><td>PMDMHW</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Neonatal Care Technician</td><td>PMDNCT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in OT Technician (Operation Theatre)</td><td>PMDOT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Occupational Therapy</td><td>PMDOT2</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Optometry</td><td>PMDO</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Orthopaedic and Plaster Technician</td><td>PMDOPT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Orthotic & Prosthetic Technician</td><td>PMDOPT2</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Physiotherapy</td><td>PMDP</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Radiotherapy Technician</td><td>PMDRT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Ophthalmic Assistant</td><td>PMDOA</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Respiratory Technician</td><td>PMDRT2</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Sanitation</td><td>PMDS</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Ultrasonography Technician</td><td>PMDUT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in X-Ray Technician</td><td>PMDXRT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- School of Sports -->
+                        <div class="details-card school-section" id="school-sports" data-courses="Sports Fitness Trainer Personal Fitness Yoga Sports Nutrition Fitness Training Sports Management Gym Instructor SPCFT SPCPFT SPCYF SPCSN SPDFT SPDSM SPDGI" style="margin-top: 1.5rem; background: var(--bg-white);">
+                            <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                <i class="fa-solid fa-dumbbell"></i> SCHOOL OF SPORTS
+                            </h3>
+                            <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.2rem;">
+                                Sports and fitness training builds careers in coaching, athletics, and fitness management while promoting a healthy, active lifestyle.
+                            </p>
+                            
+                            <h4 style="font-size: 1rem; color: var(--primary-green); margin-bottom: 0.5rem; font-weight: 700;">Career Opportunities:</h4>
+                            <p style="font-size: 0.95rem; color: var(--text-dark); line-height: 1.5; margin-bottom: 1.5rem;">
+                                Sports Coach/Trainer, Fitness Trainer/Gym Instructor, P.E. Teacher, Sports Manager/Coordinator, Personal Trainer
+                            </p>
+
+                            <div class="table-responsive">
+                                <table class="catalog-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 35%;">Program Name</th>
+                                            <th style="width: 15%;">Course Code</th>
+                                            <th style="width: 15%;">Duration</th>
+                                            <th style="width: 20%;">Eligibility</th>
+                                            <th style="width: 15%;">Total Fee</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Certificate in Fitness Trainer</td><td>SPCFT</td><td>6 Months</td><td>10th/12th Pass / Graduate</td><td>₹10,000</td></tr>
+                                        <tr><td>Certificate in Personal Fitness Trainer</td><td>SPCPFT</td><td>6 Months</td><td>10th/12th Pass / Graduate</td><td>₹10,000</td></tr>
+                                        <tr><td>Certificate in Yoga & Fitness</td><td>SPCYF</td><td>6 Months</td><td>10th/12th Pass / Graduate</td><td>₹10,000</td></tr>
+                                        <tr><td>Certificate in Sports Nutrition</td><td>SPCSN</td><td>6 Months</td><td>10th/12th Pass / Graduate</td><td>₹10,000</td></tr>
+                                        <tr><td>Diploma in Fitness Training</td><td>SPDFT</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹20,000</td></tr>
+                                        <tr><td>Diploma in Sports Management</td><td>SPDSM</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹20,000</td></tr>
+                                        <tr><td>Diploma in Gym Instructor</td><td>SPDGI</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹20,000</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- School of Yoga & Naturopathy -->
+                        <div class="details-card school-section" id="school-yoga-naturopathy" data-courses="Yoga Naturopathy Natural Therapy Yoga Therapy Naturopathy Yoga Meditation Yogic Science Holistic Health YNCNT YNCYT YNCN YNCYM YNCYS YNDYT YNDN YNDYM YNDHHY YNDNYS" style="margin-top: 1.5rem; background: var(--bg-white);">
+                            <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                <i class="fa-solid fa-spa"></i> SCHOOL OF YOGA & NATUROPATHY
+                            </h3>
+                            <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.2rem;">
+                                A holistic approach to health combining ancient yogic practices (asanas, pranayama, meditation) with naturopathic therapies like diet control and hydrotherapy for physical, mental, and spiritual well-being.
+                            </p>
+                            
+                            <h4 style="font-size: 1rem; color: var(--primary-green); margin-bottom: 0.5rem; font-weight: 700;">Career Opportunities:</h4>
+                            <p style="font-size: 0.95rem; color: var(--text-dark); line-height: 1.5; margin-bottom: 1.5rem;">
+                                Yoga Instructor/Trainer, Naturopathy Therapist, Wellness Consultant, Health Coach, Panchakarma/Natural Therapy Assistant
+                            </p>
+
+                            <div class="table-responsive">
+                                <table class="catalog-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 35%;">Program Name</th>
+                                            <th style="width: 15%;">Course Code</th>
+                                            <th style="width: 15%;">Duration</th>
+                                            <th style="width: 20%;">Eligibility</th>
+                                            <th style="width: 15%;">Total Fee</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Certificate in Natural Therapy</td><td>YNCNT</td><td>6 Months / 1 Year</td><td>10th/12th Pass / Graduate</td><td>₹20,000 / ₹30,000</td></tr>
+                                        <tr><td>Certificate in Yoga Therapy</td><td>YNCYT</td><td>6 Months / 1 Year</td><td>10th/12th Pass / Graduate</td><td>₹20,000 / ₹30,000</td></tr>
+                                        <tr><td>Certificate in Naturopathy</td><td>YNCN</td><td>6 Months / 1 Year</td><td>10th/12th Pass / Graduate</td><td>₹20,000 / ₹30,000</td></tr>
+                                        <tr><td>Certificate in Yoga & Meditation</td><td>YNCYM</td><td>6 Months / 1 Year</td><td>10th/12th Pass / Graduate</td><td>₹20,000 / ₹30,000</td></tr>
+                                        <tr><td>Certificate in Yogic Science</td><td>YNCYS</td><td>6 Months / 1 Year</td><td>10th/12th Pass / Graduate</td><td>₹20,000 / ₹30,000</td></tr>
+                                        <tr><td>Diploma in Yoga Therapy</td><td>YNDYT</td><td>1 Year / 2 Years</td><td>10th/12th Pass / Graduate</td><td>₹30,000 / ₹50,000</td></tr>
+                                        <tr><td>Diploma in Naturopathy</td><td>YNDN</td><td>1 Year / 2 Years</td><td>10th/12th Pass / Graduate</td><td>₹30,000 / ₹50,000</td></tr>
+                                        <tr><td>Diploma in Yoga & Meditation</td><td>YNDYM</td><td>1 Year / 2 Years</td><td>10th/12th Pass / Graduate</td><td>₹30,000 / ₹50,000</td></tr>
+                                        <tr><td>Diploma in Holistic Health & Yoga</td><td>YNDHHY</td><td>1 Year / 2 Years</td><td>10th/12th Pass / Graduate</td><td>₹30,000 / ₹50,000</td></tr>
+                                        <tr><td>Diploma in Naturopathy & Yoga Science</td><td>YNDNYS</td><td>1 Year / 2 Years</td><td>10th/12th Pass / Graduate</td><td>₹30,000 / ₹50,000</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- School of Veterinary -->
+                        <div class="details-card school-section" id="school-veterinary" data-courses="Veterinary Assistant Animal Health Worker Livestock Management Animal Husbandry VETCVA VETCAHW VETCLM VETCAH VETDVA VETDAHW VETDLM VETDAH" style="margin-top: 1.5rem; background: var(--bg-white);">
+                            <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                <i class="fa-solid fa-paw"></i> SCHOOL OF VETERINARY
+                            </h3>
+                            <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.2rem;">
+                                Veterinary science focuses on animal healthcare, treatment, and welfare — crucial given India's large livestock population and growing dairy, poultry, and pet care sectors.
+                            </p>
+                            
+                            <h4 style="font-size: 1rem; color: var(--primary-green); margin-bottom: 0.5rem; font-weight: 700;">Career Opportunities:</h4>
+                            <p style="font-size: 0.95rem; color: var(--text-dark); line-height: 1.5; margin-bottom: 1.5rem;">
+                                Veterinary Assistant/Technician, Livestock Health Worker, Animal Caretaker, Dairy Farm Supervisor, Poultry Farm Manager
+                            </p>
+
+                            <div class="table-responsive">
+                                <table class="catalog-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 35%;">Program Name</th>
+                                            <th style="width: 15%;">Course Code</th>
+                                            <th style="width: 15%;">Duration</th>
+                                            <th style="width: 20%;">Eligibility</th>
+                                            <th style="width: 15%;">Total Fee</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Certificate in Veterinary Assistant</td><td>VETCVA</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹30,000</td></tr>
+                                        <tr><td>Certificate in Animal Health Worker</td><td>VETCAHW</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹30,000</td></tr>
+                                        <tr><td>Certificate in Livestock Management</td><td>VETCLM</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹30,000</td></tr>
+                                        <tr><td>Certificate in Animal Husbandry</td><td>VETCAH</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹30,000</td></tr>
+                                        <tr><td>Diploma in Veterinary Assistant</td><td>VETDVA</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹50,000</td></tr>
+                                        <tr><td>Diploma in Animal Health Worker</td><td>VETDAHW</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹50,000</td></tr>
+                                        <tr><td>Diploma in Livestock Management</td><td>VETDLM</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹50,000</td></tr>
+                                        <tr><td>Diploma in Animal Husbandry</td><td>VETDAH</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹50,000</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- School of Education -->
+                        <div class="details-card school-section" id="school-education" data-courses="Education Nursery Teacher Training NTT Primary Teacher Training PTT Montessori Early Childhood Care Education ECCE Art Craft Computer Teacher Training DCTT Yoga Teacher Training YTT EDUCNTT EDUCPTT EDUCMTT EDUCECCE EDUCACTT EDUDNTT EDUDPTT EDUDMTT EDUDECCE EDUDACTT EDUDCTT EDUDYTT" style="margin-top: 1.5rem; background: var(--bg-white);">
+                            <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                <i class="fa-solid fa-graduation-cap"></i> SCHOOL OF EDUCATION
+                            </h3>
+                            <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.2rem;">
+                                Teacher training programs preparing students to shape the future through schools, coaching institutes, and early childhood education.
+                            </p>
+                            
+                            <h4 style="font-size: 1rem; color: var(--primary-green); margin-bottom: 0.5rem; font-weight: 700;">Career Opportunities:</h4>
+                            <p style="font-size: 0.95rem; color: var(--text-dark); line-height: 1.5; margin-bottom: 1.5rem;">
+                                School Teacher (Primary/Secondary), Nursery/Pre-Primary Teacher, Home Tutor, Coaching Institute Faculty, Education Counselor, Content Developer/Trainer
+                            </p>
+
+                            <div class="table-responsive">
+                                <table class="catalog-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 35%;">Program Name</th>
+                                            <th style="width: 15%;">Course Code</th>
+                                            <th style="width: 15%;">Duration</th>
+                                            <th style="width: 20%;">Eligibility</th>
+                                            <th style="width: 15%;">Total Fee</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Certificate in Nursery Teacher Training (NTT)</td><td>EDUCNTT</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹30,000</td></tr>
+                                        <tr><td>Certificate in Primary Teacher Training (PTT)</td><td>EDUCPTT</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹30,000</td></tr>
+                                        <tr><td>Certificate in Montessori Teacher Training</td><td>EDUCMTT</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹30,000</td></tr>
+                                        <tr><td>Certificate in Early Childhood Care & Education (ECCE)</td><td>EDUCECCE</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹30,000</td></tr>
+                                        <tr><td>Certificate in Art & Craft Teacher Training</td><td>EDUCACTT</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹30,000</td></tr>
+                                        <tr><td>Diploma in Nursery Teacher Training (NTT)</td><td>EDUDNTT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Primary Teacher Training (PTT)</td><td>EDUDPTT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Montessori Teacher Training</td><td>EDUDMTT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Early Childhood Care & Education (ECCE)</td><td>EDUDECCE</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Art & Craft Teacher Training</td><td>EDUDACTT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Computer Teacher Training (DCTT)</td><td>EDUDCTT</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹30,000</td></tr>
+                                        <tr><td>Diploma in Yoga Teacher Training</td><td>EDUDYTT</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹30,000</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- School of Information Technology (IT) -->
+                        <div class="details-card school-section" id="school-it" data-courses="Information Technology IT Basic Computer Course BCC Data Entry Operator Tally GST Desktop Publishing DTP Web Designing Computer Hardware Graphic Designing Computer Application DCA Computer Science Computer Hardware Networking Financial Accounting Advanced Diploma ADCA Post Graduate Diploma PGDCA ITCBCC ITCDEO ITCTG ITCDP ITCWD ITCCH ITCGD ITDCA ITDWD ITDCHN ITDGD ITDFA ITADCA ITPGDCA" style="margin-top: 1.5rem; background: var(--bg-white);">
+                            <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                <i class="fa-solid fa-laptop-code"></i> SCHOOL OF INFORMATION TECHNOLOGY (IT)
+                            </h3>
+                            <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.2rem;">
+                                IT skills are essential in today's digital world, applicable across education, healthcare, business, banking, and communication.
+                            </p>
+                            
+                            <h4 style="font-size: 1rem; color: var(--primary-green); margin-bottom: 0.5rem; font-weight: 700;">Career Opportunities:</h4>
+                            <p style="font-size: 0.95rem; color: var(--text-dark); line-height: 1.5; margin-bottom: 1.5rem;">
+                                Computer Operator, Data Entry Operator, Web Designer/Developer, Software Support Executive, IT Technician, Digital Marketing Executive
+                            </p>
+
+                            <div class="table-responsive">
+                                <table class="catalog-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 35%;">Program Name</th>
+                                            <th style="width: 15%;">Course Code</th>
+                                            <th style="width: 15%;">Duration</th>
+                                            <th style="width: 20%;">Eligibility</th>
+                                            <th style="width: 15%;">Total Fee</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Certificate in Basic Computer Course (BCC)</td><td>ITCBCC</td><td>1 Month / 3 Months</td><td>10th/12th Pass / Graduate</td><td>₹500 / ₹1,500</td></tr>
+                                        <tr><td>Certificate in Data Entry Operator</td><td>ITCDEO</td><td>3 Months</td><td>10th/12th Pass / Graduate</td><td>₹1,500</td></tr>
+                                        <tr><td>Certificate in Tally & GST</td><td>ITCTG</td><td>3 Months</td><td>10th/12th Pass / Graduate</td><td>₹1,500</td></tr>
+                                        <tr><td>Certificate in Desktop Publishing (DTP)</td><td>ITCDP</td><td>3 Months</td><td>10th/12th Pass / Graduate</td><td>₹1,500</td></tr>
+                                        <tr><td>Certificate in Web Designing</td><td>ITCWD</td><td>6 Months</td><td>10th/12th Pass / Graduate</td><td>₹3,000</td></tr>
+                                        <tr><td>Certificate in Computer Hardware</td><td>ITCCH</td><td>6 Months</td><td>10th/12th Pass / Graduate</td><td>₹3,000</td></tr>
+                                        <tr><td>Certificate in Graphic Designing</td><td>ITCGD</td><td>6 Months</td><td>10th/12th Pass / Graduate</td><td>₹3,000</td></tr>
+                                        <tr><td>Diploma in Computer Application (DCA)</td><td>ITDCA</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹6,000</td></tr>
+                                        <tr><td>Diploma in Computer Science</td><td>ITDCA <span style="color: var(--accent-red); font-weight: 700;">*</span></td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹6,000</td></tr>
+                                        <tr><td>Diploma in Web Designing</td><td>ITDWD</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹6,000</td></tr>
+                                        <tr><td>Diploma in Computer Hardware & Networking</td><td>ITDCHN</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹6,000</td></tr>
+                                        <tr><td>Diploma in Graphic Designing</td><td>ITDGD</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹6,000</td></tr>
+                                        <tr><td>Diploma in Financial Accounting (Tally)</td><td>ITDFA</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹6,000</td></tr>
+                                        <tr><td>Advanced Diploma in Computer Application (ADCA)</td><td>ITADCA</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹6,000</td></tr>
+                                        <tr><td>Post Graduate Diploma in Computer Application</td><td>ITPGDCA</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹6,000</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin-top: 1rem; border-left: 3px solid var(--accent-red); padding-left: 0.8rem;">
+                                <strong style="color: var(--accent-red);">* Note:</strong> The course code <strong>ITDCA</strong> is used for both "Diploma in Computer Application" and "Diploma in Computer Science" in the source prospectus. This has been flagged for confirmation with the institute to assign the correct unique course code.
+                            </p>
+                        </div>
+
+                        <!-- School of Fire & Safety -->
+                        <div class="details-card school-section" id="school-fire-safety" data-courses="Fire Safety Industrial Safety Fire Safety Management Disaster Management First Aid Emergency Care Fire Safety Engineering Fireman Fire Industrial Safety FSCIS FSCFSM FSCDM FSCFAEC FSDFSE FSDIS FSDF FSDDM FSDFISM" style="margin-top: 1.5rem; background: var(--bg-white);">
+                            <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                <i class="fa-solid fa-fire-extinguisher"></i> SCHOOL OF FIRE & SAFETY
+                            </h3>
+                            <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.2rem;">
+                                Fire and safety training focuses on hazard prevention, protecting lives and property, and effective emergency response — increasingly important with rising industrialization.
+                            </p>
+                            
+                            <h4 style="font-size: 1rem; color: var(--primary-green); margin-bottom: 0.5rem; font-weight: 700;">Career Opportunities:</h4>
+                            <p style="font-size: 0.95rem; color: var(--text-dark); line-height: 1.5; margin-bottom: 1.5rem;">
+                                Fire Safety Officer, Firefighter, Safety Supervisor, Industrial Safety Officer, Disaster Management Executive, Safety Auditor, Emergency Response Team Member
+                            </p>
+
+                            <div class="table-responsive">
+                                <table class="catalog-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 35%;">Program Name</th>
+                                            <th style="width: 15%;">Course Code</th>
+                                            <th style="width: 15%;">Duration</th>
+                                            <th style="width: 20%;">Eligibility</th>
+                                            <th style="width: 15%;">Total Fee</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Certificate in Industrial Safety</td><td>FSCIS</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹25,000</td></tr>
+                                        <tr><td>Certificate in Fire & Safety Management</td><td>FSCFSM</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹25,000</td></tr>
+                                        <tr><td>Certificate in Disaster Management</td><td>FSCDM</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹25,000</td></tr>
+                                        <tr><td>Certificate in First Aid & Emergency Care</td><td>FSCFAEC</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹25,000</td></tr>
+                                        <tr><td>Diploma in Fire & Safety Engineering</td><td>FSDFSE</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Industrial Safety</td><td>FSDIS</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Fireman</td><td>FSDF</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Disaster Management</td><td>FSDDM</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Fire & Industrial Safety Management</td><td>FSDFISM</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- School of Beauty & Wellness -->
+                        <div class="details-card school-section" id="school-beauty-wellness" data-courses="Beauty Wellness Spa Wellness Management Assistant Beauty Therapist Make-Up Artist Beauty Therapist Cosmetology Beautician Nail Art Extension Skin Care Therapy Professional Makeup Hair Styling Beauty Culture Hair Dressing Spa Therapy Aesthetic Beauty Therapy BWCSWM BWCABT BWCMUA BWCBT BWCC BWCB BWCNA BWCSCT BWCPM BWCHS BWDBT BWDC BWDBC BWDHD BWDST BWDABT BWDBWM BWDPMA" style="margin-top: 1.5rem; background: var(--bg-white);">
+                            <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                <i class="fa-solid fa-scissors"></i> SCHOOL OF BEAUTY & WELLNESS
+                            </h3>
+                            <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.2rem;">
+                                A creative, fast-growing industry covering skincare, haircare, makeup, and wellness — combining artistic careers with strong earning potential and self-employment options.
+                            </p>
+                            
+                            <h4 style="font-size: 1rem; color: var(--primary-green); margin-bottom: 0.5rem; font-weight: 700;">Career Opportunities:</h4>
+                            <p style="font-size: 0.95rem; color: var(--text-dark); line-height: 1.5; margin-bottom: 1.5rem;">
+                                Beautician/Cosmetologist, Hair Stylist, Makeup Artist, Spa Therapist, Salon/Spa Manager, Beauty Influencer
+                            </p>
+
+                            <div class="table-responsive">
+                                <table class="catalog-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 35%;">Program Name</th>
+                                            <th style="width: 15%;">Course Code</th>
+                                            <th style="width: 15%;">Duration</th>
+                                            <th style="width: 20%;">Eligibility</th>
+                                            <th style="width: 15%;">Total Fee</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Certificate in Spa and Wellness Management</td><td>BWCSWM</td><td>3 Months / 6 Months</td><td>10th/12th Pass / Graduate</td><td>₹4,000 / ₹7,000</td></tr>
+                                        <tr><td>Certificate in Assistant Beauty Therapist</td><td>BWCABT</td><td>3 Months / 6 Months</td><td>10th/12th Pass / Graduate</td><td>₹4,000 / ₹7,000</td></tr>
+                                        <tr><td>Certificate in Make-Up Artist</td><td>BWCMUA</td><td>3 Months / 6 Months</td><td>10th/12th Pass / Graduate</td><td>₹4,000 / ₹7,000</td></tr>
+                                        <tr><td>Certificate in Beauty Therapist</td><td>BWCBT</td><td>3 Months / 6 Months</td><td>10th/12th Pass / Graduate</td><td>₹4,000 / ₹7,000</td></tr>
+                                        <tr><td>Certificate in Cosmetology</td><td>BWCC</td><td>3 Months / 6 Months</td><td>10th/12th Pass / Graduate</td><td>₹4,000 / ₹7,000</td></tr>
+                                        <tr><td>Certificate in Beautician</td><td>BWCB</td><td>3 Months / 6 Months</td><td>10th/12th Pass / Graduate</td><td>₹4,000 / ₹7,000</td></tr>
+                                        <tr><td>Certificate in Nail Art & Extension</td><td>BWCNA</td><td>3 Months / 6 Months</td><td>10th/12th Pass / Graduate</td><td>₹4,000 / ₹7,000</td></tr>
+                                        <tr><td>Certificate in Skin Care Therapy</td><td>BWCSCT</td><td>3 Months / 6 Months</td><td>10th/12th Pass / Graduate</td><td>₹4,000 / ₹7,000</td></tr>
+                                        <tr><td>Certificate in Professional Makeup</td><td>BWCPM</td><td>3 Months / 6 Months</td><td>10th/12th Pass / Graduate</td><td>₹4,000 / ₹7,000</td></tr>
+                                        <tr><td>Certificate in Hair Styling</td><td>BWCHS</td><td>3 Months / 6 Months</td><td>10th/12th Pass / Graduate</td><td>₹4,000 / ₹7,000</td></tr>
+                                        <tr><td>Diploma in Beauty Therapist</td><td>BWDBT</td><td>6 Months / 1 Year</td><td>10th/12th Pass / Graduate</td><td>₹9,000 / ₹14,000</td></tr>
+                                        <tr><td>Diploma in Cosmetology</td><td>BWDC</td><td>6 Months / 1 Year</td><td>10th/12th Pass / Graduate</td><td>₹9,000 / ₹14,000</td></tr>
+                                        <tr><td>Diploma in Beauty Culture</td><td>BWDBC</td><td>6 Months / 1 Year</td><td>10th/12th Pass / Graduate</td><td>₹9,000 / ₹14,000</td></tr>
+                                        <tr><td>Diploma in Hair Dressing</td><td>BWDHD</td><td>6 Months / 1 Year</td><td>10th/12th Pass / Graduate</td><td>₹9,000 / ₹14,000</td></tr>
+                                        <tr><td>Diploma in Spa Therapy</td><td>BWDST</td><td>6 Months / 1 Year</td><td>10th/12th Pass / Graduate</td><td>₹9,000 / ₹14,000</td></tr>
+                                        <tr><td>Diploma in Aesthetic Beauty Therapy</td><td>BWDABT</td><td>6 Months / 1 Year</td><td>10th/12th Pass / Graduate</td><td>₹9,000 / ₹14,000</td></tr>
+                                        <tr><td>Diploma in Beauty & Wellness Management</td><td>BWDBWM</td><td>6 Months / 1 Year</td><td>10th/12th Pass / Graduate</td><td>₹9,000 / ₹14,000</td></tr>
+                                        <tr><td>Diploma in Professional Makeup Artist</td><td>BWDPMA</td><td>6 Months / 1 Year</td><td>10th/12th Pass / Graduate</td><td>₹9,000 / ₹14,000</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- School of Vocational -->
+                        <div class="details-card school-section" id="school-vocational" data-courses="Vocational Refrigeration Air Conditioning Mobile Repairing TV LED Repairing CCTV Installation Solar Panel Technician Automobile Mechanic Sewing Machine Operator Fashion Design Fitter Welder Electrician CCTV Technology Solar Energy Technician Automobile Engineering Mechanical Technician Electrical Technician Fashion Design Labour Law Hotel Management VOCCRAC VOCCMR VOCCTLR VOCCCI VOCCSPT VOCCAM VOCCSMO VOCFD VOCDF VOCDW VOCDE VOCDRAC VOCDMR VOCDCCTVT VOCDSET VOCDAE VOCDMT VOCDET VOCDFD VOCDLL VOCDHM" style="margin-top: 1.5rem; background: var(--bg-white);">
+                            <h3 style="font-size: 1.4rem; color: var(--primary-green); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                <i class="fa-solid fa-screwdriver-wrench"></i> SCHOOL OF VOCATIONAL
+                            </h3>
+                            <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.2rem;">
+                                Hands-on, job-ready training in trades and technical fields like electrical work, repair, fashion design, and hospitality.
+                            </p>
+                            
+                            <h4 style="font-size: 1rem; color: var(--primary-green); margin-bottom: 0.5rem; font-weight: 700;">Career Opportunities:</h4>
+                            <p style="font-size: 0.95rem; color: var(--text-dark); line-height: 1.5; margin-bottom: 1.5rem;">
+                                Electrician, Plumber, Carpenter, Computer Technician, Chef/Hotel Manager, Mechanic/Machine Operator
+                            </p>
+
+                            <div class="table-responsive">
+                                <table class="catalog-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 35%;">Program Name</th>
+                                            <th style="width: 15%;">Course Code</th>
+                                            <th style="width: 15%;">Duration</th>
+                                            <th style="width: 20%;">Eligibility</th>
+                                            <th style="width: 15%;">Total Fee</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Certificate in Refrigeration & Air Conditioning</td><td>VOCCRAC</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹25,000</td></tr>
+                                        <tr><td>Certificate in Mobile Repairing</td><td>VOCCMR</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹25,000</td></tr>
+                                        <tr><td>Certificate in TV & LED Repairing</td><td>VOCCTLR</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹25,000</td></tr>
+                                        <tr><td>Certificate in CCTV Installation</td><td>VOCCCI</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹25,000</td></tr>
+                                        <tr><td>Certificate in Solar Panel Technician</td><td>VOCCSPT</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹25,000</td></tr>
+                                        <tr><td>Certificate in Automobile Mechanic</td><td>VOCCAM</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹25,000</td></tr>
+                                        <tr><td>Certificate in Sewing Machine Operator</td><td>VOCCSMO</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹25,000</td></tr>
+                                        <tr><td>Certificate in Fashion Design</td><td>VOCFD</td><td>1 Year</td><td>10th/12th Pass / Graduate</td><td>₹25,000</td></tr>
+                                        <tr><td>Diploma in Fitter</td><td>VOCDF</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Welder</td><td>VOCDW <span style="color: var(--accent-red); font-weight: 700;">*</span></td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹25,000</td></tr>
+                                        <tr><td>Diploma in Electrician</td><td>VOCDE</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Refrigeration & Air Conditioning</td><td>VOCDRAC</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Mobile Repairing</td><td>VOCDMR</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in CCTV Technology</td><td>VOCDCCTVT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Solar Energy Technician</td><td>VOCDSET</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Automobile Engineering</td><td>VOCDAE</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Mechanical Technician</td><td>VOCDMT</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Electrical Technician</td><td>VOCDET</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Fashion Design</td><td>VOCDFD</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Labour Law</td><td>VOCDLL</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                        <tr><td>Diploma in Hotel Management</td><td>VOCDHM</td><td>2 Years</td><td>10th/12th Pass / Graduate</td><td>₹40,000</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin-top: 1rem; border-left: 3px solid var(--accent-red); padding-left: 0.8rem;">
+                                <strong style="color: var(--accent-red);">* Note:</strong> The 2-Year "Diploma in Welder" shows a fee of <strong>₹25,000</strong> in the prospectus, whereas other 2-Year diplomas in the School of Vocational are priced at <strong>₹40,000</strong>. This has been flagged for confirmation with the institute.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Admission Sessions -->
+                    <div class="details-section">
+                        <h2>Admission Sessions</h2>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                            <div class="details-card" style="margin-bottom: 0;">
+                                <h3 style="font-size: 1.15rem; color: var(--primary-green);"><i class="fa-solid fa-calendar-days"></i> Session 1: April Intake</h3>
+                                <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 0.5rem; line-height: 1.5;">
+                                    <strong>Applications:</strong> Feb-March<br>
+                                    <strong>Session Starts:</strong> April 1
+                                </p>
+                            </div>
+                            <div class="details-card" style="margin-bottom: 0;">
+                                <h3 style="font-size: 1.15rem; color: var(--primary-green);"><i class="fa-solid fa-calendar-days"></i> Session 2: November Intake</h3>
+                                <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 0.5rem; line-height: 1.5;">
+                                    <strong>Applications:</strong> Sept-Oct<br>
+                                    <strong>Session Starts:</strong> November 1
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 5: Scholarships -->
+                    <div class="details-section">
+                        <h2>Scholarship Programs</h2>
+                        <ul style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; padding-left: 1.2rem; list-style-type: square; margin-top: 1rem;">
+                            <li><strong>Merit-Based Scholarship</strong> (based on academic performance, minimum % as decided by the institute)</li>
+                            <li><strong>Economic (EWS) Category</strong> (income certificate required)</li>
+                            <li><strong>Girl Student Scholarship</strong></li>
+                            <li><strong>SC/ST/OBC Reserved Category Scholarship</strong> (caste certificate required)</li>
+                            <li><strong>Minority & Divyang Scholarship</strong> (disability certificate required)</li>
+                        </ul>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); font-style: italic; margin-top: 0.8rem; border-left: 3px solid var(--primary-brown); padding-left: 0.8rem;">
+                            <strong>Note:</strong> Only one scholarship can be availed at a time; minimum 75% attendance is required to remain eligible.
+                        </p>
+                    </div>
+
+                    <!-- Section 6: Required Documents -->
+                    <div class="details-section">
+                        <h2>Required Documents for Admission</h2>
+                        <ul style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; padding-left: 1.2rem; list-style-type: check; margin-top: 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.4rem;">
+                            <li>10th Marksheet & Certificate (Mandatory)</li>
+                            <li>12th Marksheet & Certificate</li>
+                            <li>Graduation Certificate (for advanced courses)</li>
+                            <li>Aadhaar Card (Mandatory)</li>
+                            <li>Transfer / School Leaving Certificate</li>
+                            <li>Character Certificate</li>
+                            <li>Migration Certificate (if applicable)</li>
+                            <li>Caste Certificate (if applicable)</li>
+                            <li>4-6 Passport Size Photographs</li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 7: Refund Policy & Correction Charges -->
+                    <div class="details-section">
+                        <h2>Refund & Correction Policies</h2>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                            <div class="details-card" style="margin-bottom: 0;">
+                                <h3 style="font-size: 1.15rem; color: var(--primary-green);"><i class="fa-solid fa-hand-holding-dollar"></i> Refund Policy</h3>
+                                <ul style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem; padding-left: 1rem; line-height: 1.4;">
+                                    <li><strong>Before course starts:</strong> Refund possible after deducting registration/processing charges.</li>
+                                    <li><strong>After course starts:</strong> No refund under any circumstances.</li>
+                                    <li><strong>If institute cancels course:</strong> Full (100%) refund of fees paid.</li>
+                                </ul>
+                            </div>
+                            <div class="details-card" style="margin-bottom: 0;">
+                                <h3 style="font-size: 1.15rem; color: var(--primary-green);"><i class="fa-solid fa-screwdriver-wrench"></i> Administrative Charges</h3>
+                                <ul style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem; padding-left: 1rem; line-height: 1.4;">
+                                    <li><strong>Minor corrections:</strong> ₹200 (e.g. spelling errors)</li>
+                                    <li><strong>Major corrections:</strong> ₹500 (Name/DOB/Course changes)</li>
+                                    <li><strong>Re-issue of certificate:</strong> ₹500</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 8: Placement Support -->
+                    <div class="details-section">
+                        <h2>Placement & Internship Support</h2>
+                        <p style="font-size: 1.05rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.6;">
+                            SBSHE provides structured placement assistance to bridge the transition from vocational training to employment:
+                        </p>
+                        <ul style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; padding-left: 1.2rem; list-style-type: square; margin-top: 0.8rem;">
+                            <li><strong>100% placement assistance</strong> based on academic and training performance.</li>
+                            <li><strong>Corporate Tie-ups</strong> with clinics, laboratories, hospitals, and agro-companies.</li>
+                            <li><strong>Career Readiness Programs</strong> covering interview preparation, resume building, and practical internship placement support.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 9: Official Contact (Reference/Transparency) -->
+                    <div class="details-section">
+                        <h2>Official Institute Contact</h2>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+                            For transparency and direct verification, the official administrative details of Shaheed Bhagat Singh Health and Education are listed below:
+                        </p>
+                        <div class="details-card" style="background-color: var(--bg-accent); border-left: 4px solid var(--primary-brown); padding: 1.5rem; margin-bottom: 0;">
+                            <ul style="font-size: 0.95rem; color: var(--text-dark); display: flex; flex-direction: column; gap: 0.6rem; list-style: none; padding-left: 0;">
+                                <li><i class="fa-solid fa-envelope" style="color: var(--primary-green); width: 20px;"></i> <strong>Email:</strong> <a href="mailto:admission@shaheedbhagatsinghhealthandeducation.com" style="color: var(--primary-brown); font-weight: 600;">admission@shaheedbhagatsinghhealthandeducation.com</a></li>
+                                <li><i class="fa-solid fa-phone" style="color: var(--primary-green); width: 20px;"></i> <strong>Phone:</strong> +91 7082013213, +91 7082013215</li>
+                                <li><i class="fa-solid fa-location-dot" style="color: var(--primary-green); width: 20px;"></i> <strong>Office:</strong> 21/30-31 Trilok Puri East, Delhi-110091, India</li>
+                                <li><i class="fa-solid fa-globe" style="color: var(--primary-green); width: 20px;"></i> <strong>Website:</strong> <a href="http://www.shaheedbhagatsinghhealthandeducation.com" target="_blank" rel="noopener noreferrer" style="color: var(--primary-brown); font-weight: 600; text-decoration: underline;">www.shaheedbhagatsinghhealthandeducation.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Sidebar Counseling Form -->
+                <div class="sticky-sidebar">
+                    <div class="card" style="padding: 2.2rem 1.8rem; border-color: var(--primary-brown);">
+                        <h3 style="font-size: 1.35rem; margin-bottom: 0.6rem; color: var(--primary-green); display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-solid fa-headset"></i> Counseling Desk
+                        </h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5;">
+                            JB Siksha Institute assists with admission guidance, documentation, and enrollment support for SBSHE's certificate and diploma programs.
+                        </p>
+                        
+                        <div style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.9rem;">
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-phone" style="color: var(--primary-brown); width: 16px;"></i>
+                                <a href="tel:+918780459636" style="font-weight: 700; color: var(--text-dark);">+91 87804 59636</a>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-envelope" style="color: var(--primary-brown); width: 16px;"></i>
+                                <a href="mailto:jbsikshainstitute@gmail.com" style="font-weight: 700; color: var(--text-dark); word-break: break-all;">jbsikshainstitute@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: var(--primary-green);">Request Admission Guidance</h4>
+                        
+                        <form id="university-counseling-form">
+                            <div class="form-group">
+                                <label for="counsel-name">Full Name *</label>
+                                <input type="text" id="counsel-name" placeholder="Your Name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="counsel-email">Email Address *</label>
+                                <input type="email" id="counsel-email" placeholder="Your Email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="counsel-phone">Mobile Number *</label>
+                                <input type="tel" id="counsel-phone" placeholder="Your Phone Number" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="counsel-school">Preferred Program *</label>
+                                <select id="counsel-school" required>
+                                    <option value="" disabled selected>-- Select Program --</option>
+                                    <option value="Certificate in Agriculture (AGRCA)">Certificate in Agriculture (AGRCA)</option>
+                                    <option value="Certificate in Organic Farming (AGRCOF)">Certificate in Organic Farming (AGRCOF)</option>
+                                    <option value="Diploma in Agriculture (AGRDA)">Diploma in Agriculture (AGRDA)</option>
+                                    <option value="Diploma in Organic Farming (AGRDOF)">Diploma in Organic Farming (AGRDOF)</option>
+                                    <option value="Diploma in Horticulture (AGRDH)">Diploma in Horticulture (AGRDH)</option>
+                                    <option value="Diploma in Agricultural Extension Services (AGRDAESID)">Diploma in Agricultural Extension Services (AGRDAESID)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="counsel-message">Your Message</label>
+                                <textarea id="counsel-message" rows="3" placeholder="Describe your academic goals..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                                Submit Request <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        
+                        <div id="counsel-form-response" class="form-message"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    JB Siksha <span>Institute</span>
+                </a>
+                <p>A trusted educational admission consultancy helping students choose appropriate degree paths and secure seats in leading colleges across Gujarat and India.</p>
+                <div class="social-links">
+                    <!-- TODO: add Facebook URL -->
+                    <!-- TODO: add Instagram URL -->
+                    <!-- TODO: add LinkedIn URL -->
+                    <!-- TODO: add WhatsApp URL -->
+                </div>
+            </div>
+            <div>
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html">Home</a></li>
+                    <li class="footer-link-item"><a href="about.html">About Us</a></li>
+                    <li class="footer-link-item"><a href="universities.html">Universities</a></li>
+                    <li class="footer-link-item"><a href="mous.html">Our MOUs</a></li>
+                    <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Our Services</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html#services">Career Profiling</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">ACPC Counselling</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">Management Seats</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">NRI Sponsorship</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">Hostel Coordination</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Contact Office</h3>
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>02, Mani Complex, Plot No. 84, Sector 8, Gandhidham, Kachchh, Gujarat. 370201</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 87804 59636</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>jbsikshainstitute@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 JB Siksha Institute. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-conditions.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Main JavaScript & Form Handler Script -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Offering Search Filter
+            const searchInput = document.getElementById('offering-search');
+            const searchBtn = document.getElementById('search-action-btn');
+            const schoolSections = document.querySelectorAll('.school-section');
+            const directoryCards = document.querySelectorAll('.directory-card');
+
+            const performScroll = () => {
+                const firstVisible = Array.from(schoolSections).find(item => item.style.display !== 'none');
+                if (firstVisible) {
+                    firstVisible.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    const fallbackSec = document.getElementById('schools-section');
+                    if (fallbackSec) {
+                        fallbackSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            };
+
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const rawQuery = e.target.value.toLowerCase().trim();
+                    
+                    // Show/hide Search button
+                    if (searchBtn) {
+                        searchBtn.style.display = rawQuery.length > 0 ? 'inline-flex' : 'none';
+                    }
+
+                    const normalize = (str) => str.replace(/[\s\.\-\(\)\&]/g, '').toLowerCase();
+                    const queryNormalized = normalize(rawQuery);
+
+                    // Filter details sections
+                    schoolSections.forEach(item => {
+                        const name = item.querySelector('h3').textContent;
+                        const nameNormalized = normalize(name);
+                        const coursesAttr = item.getAttribute('data-courses') || '';
+                        const coursesNormalized = normalize(coursesAttr);
+
+                        let isMatch = nameNormalized.includes(queryNormalized) || coursesNormalized.includes(queryNormalized);
+
+                        if (!isMatch && queryNormalized.length > 1) {
+                            // Support basic synonyms / keywords
+                            const synonyms = {
+                                'agri': ['agriculture', 'farming'],
+                                'med': ['medical', 'paramedical', 'health'],
+                                'comp': ['computer', 'it', 'software'],
+                                'fit': ['fitness', 'sports', 'gym'],
+                                'teach': ['teacher', 'education', 'nursery', 'primary']
+                            };
+
+                            for (const [key, values] of Object.entries(synonyms)) {
+                                if (queryNormalized === key || queryNormalized.includes(key) || key.includes(queryNormalized)) {
+                                    const hasAny = [key, ...values].some(val => 
+                                        nameNormalized.includes(normalize(val)) || coursesNormalized.includes(normalize(val))
+                                    );
+                                    if (hasAny) {
+                                        isMatch = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        item.style.display = isMatch ? 'block' : 'none';
+                    });
+
+                    // Filter directory cards
+                    directoryCards.forEach(card => {
+                        const name = card.querySelector('h4').textContent;
+                        const nameNormalized = normalize(name);
+                        const coursesAttr = card.getAttribute('data-courses') || '';
+                        const coursesNormalized = normalize(coursesAttr);
+
+                        let isMatch = nameNormalized.includes(queryNormalized) || coursesNormalized.includes(queryNormalized);
+
+                        if (!isMatch && queryNormalized.length > 1) {
+                            const synonyms = {
+                                'agri': ['agriculture', 'farming'],
+                                'med': ['medical', 'paramedical', 'health'],
+                                'comp': ['computer', 'it', 'software'],
+                                'fit': ['fitness', 'sports', 'gym'],
+                                'teach': ['teacher', 'education', 'nursery', 'primary']
+                            };
+
+                            for (const [key, values] of Object.entries(synonyms)) {
+                                if (queryNormalized === key || queryNormalized.includes(key) || key.includes(queryNormalized)) {
+                                    const hasAny = [key, ...values].some(val => 
+                                        nameNormalized.includes(normalize(val)) || coursesNormalized.includes(normalize(val))
+                                    );
+                                    if (hasAny) {
+                                        isMatch = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        card.style.display = isMatch ? 'flex' : 'none';
+                    });
+                });
+
+                // Listen for Enter key press
+                searchInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        performScroll();
+                    }
+                });
+            }
+
+            if (searchBtn) {
+                searchBtn.addEventListener('click', () => {
+                    performScroll();
+                });
+            }
+
+            const form = document.getElementById('university-counseling-form');
+            const responseDiv = document.getElementById('counsel-form-response');
+
+            if (form && responseDiv) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const name = document.getElementById('counsel-name').value.trim();
+                    const email = document.getElementById('counsel-email').value.trim();
+                    const phone = document.getElementById('counsel-phone').value.trim();
+                    const school = document.getElementById('counsel-school').value;
+
+                    if (!name || !email || !phone || !school) {
+                        responseDiv.textContent = 'Please fill out all required fields.';
+                        responseDiv.className = 'form-message error';
+                        responseDiv.style.display = 'block';
+                        return;
+                    }
+
+                    responseDiv.textContent = 'Submitting counseling request...';
+                    responseDiv.className = 'form-message';
+                    responseDiv.style.display = 'block';
+
+                    // Simulate email routing trigger
+                    setTimeout(() => {
+                        responseDiv.innerHTML = `<strong>Request Received!</strong> Thank you ${name}. We have logged your request for <strong>${school}</strong> at SBSHE. Admissions specialist will contact you on <strong>${phone}</strong> or send details to <strong>${email}</strong>. (Lead sent to jbsikshainstitute@gmail.com)`;
+                        responseDiv.className = 'form-message success';
+                        form.reset();
+                    }, 1200);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fergana Medical Institute of Public Health, Uzbekistan - Admission & Fees | JB Siksha Institute</title>
+    <meta name="description" content="Secure your admission in MD (General Medicine) at Fergana Medical Institute of Public Health, Uzbekistan. Fully NMC compliant, English medium, 19+ partner hospitals, low fees.">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico?v=2" sizes="any">
+    <link rel="icon" type="image/png" sizes="512x512" href="/jb-siksha-favicon-512.png?v=2">
+    <style>
+        /* Dedicated Page Custom Styles */
+        .university-details-grid {
+            display: grid;
+            grid-template-columns: 2fr 1.2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .details-section {
+            margin-bottom: 3rem;
+        }
+
+        .details-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .details-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-brown);
+            border-radius: var(--radius-full);
+        }
+
+        .details-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .details-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .details-card h3 i {
+            color: var(--primary-brown);
+        }
+
+        .program-card {
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2.2rem 1.8rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .program-card:hover {
+            border-color: var(--primary-brown);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .program-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .program-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        .program-badge {
+            background-color: var(--primary-green-subtle);
+            color: var(--primary-green);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.3rem 0.8rem;
+            border-radius: var(--radius-sm);
+            text-transform: uppercase;
+        }
+
+        .stat-badge-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: -2rem auto 3rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-badge-card {
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-badge-num {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--primary-brown);
+            font-weight: 800;
+        }
+
+        .stat-badge-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
+
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .fee-table th, .fee-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .fee-table th {
+            background-color: var(--primary-green-subtle);
+            color: var(--primary-green);
+            font-weight: 700;
+        }
+
+        .fee-table tr:hover {
+            background-color: rgba(14, 58, 36, 0.02);
+        }
+
+        .sticky-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .form-message {
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: var(--primary-green-subtle);
+            color: var(--primary-green);
+            border: 1px solid rgba(14, 58, 36, 0.1);
+        }
+
+        .form-message.error {
+            background-color: #fce4ec;
+            color: var(--accent-red);
+            border: 1px solid rgba(192, 57, 43, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition-normal);
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px var(--primary-green-subtle);
+        }
+
+        @media (max-width: 1024px) {
+            .university-details-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .stat-badge-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stat-badge-grid {
+                grid-template-columns: 1fr;
+                margin-top: -1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/Logo/jb-siksha-emblem.png" alt="JB Logo" class="logo-img">
+                JB Siksha <span>Institute</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="universities.html" class="nav-link">Universities</a></li>
+                <li><a href="mous.html" class="nav-link">Our MOUs</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li><a href="contact.html" class="btn btn-primary btn-sm">Get Counseling</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Header -->
+    <section class="about-hero" style="padding-bottom: 6rem; background-image: linear-gradient(to bottom, rgba(27, 83, 56, 0.15), rgba(255, 255, 255, 1));">
+        <div class="container">
+            <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> International Medical Partner</span>
+            <h1 style="font-size: 3.5rem; margin-top: 0.5rem; line-height: 1.2;">Fergana Medical Institute of Public Health</h1>
+            <p class="section-desc" style="max-width: 700px; margin: 1rem auto 0; font-size: 1.25rem;">
+                <i class="fa-solid fa-location-dot" style="color: var(--primary-brown);"></i> Fergana, Uzbekistan
+            </p>
+            <p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 600;">
+                Government Medical University &bull; Established 1992 &bull; NMC Compliant MD Program
+            </p>
+            <div style="margin-top: 1.8rem; display: flex; flex-direction: column; align-items: center; gap: 1.2rem;">
+                <a href="#programs-section" class="btn btn-primary btn-sm">Explore Programs & Fees <i class="fa-solid fa-arrow-down"></i></a>
+                
+                <div class="search-wrapper" style="max-width: 500px; width: 100%; position: relative; box-shadow: 0 8px 30px rgba(0,0,0,0.15); border-radius: var(--radius-full); background: #ffffff;">
+                    <i class="fa-solid fa-magnifying-glass search-icon" style="position: absolute; left: 1.5rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 1.1rem; z-index: 10;"></i>
+                    <input type="text" id="offering-search" class="search-input" placeholder="Search courses, faculties or degrees (e.g. MBBS, MD, Medicine)..." style="width: 100%; padding: 1.1rem 8.5rem 1.1rem 3.5rem; border-radius: var(--radius-full); border: 1px solid var(--border-color); outline: none; background: transparent; transition: var(--transition-normal); color: var(--text-dark);">
+                    <button id="search-action-btn" class="btn btn-primary" style="position: absolute; right: 0.4rem; top: 50%; transform: translateY(-50%); padding: 0.7rem 1.5rem; border-radius: var(--radius-full); font-size: 0.9rem; display: none; align-items: center; gap: 0.5rem; cursor: pointer; border: none; height: calc(100% - 0.8rem); z-index: 10;">
+                        Search <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            
+            <!-- Quick Stats Badges -->
+            <div class="stat-badge-grid">
+                <div class="stat-badge-card">
+                    <div class="stat-badge-num">6 Year</div>
+                    <div class="stat-badge-title">MD Program Duration</div>
+                </div>
+                <div class="stat-badge-card">
+                    <div class="stat-badge-num">19</div>
+                    <div class="stat-badge-title">Partner Hospitals</div>
+                </div>
+                <div class="stat-badge-card">
+                    <div class="stat-badge-num">4000+</div>
+                    <div class="stat-badge-title">Combined Hospital Beds</div>
+                </div>
+                <div class="stat-badge-card">
+                    <div class="stat-badge-num">200</div>
+                    <div class="stat-badge-title">Bed Hospital on Campus</div>
+                </div>
+            </div>
+
+            <!-- Two-Column Grid Layout -->
+            <div class="university-details-grid">
+                
+                <!-- Left Column: Detailed Profile -->
+                <div>
+                    
+                    <!-- Section 1: Overview -->
+                    <div class="details-section">
+                        <h2>University Profile</h2>
+                        <p style="font-size: 1.05rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.7;">
+                            Fergana Medical Institute of Public Health is a government-recognised medical university in Uzbekistan, functioning under the Ministry of Health and Education. It offers a 6-year MD (General Medicine) program in English medium, structured as per the latest NMC screening test requirements. Students gain hands-on clinical exposure across a network of 19 affiliated hospitals with a combined capacity of over 4,000 beds, in addition to the institute's own 200-bed teaching hospital located inside the campus.
+                        </p>
+                    </div>
+
+                    <!-- Section 2: Recognition & Approvals -->
+                    <div class="details-section">
+                        <h2>Approvals & Recognitions</h2>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-top: 1rem;">
+                            <div class="details-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <h3><i class="fa-solid fa-shield-halved"></i> Ministry Recognized</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Recognized and regulated under the Ministry of Health and Education, Uzbekistan.</p>
+                            </div>
+                            <div class="details-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <h3><i class="fa-solid fa-circle-check"></i> NMC Compliant</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">MD (General Medicine) program structured as per the new NMC screening/eligibility rules for Indian students.</p>
+                            </div>
+                            <div class="details-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <h3><i class="fa-solid fa-hospital"></i> Own Campus Hospital</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">200-bed hospital located inside the campus for direct clinical training.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Programs Offered -->
+                    <div class="details-section" id="programs-section">
+                        <h2>Programs Offered</h2>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem; margin-bottom: 1.5rem;">
+                            The institute offers direct clinical training and standard international modules:
+                        </p>
+                        
+                        <div class="program-card school-item" data-courses="MBBS MD General Medicine Public Health Specialization Faculty of Medicine English Medium 6 Years">
+                            <div class="program-header">
+                                <h3 class="program-title">MD (General Medicine)</h3>
+                                <span class="program-badge">MD Program</span>
+                            </div>
+                            <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">
+                                A comprehensive medical degree program spanning 6 years, entirely taught in English medium. The curriculum is optimized to meet global licensing exam requirements, combining strong theoretical foundations with extensive bedside practice.
+                            </p>
+                            <div style="margin-top: 0.5rem;">
+                                <a href="fergana-mbbs-program.html" class="btn btn-secondary btn-sm">Explore Program & Syllabus <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Campus Highlights -->
+                    <div class="details-section">
+                        <h2>Campus Highlights</h2>
+                        <ul style="font-size: 1rem; color: var(--text-muted); display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.8rem; margin-top: 1rem; padding-left: 1.2rem; list-style-type: square;">
+                            <li>Clinical exposure across 19 hospitals with 4,000+ combined beds.</li>
+                            <li>Own 200-bed teaching hospital inside campus boundaries.</li>
+                            <li>Fully separate Indian hostel with hygienic Indian food (vegetarian/non-vegetarian).</li>
+                            <li>Regular medical assistance and health check-ups included in services.</li>
+                            <li>Full visa, travel, and documentation support arranged by authorized desks.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 5: Fee Snapshot -->
+                    <div class="details-section">
+                        <h2>Fee Snapshot</h2>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem; margin-bottom: 1rem;">
+                            Annual tuition fee is flat at <strong>$3,600/year</strong> throughout. Detailed breakdown of payments (in USD):
+                        </p>
+                        <table class="fee-table">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Tuition Fee</th>
+                                    <th>Other Expenses</th>
+                                    <th>Total (USD)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Year 1</strong></td>
+                                    <td>$3,600</td>
+                                    <td>$3,950 (Incl. hostel, mess, visa & admin charges)</td>
+                                    <td><strong>$7,550</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Year 2</strong></td>
+                                    <td>$3,600</td>
+                                    <td>$850 (Hostel & basic charges)</td>
+                                    <td><strong>$4,450</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Year 3–6</strong></td>
+                                    <td>$3,600</td>
+                                    <td>$100 each (Flat charges)</td>
+                                    <td><strong>$3,700 / year</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Sidebar Counseling Form -->
+                <div class="sticky-sidebar">
+                    <div class="card" style="padding: 2.2rem 1.8rem; border-color: var(--primary-brown);">
+                        <h3 style="font-size: 1.35rem; margin-bottom: 0.6rem; color: var(--primary-green); display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-solid fa-headset"></i> Counseling Desk
+                        </h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5;">
+                            JB Siksha Institute is your trusted advisor for admission, documentation, visa processing and travel support for Fergana Medical Institute of Public Health.
+                        </p>
+                        
+                        <div style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.9rem;">
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-phone" style="color: var(--primary-brown); width: 16px;"></i>
+                                <a href="tel:+918780459636" style="font-weight: 700; color: var(--text-dark);">+91 87804 59636</a>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-envelope" style="color: var(--primary-brown); width: 16px;"></i>
+                                <a href="mailto:jbsikshainstitute@gmail.com" style="font-weight: 700; color: var(--text-dark); word-break: break-all;">jbsikshainstitute@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: var(--primary-green);">Request Admission Guidance</h4>
+                        
+                        <form id="university-counseling-form">
+                            <div class="form-group">
+                                <label for="counsel-name">Full Name *</label>
+                                <input type="text" id="counsel-name" placeholder="Your Name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="counsel-email">Email Address *</label>
+                                <input type="email" id="counsel-email" placeholder="Your Email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="counsel-phone">Mobile Number *</label>
+                                <input type="tel" id="counsel-phone" placeholder="Your Phone Number" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="counsel-school">Preferred Program *</label>
+                                <select id="counsel-school" required>
+                                    <option value="" disabled selected>-- Select Program --</option>
+                                    <option value="MD (General Medicine)">MD (General Medicine)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="counsel-message">Your Message</label>
+                                <textarea id="counsel-message" rows="3" placeholder="Describe your academic goals..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                                Submit Request <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        
+                        <div id="counsel-form-response" class="form-message"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    JB Siksha <span>Institute</span>
+                </a>
+                <p>A trusted educational admission consultancy helping students choose appropriate degree paths and secure seats in leading colleges across Gujarat and India.</p>
+                <div class="social-links">
+                    <!-- TODO: add Facebook URL -->
+                    <!-- TODO: add Instagram URL -->
+                    <!-- TODO: add LinkedIn URL -->
+                    <!-- TODO: add WhatsApp URL -->
+                </div>
+            </div>
+            <div>
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html">Home</a></li>
+                    <li class="footer-link-item"><a href="about.html">About Us</a></li>
+                    <li class="footer-link-item"><a href="universities.html">Universities</a></li>
+                    <li class="footer-link-item"><a href="mous.html">Our MOUs</a></li>
+                    <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Our Services</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html#services">Career Profiling</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">ACPC Counselling</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">Management Seats</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">NRI Sponsorship</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">Hostel Coordination</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Contact Office</h3>
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>02, Mani Complex, Plot No. 84, Sector 8, Gandhidham, Kachchh, Gujarat. 370201</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 87804 59636</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>jbsikshainstitute@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 JB Siksha Institute. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-conditions.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Main JavaScript & Form Handler Script -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Offering Search Filter
+            const searchInput = document.getElementById('offering-search');
+            const searchBtn = document.getElementById('search-action-btn');
+            const schoolItems = document.querySelectorAll('.school-item');
+
+            const performScroll = () => {
+                const firstVisible = Array.from(schoolItems).find(item => item.style.display !== 'none');
+                if (firstVisible) {
+                    firstVisible.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    const fallbackSec = document.getElementById('programs-section');
+                    if (fallbackSec) {
+                        fallbackSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            };
+
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const rawQuery = e.target.value.toLowerCase().trim();
+                    
+                    // Show/hide Search button
+                    if (searchBtn) {
+                        searchBtn.style.display = rawQuery.length > 0 ? 'inline-flex' : 'none';
+                    }
+
+                    const normalize = (str) => str.replace(/[\s\.\-\(\)\&]/g, '').toLowerCase();
+                    const queryNormalized = normalize(rawQuery);
+
+                    schoolItems.forEach(item => {
+                        const name = item.querySelector('.program-title') ? item.querySelector('.program-title').textContent : '';
+                        const nameNormalized = normalize(name);
+                        const coursesAttr = item.getAttribute('data-courses') || '';
+                        const coursesNormalized = normalize(coursesAttr);
+
+                        let isMatch = nameNormalized.includes(queryNormalized) || coursesNormalized.includes(queryNormalized);
+
+                        if (!isMatch && queryNormalized.length > 1) {
+                            const synonyms = {
+                                'nurse': ['nursing', 'gnm'],
+                                'medicine': ['mbbs', 'medical', 'healthcare', 'md'],
+                                'mbbs': ['medicine', 'medical', 'md'],
+                                'md': ['medicine', 'medical', 'mbbs'],
+                                'medical': ['mbbs', 'medicine', 'healthcare', 'md']
+                            };
+
+                            for (const [key, values] of Object.entries(synonyms)) {
+                                if (queryNormalized === key || queryNormalized.includes(key) || key.includes(queryNormalized)) {
+                                    const hasAny = [key, ...values].some(val => 
+                                        nameNormalized.includes(normalize(val)) || coursesNormalized.includes(normalize(val))
+                                    );
+                                    if (hasAny) {
+                                        isMatch = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        item.style.display = isMatch ? 'flex' : 'none';
+                    });
+                });
+
+                // Listen for Enter key press
+                searchInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        performScroll();
+                    }
+                });
+            }
+
+            if (searchBtn) {
+                searchBtn.addEventListener('click', () => {
+                    performScroll();
+                });
+            }
+
+            const form = document.getElementById('university-counseling-form');
+            const responseDiv = document.getElementById('counsel-form-response');
+
+            if (form && responseDiv) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const name = document.getElementById('counsel-name').value.trim();
+                    const email = document.getElementById('counsel-email').value.trim();
+                    const phone = document.getElementById('counsel-phone').value.trim();
+                    const school = document.getElementById('counsel-school').value;
+
+                    if (!name || !email || !phone || !school) {
+                        responseDiv.textContent = 'Please fill out all required fields.';
+                        responseDiv.className = 'form-message error';
+                        responseDiv.style.display = 'block';
+                        return;
+                    }
+
+                    responseDiv.textContent = 'Submitting counseling request...';
+                    responseDiv.className = 'form-message';
+                    responseDiv.style.display = 'block';
+
+                    // Simulate email routing trigger
+                    setTimeout(() => {
+                        responseDiv.innerHTML = `<strong>Request Received!</strong> Thank you ${name}. We have logged your request for the <strong>${school}</strong> at Fergana Medical Institute of Public Health. Admissions specialist will contact you on <strong>${phone}</strong> or send details to <strong>${email}</strong>. (Lead sent to jbsikshainstitute@gmail.com)`;
+                        responseDiv.className = 'form-message success';
+                        form.reset();
+                    }, 1200);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

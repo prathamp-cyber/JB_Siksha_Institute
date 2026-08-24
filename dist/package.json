@@ -1,0 +1,12 @@
+{
+  "name": "jb-siksha-institute",
+  "version": "1.0.0",
+  "description": "JB Siksha Institute static website",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

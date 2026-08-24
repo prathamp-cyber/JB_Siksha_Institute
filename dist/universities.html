@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Universities | JB Siksha Institute Consultancy</title>
+    <meta name="description" content="Search and filter through premier partner universities in Gujarat and across India. Get detailed entry criteria, accredited ratings, and eligibility info.">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico?v=2" sizes="any">
+    <link rel="icon" type="image/png" sizes="512x512" href="/jb-siksha-favicon-512.png?v=2">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/Logo/jb-siksha-emblem.png" alt="JB Logo" class="logo-img">
+                JB Siksha <span>Institute</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="universities.html" class="nav-link">Universities</a></li>
+                <li><a href="mous.html" class="nav-link">Our MOUs</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li><a href="contact.html" class="btn btn-primary btn-sm">Get Counseling</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="about-hero" style="padding-bottom: 2rem;">
+        <div class="container">
+            <span class="section-tag">Explore Options</span>
+            <h1>Universities & Institutions</h1>
+            <p class="section-desc" style="max-width: 600px; margin: 0 auto;">Select from the finest private and government institutions across Gujarat and India.</p>
+        </div>
+    </section>
+
+    <!-- Filter & Grid Section -->
+    <section class="section" style="padding-top: 2rem;">
+        <div class="container">
+            
+            <!-- Filters Panel -->
+            <div class="filter-controls">
+                <div class="search-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="university-search" class="search-input" placeholder="Search by university name, city, or courses (e.g. BBA, MBBS, B.Tech)...">
+                </div>
+                <div class="tags-group">
+                    <button class="tag-btn active" data-filter="all">All Institutions</button>
+                    <button class="tag-btn" data-filter="gujarat">Gujarat Region</button>
+                    <button class="tag-btn" data-filter="india-wide">India-wide (Other States)</button>
+                    <button class="tag-btn" data-filter="engineering">Engineering / Tech</button>
+                    <button class="tag-btn" data-filter="medical">Medical / Pharmacy</button>
+                    <button class="tag-btn" data-filter="management">MBA / Management</button>
+                    <button class="tag-btn" data-filter="international">International</button>
+                    <button class="tag-btn" data-filter="vocational">Skill Development & Vocational</button>
+                </div>
+            </div>
+
+            <!-- University Cards Grid -->
+            <div class="grid-3" id="university-grid">
+                
+                <!-- Uni 1: MK University -->
+                <div class="card university-card uni-grid-item" data-tags="gujarat engineering medical management" data-courses="B.Tech M.Tech Polytechnic Diploma B.Pharm D.Pharm B.Sc-MLT BPT GNM B.Sc-Nursing B.Optom BA B.Ed B.Lib MSW MA M.Lib M.Ed BPES MPES BJMC MJMC DJMC Yoga LLB BA-LLB BBA-LLB LLM MBA BBA B.Com M.Com PGDM Ph.D M.Phil B.Sc M.Sc B.Voc D.Voc Certificate" style="max-width: 500px; width: 100%; justify-self: center;">
+                    <div class="uni-header" style="background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80')">
+                        <span class="uni-badge">Gujarat</span>
+                        <div class="uni-logo-placeholder">MK</div>
+                    </div>
+                    <div class="uni-body">
+                        <div class="uni-location"><i class="fa-solid fa-location-dot"></i> Patan, Gujarat</div>
+                        <h3 class="uni-title">MK University</h3>
+                        <div class="uni-meta-list">
+                            <div class="uni-meta-item"><i class="fa-solid fa-building-columns"></i> State Private University</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-award"></i> UGC Recognized & Govt of Gujarat Approved</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-phone"></i> +91 87804 59636</div>
+                        </div>
+                        <a href="mk-university.html" class="btn btn-primary btn-sm" style="margin-top: 1.5rem; width: 100%; display: inline-flex;">View Detailed Profile & Courses <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Uni 2: Ganpat University -->
+                <div class="card university-card uni-grid-item" data-tags="gujarat engineering medical management" data-courses="B.Tech M.Tech Polytechnic Diploma B.Pharm Pharm.D B.Sc Optometry B.Sc-MLT B.Sc Microbiology B.Sc Biotech MBA BBA B.Com M.Com BCA MCA B.Sc-IT M.Sc-IT PGDCA B.Sc M.Sc B.Des M.Des B.Arch M.Arch B.Plan M.Plan Liberal Studies MSW GNM B.Sc Nursing BPT B.Optom B.Sc Agriculture B.Voc Certificate Diploma" style="max-width: 500px; width: 100%; justify-self: center;">
+                    <div class="uni-header" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80')">
+                        <span class="uni-badge">Gujarat</span>
+                        <div class="uni-logo-placeholder">GU</div>
+                    </div>
+                    <div class="uni-body">
+                        <div class="uni-location"><i class="fa-solid fa-location-dot"></i> Mehsana, Gujarat</div>
+                        <h3 class="uni-title">Ganpat University</h3>
+                        <div class="uni-meta-list">
+                            <div class="uni-meta-item"><i class="fa-solid fa-building-columns"></i> State Private University</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-award"></i> UGC Recognized & AICTE/PCI/COA Approved</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-phone"></i> +91 87804 59636</div>
+                        </div>
+                        <a href="ganpat-university.html" class="btn btn-primary btn-sm" style="margin-top: 1.5rem; width: 100%; display: inline-flex;">View Detailed Profile & Courses <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Uni 3: CDOE VGU -->
+                <div class="card university-card uni-grid-item" data-tags="india-wide management" data-courses="MBA MCA BCA BBA BA B.Sc B.Com M.Sc Math MAJMC PGDCA M.A. English Engineering Computer Applications Management Pharmacy Nursing Science Architecture Design Law Humanities Journalism Hospitality Agriculture Physiotherapy Healthcare" style="max-width: 500px; width: 100%; justify-self: center;">
+                    <div class="uni-header" style="background-image: url('https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=800&q=80')">
+                        <span class="uni-badge">Rajasthan</span>
+                        <div class="uni-logo-placeholder">VGU</div>
+                    </div>
+                    <div class="uni-body">
+                        <div class="uni-location"><i class="fa-solid fa-location-dot"></i> Jaipur, Rajasthan</div>
+                        <h3 class="uni-title">CDOE VGU</h3>
+                        <div class="uni-meta-list">
+                            <div class="uni-meta-item"><i class="fa-solid fa-building-columns"></i> Centre for Distance & Online Education</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-award"></i> NAAC A+ Accredited & UGC-DEB Entitled</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-phone"></i> +91 87804 59636</div>
+                        </div>
+                        <a href="vgu-university.html" class="btn btn-primary btn-sm" style="margin-top: 1.5rem; width: 100%; display: inline-flex;">View Detailed Profile & Courses <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Uni 4: Fergana Medical Institute of Public Health -->
+                <div class="card university-card uni-grid-item" data-tags="medical international" data-courses="MBBS MD Medicine" style="max-width: 500px; width: 100%; justify-self: center;">
+                    <div class="uni-header" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80')">
+                        <span class="uni-badge">FMIPH</span>
+                        <div class="uni-logo-placeholder">FM</div>
+                    </div>
+                    <div class="uni-body">
+                        <div class="uni-location"><i class="fa-solid fa-location-dot"></i> Fergana, Uzbekistan</div>
+                        <h3 class="uni-title">Fergana Medical Institute of Public Health</h3>
+                        <div class="uni-meta-list">
+                            <div class="uni-meta-item"><i class="fa-solid fa-building-columns"></i> Government Medical Institute</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-award"></i> Ministry of Health & Education, Uzbekistan • NMC Compliant</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-phone"></i> +91 87804 59636</div>
+                        </div>
+                        <a href="fergana-medical-institute.html" class="btn btn-primary btn-sm" style="margin-top: 1.5rem; width: 100%; display: inline-flex;">View Detailed Profile & Courses <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Uni 5: Andijan State Medical Institute -->
+                <div class="card university-card uni-grid-item" data-tags="medical international" data-courses="MBBS MD Medicine" style="max-width: 500px; width: 100%; justify-self: center;">
+                    <div class="uni-header" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80')">
+                        <span class="uni-badge">ASMI</span>
+                        <div class="uni-logo-placeholder">AS</div>
+                    </div>
+                    <div class="uni-body">
+                        <div class="uni-location"><i class="fa-solid fa-location-dot"></i> Andijan, Uzbekistan</div>
+                        <h3 class="uni-title">Andijan State Medical Institute</h3>
+                        <div class="uni-meta-list">
+                            <div class="uni-meta-item"><i class="fa-solid fa-building-columns"></i> Government Medical Institute</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-award"></i> WHO Listed • ECFMG & FAIMER Recognized</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-phone"></i> +91 87804 59636</div>
+                        </div>
+                        <a href="andijan-state-medical-institute.html" class="btn btn-primary btn-sm" style="margin-top: 1.5rem; width: 100%; display: inline-flex;">View Detailed Profile & Courses <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Inst 1: Shaheed Bhagat Singh Health and Education (SBSHE) -->
+                <div class="card university-card uni-grid-item" data-tags="vocational agriculture" data-courses="Certificate in Agriculture Certificate in Organic Farming Diploma in Agriculture Diploma in Organic Farming Diploma in Horticulture Diploma in Agricultural Extension Services for Input Dealers Vocational Skill Training SBSHE" style="max-width: 500px; width: 100%; justify-self: center;">
+                    <div class="uni-header" style="background-image: url('https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80')">
+                        <span class="uni-badge">SBSHE</span>
+                        <div class="uni-logo-placeholder">SB</div>
+                    </div>
+                    <div class="uni-body">
+                        <div class="uni-location"><i class="fa-solid fa-location-dot"></i> Delhi, India</div>
+                        <h3 class="uni-title">Shaheed Bhagat Singh Health and Education (SBSHE)</h3>
+                        <div class="uni-meta-list">
+                            <div class="uni-meta-item"><i class="fa-solid fa-building-columns"></i> Skill Development Institute (ISO 9001:2015 Certified)</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-award"></i> ISO 9001:2015 Certified &bull; NGO-Darpan &bull; MSME Registered</div>
+                            <div class="uni-meta-item"><i class="fa-solid fa-phone"></i> +91 87804 59636</div>
+                        </div>
+                        <a href="sbshe-institute.html" class="btn btn-primary btn-sm" style="margin-top: 1.5rem; width: 100%; display: inline-flex;">View Detailed Profile & Programs <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- No Results Block -->
+                <div class="no-results" id="no-results" style="display: none;">
+                    <i class="fa-solid fa-building-circle-exclamation"></i>
+                    <h3>No Universities Match Your Query</h3>
+                    <p style="margin-top: 0.5rem;">Try adjusting your search terms or choosing a different filter category.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    JB Siksha <span>Institute</span>
+                </a>
+                <p>A trusted educational admission consultancy helping students choose appropriate degree paths and secure seats in leading colleges across Gujarat and India.</p>
+                <div class="social-links">
+                    <!-- TODO: add Facebook URL -->
+                    <!-- TODO: add Instagram URL -->
+                    <!-- TODO: add LinkedIn URL -->
+                    <!-- TODO: add WhatsApp URL -->
+                </div>
+            </div>
+            <div>
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html">Home</a></li>
+                    <li class="footer-link-item"><a href="about.html">About Us</a></li>
+                    <li class="footer-link-item"><a href="universities.html">Universities</a></li>
+                    <li class="footer-link-item"><a href="mous.html">Our MOUs</a></li>
+                    <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Our Services</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html#services">Career Profiling</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">ACPC Counselling</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">Management Seats</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">NRI Sponsorship</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">Hostel Coordination</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Contact Office</h3>
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>02, Mani Complex, Plot No. 84, Sector 8, Gandhidham, Kachchh, Gujarat. 370201</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 87804 59636</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>jbsikshainstitute@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 JB Siksha Institute. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-conditions.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

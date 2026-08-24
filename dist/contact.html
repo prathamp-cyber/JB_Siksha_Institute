@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us & FAQs | JB Siksha Institute Admission Consultancy</title>
+    <meta name="description" content="Get in touch with JB Siksha Institute. Request a free counseling session or browse answers to FAQs about ACPC, NEET, and NRI quota admissions.">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico?v=2" sizes="any">
+    <link rel="icon" type="image/png" sizes="512x512" href="/jb-siksha-favicon-512.png?v=2">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/Logo/jb-siksha-emblem.png" alt="JB Logo" class="logo-img">
+                JB Siksha <span>Institute</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="universities.html" class="nav-link">Universities</a></li>
+                <li><a href="mous.html" class="nav-link">Our MOUs</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li><a href="contact.html" class="btn btn-primary btn-sm">Get Counseling</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="about-hero" style="padding-bottom: 2rem;">
+        <div class="container">
+            <span class="section-tag">Let's Connect</span>
+            <h1>Contact Our Advisory Desk</h1>
+            <p class="section-desc" style="max-width: 600px; margin: 0 auto;">Connect with our professional counselors to clear your academic doubts.</p>
+        </div>
+    </section>
+
+    <!-- Contact Grid & Form -->
+    <section class="section" style="padding-top: 2rem;">
+        <div class="container">
+            <div class="contact-grid">
+                
+                <!-- Left: Contact info and map -->
+                <div class="contact-info-panel">
+                    <div class="contact-info-card">
+                        <h2>Office Details</h2>
+                        <div class="contact-details">
+                            <div class="contact-detail-item">
+                                <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="details">
+                                    <h4>Our Address</h4>
+                                    <p>02, Mani Complex, Plot No. 84, Sector 8, Gandhidham, Kachchh, Gujarat. 370201</p>
+                                </div>
+                            </div>
+                            <div class="contact-detail-item">
+                                <div class="icon"><i class="fa-solid fa-phone"></i></div>
+                                <div class="details">
+                                    <h4>Phone Numbers</h4>
+                                    <p>+91 87804 59636</p>
+                                </div>
+                            </div>
+                            <div class="contact-detail-item">
+                                <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="details">
+                                    <h4>Email Support</h4>
+                                    <p>jbsikshainstitute@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                    <!-- TODO: add Facebook URL -->
+                    <!-- TODO: add Instagram URL -->
+                    <!-- TODO: add LinkedIn URL -->
+                    <!-- TODO: add WhatsApp URL -->
+                </div>
+                    </div>
+
+                    <!-- Map Mockup -->
+                    <div class="map-card">
+                        <div class="map-placeholder">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <h4>Gandhidham Office Location</h4>
+                            <p style="font-size: 0.8rem; max-width: 250px; margin-top: 0.3rem;">Conveniently located in Sector 8, Gandhidham.</p>
+                            <button class="btn btn-secondary btn-sm" style="margin-top: 1rem;" onclick="alert('Google Maps navigation link triggered.');"><i class="fa-solid fa-location-arrow"></i> Open Map</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="contact-form-panel">
+                    <h2 class="form-title">Request Free Counseling</h2>
+                    <p class="form-subtitle">Fill in the fields below, and our senior admission advisor will schedule a call with you.</p>
+                    
+                    <form id="consultation-form" class="contact-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name *</label>
+                                <input type="text" id="name" class="form-control" placeholder="Enter full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="10-digit mobile number" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" class="form-control" placeholder="name@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="course">Interested Field *</label>
+                                <select id="course" class="form-control" required>
+                                    <option value="" disabled selected>Select course stream</option>
+                                    <option value="eng">Engineering (B.Tech/M.Tech)</option>
+                                    <option value="med">Medical / Nursing (MBBS/BDS)</option>
+                                    <option value="mgt">Management / MBA</option>
+                                    <option value="arts">Design & Fine Arts</option>
+                                    <option value="other">Other Degrees</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message / Specific Concerns</label>
+                            <textarea id="message" class="form-control" placeholder="Tell us about your cutoff score, location preference, or specific colleges you are targeting..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="align-self: flex-start; margin-top: 0.5rem;">Submit Request <i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                    
+                    <div id="form-response" class="form-message"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Common Queries</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-desc">Get quick answers to the most common questions regarding engineering, medical, and general counseling rules.</p>
+            </div>
+            
+            <div class="accordion">
+                <!-- FAQ 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>What is the role of JB Siksha Institute in admissions?</h3>
+                        <span class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            We act as academic advisors and verification experts. We analyze your academic metrics, explain course contents, list appropriate colleges matching your marks, guide you on filling online preferences (ACPC/JoSAA/NEET), and verify compliance documents to avoid cancellation errors.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Do you charge extra fees for online counseling?</h3>
+                        <span class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            Our primary counseling sessions, university guides, and profile shortlistings are completely free of charge. For personalized end-to-end guidance, ACPC choice-filling management, and NRI-sponsored document compliance setups, we charge a nominal consulting fee, which will be explained transparently before you register.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>How does ACPC choice filling advice work?</h3>
+                        <span class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            After GUJCET/JEE results are declared, the Admission Committee for Professional Courses (ACPC) in Gujarat opens choice-filling rounds. Our advisors help you build a priority list of branches and colleges. Placing choices in the wrong order can result in getting allotted to less preferred colleges despite having a higher rank. We help eliminate this risk.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 4 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Can you help with NRI quota and management seats?</h3>
+                        <span class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            Yes, we guide eligible candidates through the official channels for seats reserved under NRI (Non-Resident Indian), NRI-sponsored, and Management quotas. We verify the required sponsorships, relationships, and banking documents to make sure they meet NMC, AICTE, and State regulatory criteria.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 5 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>What documents do I need to start the counseling session?</h3>
+                        <span class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            For a comprehensive assessment, please bring or upload copies of your Class 10 Marksheet, Class 12 Marksheet (if declared), Category Certificate (if applicable, e.g. SEBC/EWS/SC/ST, along with a valid Non-Creamy Layer certificate), and Entrance Scorecards (JEE/GUJCET/NEET).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    JB Siksha <span>Institute</span>
+                </a>
+                <p>A trusted educational admission consultancy helping students choose appropriate degree paths and secure seats in leading colleges across Gujarat and India.</p>
+                <div class="social-links">
+                    <!-- TODO: add Facebook URL -->
+                    <!-- TODO: add Instagram URL -->
+                    <!-- TODO: add LinkedIn URL -->
+                    <!-- TODO: add WhatsApp URL -->
+                </div>
+            </div>
+            <div>
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html">Home</a></li>
+                    <li class="footer-link-item"><a href="about.html">About Us</a></li>
+                    <li class="footer-link-item"><a href="universities.html">Universities</a></li>
+                    <li class="footer-link-item"><a href="mous.html">Our MOUs</a></li>
+                    <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Our Services</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html#services">Career Profiling</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">ACPC Counselling</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">Management Seats</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">NRI Sponsorship</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">Hostel Coordination</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Contact Office</h3>
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>02, Mani Complex, Plot No. 84, Sector 8, Gandhidham, Kachchh, Gujarat. 370201</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 87804 59636</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>jbsikshainstitute@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 JB Siksha Institute. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-conditions.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

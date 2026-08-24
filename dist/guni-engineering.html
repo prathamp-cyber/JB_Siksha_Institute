@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U.V. Patel College of Engineering (UVPCE) - Ganpat University | JB Siksha Institute</title>
+    <meta name="description" content="Explore B.Tech and M.Tech programs, specializations, approvals, eligibility, and fees for U.V. Patel College of Engineering, Ganpat University Mehsana.">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico?v=2" sizes="any">
+    <link rel="icon" type="image/png" sizes="512x512" href="/jb-siksha-favicon-512.png?v=2">
+    <style>
+        /* Custom Styles for Engineering Course Page */
+        .school-hero {
+            padding: calc(var(--header-height) + 2rem) 0 3rem;
+            background-image: linear-gradient(to bottom, rgba(27, 83, 56, 0.1), rgba(255, 255, 255, 1));
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb i {
+            font-size: 0.75rem;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 3.2fr 1.3fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .course-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            min-height: 380px;
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--primary-green);
+        }
+
+        .course-card.diploma::before {
+            background-color: var(--primary-brown);
+        }
+
+        .course-card.postgrad::before {
+            background-color: #1e88e5;
+        }
+
+        .course-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(27, 83, 56, 0.2);
+        }
+
+        .course-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.2rem;
+            gap: 0.5rem;
+        }
+
+        .course-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--radius-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-ug {
+            background-color: var(--primary-green-subtle);
+            color: var(--primary-green);
+        }
+
+        .badge-pg {
+            background-color: #e3f2fd;
+            color: #1e88e5;
+        }
+
+        .badge-dip {
+            background-color: var(--primary-brown-subtle);
+            color: var(--primary-brown);
+        }
+
+        .course-duration {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .course-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+            font-family: var(--font-serif);
+        }
+
+        .course-syllabus-list {
+            list-style-type: square;
+            padding-left: 1.2rem;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .course-careers {
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+            margin-top: auto;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+        }
+
+        .sticky-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .form-message {
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: var(--primary-green-subtle);
+            color: var(--primary-green);
+            border: 1px solid rgba(14, 58, 36, 0.1);
+        }
+
+        .form-message.error {
+            background-color: #fce4ec;
+            color: var(--accent-red);
+            border: 1px solid rgba(192, 57, 43, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition-normal);
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px var(--primary-green-subtle);
+        }
+
+        @media (max-width: 1024px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/Logo/jb-siksha-emblem.png" alt="JB Logo" class="logo-img">
+                JB Siksha <span>Institute</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="universities.html" class="nav-link">Universities</a></li>
+                <li><a href="mous.html" class="nav-link">Our MOUs</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li><a href="contact.html" class="btn btn-primary btn-sm">Get Counseling</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- School Hero Section -->
+    <section class="school-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="universities.html">Universities</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="ganpat-university.html">Ganpat University</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Engineering & Technology</span>
+            </div>
+            
+            <span class="section-tag"><i class="fa-solid fa-laptop-code"></i> U.V. Patel College of Engineering (UVPCE)</span>
+            <h1 style="font-size: 2.8rem; margin-top: 0.5rem; color: var(--primary-green);">Academic Programs & Offerings</h1>
+            <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 800px; margin-top: 0.8rem; line-height: 1.6;">
+                Explore top-tier technical degrees certified by AICTE, offered in collaborative association with global industry leaders like IBM, SAS, and Bosch.
+            </p>
+        </div>
+    </section>
+
+    <!-- Courses Grid Section -->
+    <section class="section" style="padding-top: 3rem;">
+        <div class="container">
+            <div class="grid-layout">
+                
+                <!-- Left: Attractive Cards List -->
+                <div>
+                    <h2 style="font-family: var(--font-serif); color: var(--primary-green); margin-bottom: 1.5rem;">Allotted Courses Directory</h2>
+                    
+                    <div class="courses-grid">
+                        
+                        <!-- Card 1: B.Tech CSE -->
+                        <div class="course-card">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-ug">UG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 4 Years</span>
+                                </div>
+                                <h3 class="course-title">B.Tech - Computer Science & Engineering (CSE)</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Focus areas: Software Development, Full Stack Web Engineering, and Networking.</li>
+                                    <li>Industry specializations: Artificial Intelligence, Machine Learning, Cyber Security, and Cloud Computing.</li>
+                                    <li>Supported by academic collaborations with IBM & SAS for real-world projects.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Software Engineer, Systems Architect, AI Specialist, Cloud Consultant.
+                            </div>
+                        </div>
+
+                        <!-- Card 2: B.Tech IT -->
+                        <div class="course-card">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-ug">UG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 4 Years</span>
+                                </div>
+                                <h3 class="course-title">B.Tech - Information Technology (IT)</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Focus areas: Software Development, Database Management, and Mobile Application design.</li>
+                                    <li>Advanced streams: Cyber Security, Network Administration, and Big Data Analytics.</li>
+                                    <li>Features real-time projects and rigorous industry-aligned internships.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> IT Analyst, Systems Administrator, Web Developer, Database Architect.
+                            </div>
+                        </div>
+
+                        <!-- Card 3: B.Tech Mech -->
+                        <div class="course-card">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-ug">UG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 4 Years</span>
+                                </div>
+                                <h3 class="course-title">B.Tech - Mechanical Engineering (ME)</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Focus areas: Advanced Thermodynamics, Fluid Mechanics, and Design of Machines.</li>
+                                    <li>Special tracks: CAD/CAM setups, Mechatronics, and Robotics Lab integrations.</li>
+                                    <li>Features active practical training in advanced manufacturing design.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Design Engineer, Automotive Specialist, Production Manager, Robotics Tech.
+                            </div>
+                        </div>
+
+                        <!-- Card 4: B.Tech Civil -->
+                        <div class="course-card">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-ug">UG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 4 Years</span>
+                                </div>
+                                <h3 class="course-title">B.Tech - Civil Engineering (CE)</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Focus areas: Structural Design, Geotechnical, and Environmental Engineering.</li>
+                                    <li>Advanced modules: GIS Mapping, Concrete Laboratory, and Construction Planning.</li>
+                                    <li>Features real-world field surveys and structural safety analyses.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Structural Consultant, Site Supervisor, Town Planner, Quantity Surveyor.
+                            </div>
+                        </div>
+
+                        <!-- Card 5: B.Tech Marine -->
+                        <div class="course-card">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-ug">UG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 4 Years</span>
+                                </div>
+                                <h3 class="course-title">B.Tech - Marine Engineering</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Fully residential program conforming to Directorate General of Shipping standards.</li>
+                                    <li>Focus: Ship Mechanics, Marine Propulsion, Electrical Systems, and Safety Drills.</li>
+                                    <li>Practical training inside real Ship Engine Room simulator systems.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Marine Engineer, Marine Surveyor, Shipping Chief Technical Officer.
+                            </div>
+                        </div>
+
+                        <!-- Card 6: B.Tech Biomedical -->
+                        <div class="course-card">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-ug">UG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 4 Years</span>
+                                </div>
+                                <h3 class="course-title">B.Tech - Biomedical Engineering</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Focus: Medical Diagnostics Equipment, Bio-sensors, and Rehabilitation Engineering.</li>
+                                    <li>Streams: Medical Imaging, Biomaterials, and Physiological Modeling.</li>
+                                    <li>Combines engineering analysis with physical human healthcare practices.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Biomedical Analyst, Medical Equipment Manager, Clinical Research Lead.
+                            </div>
+                        </div>
+
+                        <!-- Card 7: M.Tech CSE -->
+                        <div class="course-card postgrad">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-pg">PG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 2 Years</span>
+                                </div>
+                                <h3 class="course-title">M.Tech - Computer Engineering (CSE)</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Focus areas: Advanced Algorithm Analysis, Deep Learning, and Cloud Systems.</li>
+                                    <li>Requires a comprehensive thesis and industry research internship projects.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Senior Software Lead, R&D Engineer, Database Administrator.
+                            </div>
+                        </div>
+
+                        <!-- Card 8: Polytechnic Diploma -->
+                        <div class="course-card diploma">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-dip">Diploma</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 3 Years</span>
+                                </div>
+                                <h3 class="course-title">Polytechnic Diploma (CS / Mech / Civil / EE)</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Focus: Fundamental engineering principles, drafting, and workshops.</li>
+                                    <li>Emphasizes laboratory operations, machinery assembly, and repairs.</li>
+                                    <li>Direct vertical entry route to B.Tech program (2nd year lateral entry).</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Junior Engineer, Technical Assistant, Workshop Supervisor.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right: Sticky Counseling Sidebar -->
+                <div class="sticky-sidebar">
+                    <div class="card" style="padding: 2.2rem 1.8rem; border-color: var(--primary-brown);">
+                        <h3 style="font-size: 1.35rem; margin-bottom: 0.6rem; color: var(--primary-green); display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-solid fa-headset"></i> Counseling Desk
+                        </h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5;">
+                            JB Siksha Institute assists you in counseling, choice filling, and secure seat registration for engineering courses at UVPCE, Ganpat University.
+                        </p>
+                        
+                        <div style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.9rem;">
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-phone" style="color: var(--primary-brown); width: 16px;"></i>
+                                <a href="tel:+918780459636" style="font-weight: 700; color: var(--text-dark);">+91 87804 59636</a>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-envelope" style="color: var(--primary-brown); width: 16px;"></i>
+                                <a href="mailto:jbsikshainstitute@gmail.com" style="font-weight: 700; color: var(--text-dark); word-break: break-all;">jbsikshainstitute@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: var(--primary-green);">Request Admissions Guidance</h4>
+                        
+                        <form id="university-counseling-form">
+                            <div class="form-group">
+                                <label for="counsel-name">Full Name *</label>
+                                <input type="text" id="counsel-name" placeholder="Your Name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="counsel-email">Email Address *</label>
+                                <input type="email" id="counsel-email" placeholder="Your Email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="counsel-phone">Mobile Number *</label>
+                                <input type="tel" id="counsel-phone" placeholder="Your Phone Number" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="counsel-school">Preferred Faculty *</label>
+                                <select id="counsel-school" required>
+                                    <option value="UVPCE - Engineering" selected>U.V. Patel College of Engineering (UVPCE)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="counsel-message">Your Message</label>
+                                <textarea id="counsel-message" rows="3" placeholder="Describe your background or questions..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                                Submit Request <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        
+                        <div id="counsel-form-response" class="form-message"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    JB Siksha <span>Institute</span>
+                </a>
+                <p>A trusted educational admission consultancy helping students choose appropriate degree paths and secure seats in leading colleges across Gujarat and India.</p>
+                <div class="social-links">
+                    <!-- TODO: add Facebook URL -->
+                    <!-- TODO: add Instagram URL -->
+                    <!-- TODO: add LinkedIn URL -->
+                    <!-- TODO: add WhatsApp URL -->
+                </div>
+            </div>
+            <div>
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html">Home</a></li>
+                    <li class="footer-link-item"><a href="about.html">About Us</a></li>
+                    <li class="footer-link-item"><a href="universities.html">Universities</a></li>
+                    <li class="footer-link-item"><a href="mous.html">Our MOUs</a></li>
+                    <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Our Services</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html#services">Career Profiling</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">ACPC Counselling</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">Management Seats</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">NRI Sponsorship</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">Hostel Coordination</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Contact Office</h3>
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>02, Mani Complex, Plot No. 84, Sector 8, Gandhidham, Kachchh, Gujarat. 370201</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 87804 59636</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>jbsikshainstitute@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 JB Siksha Institute. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-conditions.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Main JavaScript & Form Handler Script -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('university-counseling-form');
+            const responseDiv = document.getElementById('counsel-form-response');
+
+            if (form && responseDiv) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const name = document.getElementById('counsel-name').value.trim();
+                    const email = document.getElementById('counsel-email').value.trim();
+                    const phone = document.getElementById('counsel-phone').value.trim();
+                    const school = document.getElementById('counsel-school').value;
+
+                    if (!name || !email || !phone || !school) {
+                        responseDiv.textContent = 'Please fill out all required fields.';
+                        responseDiv.className = 'form-message error';
+                        responseDiv.style.display = 'block';
+                        return;
+                    }
+
+                    responseDiv.textContent = 'Submitting counseling request...';
+                    responseDiv.className = 'form-message';
+                    responseDiv.style.display = 'block';
+
+                    // Simulate email routing trigger
+                    setTimeout(() => {
+                        responseDiv.innerHTML = `<strong>Request Received!</strong> Thank you ${name}. We have logged your request for the <strong>${school}</strong>. Admissions specialist will contact you on <strong>${phone}</strong> or send details to <strong>${email}</strong>. (Lead sent to jbsikshainstitute@gmail.com)`;
+                        responseDiv.className = 'form-message success';
+                        form.reset();
+                    }, 1200);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

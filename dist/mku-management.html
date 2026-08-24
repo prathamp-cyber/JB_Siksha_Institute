@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School of Commerce & Management Studies - MK University | JB Siksha Institute</title>
+    <meta name="description" content="Explore MBA, BBA, B.Com, and PGDBA programs offered by the School of Commerce & Management Studies at MK University Patan.">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico?v=2" sizes="any">
+    <link rel="icon" type="image/png" sizes="512x512" href="/jb-siksha-favicon-512.png?v=2">
+    <style>
+        /* Custom Styles for Management Course Page */
+        .school-hero {
+            padding: calc(var(--header-height) + 2rem) 0 3rem;
+            background-image: linear-gradient(to bottom, rgba(27, 83, 56, 0.1), rgba(255, 255, 255, 1));
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb i {
+            font-size: 0.75rem;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 3.2fr 1.3fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .course-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            min-height: 380px;
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--primary-green);
+        }
+
+        .course-card.diploma::before {
+            background-color: var(--primary-brown);
+        }
+
+        .course-card.postgrad::before {
+            background-color: #1e88e5;
+        }
+
+        .course-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(27, 83, 56, 0.2);
+        }
+
+        .course-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.2rem;
+            gap: 0.5rem;
+        }
+
+        .course-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--radius-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-ug {
+            background-color: var(--primary-green-subtle);
+            color: var(--primary-green);
+        }
+
+        .badge-pg {
+            background-color: #e3f2fd;
+            color: #1e88e5;
+        }
+
+        .badge-dip {
+            background-color: var(--primary-brown-subtle);
+            color: var(--primary-brown);
+        }
+
+        .course-duration {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .course-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+            font-family: var(--font-serif);
+        }
+
+        .course-syllabus-list {
+            list-style-type: square;
+            padding-left: 1.2rem;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            flex-grow: 1;
+        }
+
+        .course-careers {
+            background-color: var(--bg-light);
+            border-radius: var(--radius-sm);
+            padding: 0.8rem 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-left: 3px solid var(--primary-brown);
+        }
+
+        .sticky-sidebar {
+            position: sticky;
+            top: 110px;
+        }
+
+        .form-message {
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: var(--primary-green-subtle);
+            color: var(--primary-green);
+            border: 1px solid rgba(14, 58, 36, 0.1);
+        }
+
+        .form-message.error {
+            background-color: #fce4ec;
+            color: var(--accent-red);
+            border: 1px solid rgba(192, 57, 43, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition-normal);
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px var(--primary-green-subtle);
+        }
+
+        @media (max-width: 1024px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        /* Custom Table Styles */
+        .table-responsive {
+            overflow-x: auto;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .catalog-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            text-align: left;
+            background-color: var(--bg-white);
+        }
+
+        .catalog-table th {
+            background-color: var(--primary-green);
+            color: var(--bg-white);
+            padding: 0.9rem 1.2rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .catalog-table td {
+            padding: 0.9rem 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-dark);
+        }
+
+        .catalog-table tr:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        .catalog-table tr:hover {
+            background-color: rgba(27, 83, 56, 0.05);
+        }
+        
+        .catalog-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .dept-title {
+            font-family: var(--font-serif);
+            color: var(--primary-green);
+            font-size: 1.4rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-green-subtle);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/Logo/jb-siksha-emblem.png" alt="JB Logo" class="logo-img">
+                JB Siksha <span>Institute</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="universities.html" class="nav-link">Universities</a></li>
+                <li><a href="mous.html" class="nav-link">Our MOUs</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li><a href="contact.html" class="btn btn-primary btn-sm">Get Counseling</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- School Hero Section -->
+    <section class="school-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="universities.html">Universities</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="mk-university.html">MK University</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Commerce & Management</span>
+            </div>
+            
+            <span class="section-tag"><i class="fa-solid fa-chart-line"></i> Commerce & Management Studies</span>
+            <h1 style="font-size: 2.8rem; margin-top: 0.5rem; color: var(--primary-green);">Academic Programs & Offerings</h1>
+            <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 800px; margin-top: 0.8rem; line-height: 1.6;">
+                Nurturing corporate leaders, business administrators, and financial experts through case studies, analytical modeling, and strategic marketing.
+            </p>
+        </div>
+    </section>
+
+    <!-- Courses Grid Section -->
+    <section class="section" style="padding-top: 3rem;">
+        <div class="container">
+            <div class="grid-layout">
+                
+                <!-- Left: Attractive Cards List -->
+                <div>
+                    <h2 style="font-family: var(--font-serif); color: var(--primary-green); margin-bottom: 1.5rem;">Featured Programs</h2>
+                    
+                    <div class="courses-grid">
+                        
+                        <!-- Card 1: BBA -->
+                        <div class="course-card">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-ug">UG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 3 Years</span>
+                                </div>
+                                <h3 class="course-title">BBA (Bachelor of Business Administration)</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Focus areas: Marketing, HR Management, Financial Accounting.</li>
+                                    <li>Advanced streams: Principles of Management, Consumer Behavior.</li>
+                                    <li>Prepares students for administrative roles and corporate entries.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Business Analyst, HR Associate, Sales Manager.
+                            </div>
+                        </div>
+
+                        <!-- Card 2: B.Com -->
+                        <div class="course-card">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-ug">UG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 3 Years</span>
+                                </div>
+                                <h3 class="course-title">B.Com (Bachelor of Commerce - General)</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Focus areas: Accountancy, Business Economics, Commercial Law.</li>
+                                    <li>Advanced streams: Auditing, Corporate Tax, and Banking Laws.</li>
+                                    <li>Focuses on fundamental economics and standard auditing rules.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Junior Accountant, Auditor, Bank Executive.
+                            </div>
+                        </div>
+
+                        <!-- Card 3: B.Com Honors -->
+                        <div class="course-card">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-ug">UG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 3 Years</span>
+                                </div>
+                                <h3 class="course-title">B.Com (Honors) - Specialized</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Focus areas: Advanced Cost Accounting, Financial Management.</li>
+                                    <li>Advanced streams: Portfolio Management, Investment Analysis.</li>
+                                    <li>Includes practical spreadsheet modules and accounting system software.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Financial Advisor, Investment Associate, Cost Consultant.
+                            </div>
+                        </div>
+
+                        <!-- Card 4: MBA -->
+                        <div class="course-card postgrad">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-pg">PG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 2 Years</span>
+                                </div>
+                                <h3 class="course-title">MBA (Marketing / Finance / HR)</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Focus areas: Strategic Management, Operations, Leadership models.</li>
+                                    <li>Advanced streams: Portfolio Design, Capital Budgeting, HR Auditing.</li>
+                                    <li>Includes corporate case presentations and summer internship projects.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Marketing Specialist, HR Manager, Financial Controller.
+                            </div>
+                        </div>
+
+                        <!-- Card 5: MBA Business Analytics -->
+                        <div class="course-card postgrad">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-pg">PG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 2 Years</span>
+                                </div>
+                                <h3 class="course-title">MBA (Business Analytics & data)</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Focus areas: Predictive Modeling, Data Visualisation, Statistics.</li>
+                                    <li>Advanced streams: Big Data Decisions, Analytics Platforms, Enterprise Databases.</li>
+                                    <li>Tailored for management analytics career options.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Data Manager, Strategy Specialist, Analytics Architect.
+                            </div>
+                        </div>
+
+                        <!-- Card 6: M.Com -->
+                        <div class="course-card postgrad">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-pg">PG Degree</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 2 Years</span>
+                                </div>
+                                <h3 class="course-title">M.Com (Master of Commerce)</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Focus areas: Advanced Accounting, Research Methodologies, Macro Economics.</li>
+                                    <li>Advanced streams: Statistical Analysis, Tax Planning, Audit Controls.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Financial Analyst, Accounts Head, Academician.
+                            </div>
+                        </div>
+
+                        <!-- Card 7: PGDBA -->
+                        <div class="course-card diploma">
+                            <div>
+                                <div class="course-card-header">
+                                    <span class="course-badge badge-dip">Diploma</span>
+                                    <span class="course-duration"><i class="fa-solid fa-clock"></i> 1 Year</span>
+                                </div>
+                                <h3 class="course-title">Post Graduate Diploma in Business Administration (PGDBA)</h3>
+                                <ul class="course-syllabus-list">
+                                    <li>Focus areas: Entrepreneurship Skills, Costing, Corporate Relations.</li>
+                                    <li>Tailored as a fast-track management specialization for graduates.</li>
+                                </ul>
+                            </div>
+                            <div class="course-careers">
+                                <strong>Careers:</strong> Operations Lead, Admin Officer, Account Executive.
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Complete Program Catalog Section -->
+                    <div style="margin-top: 4rem;">
+                        <h2 style="font-family: var(--font-serif); color: var(--primary-green); margin-bottom: 0.5rem;">Complete Program Catalog</h2>
+                        <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 2rem; line-height: 1.6;">
+                            Browse the complete list of commerce, management, and hotel management programs offered under the School of Commerce & Management Studies at MK University.
+                        </p>
+
+                        <!-- Dept 1: Commerce -->
+                        <div class="dept-title">
+                            <i class="fa-solid fa-coins"></i> Department of Commerce
+                        </div>
+                        <div class="table-responsive">
+                            <table class="catalog-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 45%;">Program Name</th>
+                                        <th style="width: 15%;">Duration</th>
+                                        <th style="width: 40%;">Eligibility</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>B.Com (General)</td><td>3 Years</td><td>10+2 (Commerce preferred)</td></tr>
+                                    <tr><td>B.Com (Hons.) Accountancy</td><td>3 Years</td><td>10+2 (Commerce preferred)</td></tr>
+                                    <tr><td>B.Com (Hons.) Finance</td><td>3 Years</td><td>10+2 (Commerce preferred)</td></tr>
+                                    <tr><td>B.Com (Hons.) ABST</td><td>3 Years</td><td>10+2 (Commerce preferred)</td></tr>
+                                    <tr><td>M.Com (Accountancy)</td><td>2 Years</td><td>B.Com or equivalent</td></tr>
+                                    <tr><td>M.Com (Finance)</td><td>2 Years</td><td>B.Com or equivalent</td></tr>
+                                    <tr><td>M.Com (ABST – Accounting, Business Statistics & Taxation)</td><td>2 Years</td><td>B.Com or equivalent</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Dept 2: Management -->
+                        <div class="dept-title">
+                            <i class="fa-solid fa-briefcase"></i> Department of Management
+                        </div>
+                        <div class="table-responsive">
+                            <table class="catalog-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 45%;">Program Name</th>
+                                        <th style="width: 15%;">Duration</th>
+                                        <th style="width: 40%;">Eligibility</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>BBA (Bachelor of Business Administration)</td><td>3 Years</td><td>10+2 Pass</td></tr>
+                                    <tr><td>BBA+MBA (Integrated)</td><td>5 Years</td><td>12th Pass</td></tr>
+                                    <tr><td>MBA (General / HR / Finance / Operations / Marketing / International Business / Criminology / Insurance / Banking / Rural / Agri-Business / Fashion Designing)</td><td>2 Years</td><td>Graduation in any discipline</td></tr>
+                                    <tr><td>MBA (Executive)</td><td>1 Year</td><td>Minimum 2 years of work experience</td></tr>
+                                    <tr><td>Master of Valuation (Real Estate)</td><td>2 Years</td><td>Graduation in any discipline</td></tr>
+                                    <tr><td>Diploma in Oil & Gas Management</td><td>1 Year</td><td>10+2 Pass</td></tr>
+                                    <tr><td>Diploma in Logistics & Production Management</td><td>1 Year</td><td>10+2 Pass</td></tr>
+                                    <tr><td>Diploma in Logistics Management</td><td>1 Year</td><td>10+2 Pass</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Dept 3: Hotel Management -->
+                        <div class="dept-title">
+                            <i class="fa-solid fa-hotel"></i> Department of Hotel Management
+                        </div>
+                        <div class="table-responsive">
+                            <table class="catalog-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 45%;">Program Name</th>
+                                        <th style="width: 15%;">Duration</th>
+                                        <th style="width: 40%;">Eligibility</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>BHM (Bachelor of Hotel Management)</td><td>4 Years</td><td>10+2 Pass</td></tr>
+                                    <tr><td>B.A. (Hotel Management)</td><td>3 Years</td><td>10+2 Pass</td></tr>
+                                    <tr><td>B.Sc. (Hotel Management)</td><td>3 Years</td><td>10+2 Pass</td></tr>
+                                    <tr><td>MHM (Master of Hotel Management)</td><td>2 Years</td><td>Graduation in any discipline</td></tr>
+                                    <tr><td>M.A. (Hotel Management)</td><td>2 Years</td><td>Graduation in any discipline</td></tr>
+                                    <tr><td>M.Sc. (Hotel Management)</td><td>2 Years</td><td>Graduation in any discipline</td></tr>
+                                    <tr><td>DHM (Diploma in Hotel Management)</td><td>1 Year</td><td>10+2 Pass</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Sticky Counseling Sidebar -->
+                <div class="sticky-sidebar">
+                    <div class="card" style="padding: 2.2rem 1.8rem; border-color: var(--primary-brown);">
+                        <h3 style="font-size: 1.35rem; margin-bottom: 0.6rem; color: var(--primary-green); display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-solid fa-headset"></i> Counseling Desk
+                        </h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5;">
+                            JB Siksha Institute manages the counseling, choice filling, registration, and seat coordinates for Management at MK University.
+                        </p>
+                        
+                        <div style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.9rem;">
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-phone" style="color: var(--primary-brown); width: 16px;"></i>
+                                <a href="tel:+918780459636" style="font-weight: 700; color: var(--text-dark);">+91 87804 59636</a>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-envelope" style="color: var(--primary-brown); width: 16px;"></i>
+                                <a href="mailto:jbsikshainstitute@gmail.com" style="font-weight: 700; color: var(--text-dark); word-break: break-all;">jbsikshainstitute@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: var(--primary-green);">Request Admissions Guidance</h4>
+                        
+                        <form id="university-counseling-form">
+                            <div class="form-group">
+                                <label for="counsel-name">Full Name *</label>
+                                <input type="text" id="counsel-name" placeholder="Your Name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="counsel-email">Email Address *</label>
+                                <input type="email" id="counsel-email" placeholder="Your Email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="counsel-phone">Mobile Number *</label>
+                                <input type="tel" id="counsel-phone" placeholder="Your Phone Number" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="counsel-school">Preferred School *</label>
+                                <select id="counsel-school" required>
+                                    <option value="Commerce & Management" selected>Commerce & Management Studies</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="counsel-message">Your Message</label>
+                                <textarea id="counsel-message" rows="3" placeholder="Describe your background or questions..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                                Submit Request <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        
+                        <div id="counsel-form-response" class="form-message"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    JB Siksha <span>Institute</span>
+                </a>
+                <p>A trusted educational admission consultancy helping students choose appropriate degree paths and secure seats in leading colleges across Gujarat and India.</p>
+                <div class="social-links">
+                    <!-- TODO: add Facebook URL -->
+                    <!-- TODO: add Instagram URL -->
+                    <!-- TODO: add LinkedIn URL -->
+                    <!-- TODO: add WhatsApp URL -->
+                </div>
+            </div>
+            <div>
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html">Home</a></li>
+                    <li class="footer-link-item"><a href="about.html">About Us</a></li>
+                    <li class="footer-link-item"><a href="universities.html">Universities</a></li>
+                    <li class="footer-link-item"><a href="mous.html">Our MOUs</a></li>
+                    <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Our Services</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html#services">Career Profiling</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">ACPC Counselling</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">Management Seats</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">NRI Sponsorship</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">Hostel Coordination</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Contact Office</h3>
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>02, Mani Complex, Plot No. 84, Sector 8, Gandhidham, Kachchh, Gujarat. 370201</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 87804 59636</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>jbsikshainstitute@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 JB Siksha Institute. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-conditions.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Main JavaScript & Form Handler Script -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('university-counseling-form');
+            const responseDiv = document.getElementById('counsel-form-response');
+
+            if (form && responseDiv) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const name = document.getElementById('counsel-name').value.trim();
+                    const email = document.getElementById('counsel-email').value.trim();
+                    const phone = document.getElementById('counsel-phone').value.trim();
+                    const school = document.getElementById('counsel-school').value;
+
+                    if (!name || !email || !phone || !school) {
+                        responseDiv.textContent = 'Please fill out all required fields.';
+                        responseDiv.className = 'form-message error';
+                        responseDiv.style.display = 'block';
+                        return;
+                    }
+
+                    responseDiv.textContent = 'Submitting counseling request...';
+                    responseDiv.className = 'form-message';
+                    responseDiv.style.display = 'block';
+
+                    // Simulate email routing trigger
+                    setTimeout(() => {
+                        responseDiv.innerHTML = `<strong>Request Received!</strong> Thank you ${name}. We have logged your request for the <strong>${school}</strong> at MK University. Admissions specialist will contact you on <strong>${phone}</strong> or send details to <strong>${email}</strong>. (Lead sent to jbsikshainstitute@gmail.com)`;
+                        responseDiv.className = 'form-message success';
+                        form.reset();
+                    }, 1200);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

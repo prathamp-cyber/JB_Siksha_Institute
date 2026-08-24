@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK University, Patan Gujarat - Admission & Courses Profile | JB Siksha Institute</title>
+    <meta name="description" content="Explore programs, departments, approvals, and admission criteria for MK University Patan Gujarat. Get direct ACPC, management, and NRI counseling.">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico?v=2" sizes="any">
+    <link rel="icon" type="image/png" sizes="512x512" href="/jb-siksha-favicon-512.png?v=2">
+    <style>
+        /* Dedicated Page Custom Styles */
+        .university-details-grid {
+            display: grid;
+            grid-template-columns: 2fr 1.2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .details-section {
+            margin-bottom: 3rem;
+        }
+
+        .details-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .details-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-brown);
+            border-radius: var(--radius-full);
+        }
+
+        .details-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .details-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .details-card h3 i {
+            color: var(--primary-brown);
+        }
+
+        .schools-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .school-item {
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2.2rem 1.8rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: space-between;
+        }
+
+        .school-item:hover {
+            border-color: var(--primary-brown);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .school-icon-wrapper {
+            font-size: 3rem;
+            color: var(--primary-brown);
+            margin-bottom: 1.2rem;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition-normal);
+        }
+
+        .school-item:hover .school-icon-wrapper {
+            transform: scale(1.1);
+        }
+
+        .school-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-badge-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: -2rem auto 3rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-badge-card {
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-badge-num {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--primary-brown);
+            font-weight: 800;
+        }
+
+        .stat-badge-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
+
+        .sticky-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .form-message {
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: var(--primary-green-subtle);
+            color: var(--primary-green);
+            border: 1px solid rgba(14, 58, 36, 0.1);
+        }
+
+        .form-message.error {
+            background-color: #fce4ec;
+            color: var(--accent-red);
+            border: 1px solid rgba(192, 57, 43, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition-normal);
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px var(--primary-green-subtle);
+        }
+
+        @media (max-width: 1024px) {
+            .university-details-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .stat-badge-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stat-badge-grid {
+                grid-template-columns: 1fr;
+                margin-top: -1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/Logo/jb-siksha-emblem.png" alt="JB Logo" class="logo-img">
+                JB Siksha <span>Institute</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="universities.html" class="nav-link">Universities</a></li>
+                <li><a href="mous.html" class="nav-link">Our MOUs</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li><a href="contact.html" class="btn btn-primary btn-sm">Get Counseling</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Header -->
+    <section class="about-hero" style="padding-bottom: 6rem; background-image: linear-gradient(to bottom, rgba(27, 83, 56, 0.15), rgba(255, 255, 255, 1));">
+        <div class="container">
+            <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Featured Partner University</span>
+            <h1 style="font-size: 3.5rem; margin-top: 0.5rem;">MK University</h1>
+            <p class="section-desc" style="max-width: 700px; margin: 1rem auto 0; font-size: 1.25rem;">
+                <i class="fa-solid fa-location-dot" style="color: var(--primary-brown);"></i> Patan, Gujarat, India
+            </p>
+            <p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 600;">
+                State Private University &bull; UGC Recognized &bull; Govt of Gujarat Approved
+            </p>
+            <div style="margin-top: 1.8rem; display: flex; flex-direction: column; align-items: center; gap: 1.2rem;">
+                <a href="#schools-section" class="btn btn-primary btn-sm">Explore Courses & Specializations <i class="fa-solid fa-arrow-down"></i></a>
+                
+                <div class="search-wrapper" style="max-width: 500px; width: 100%; position: relative; box-shadow: 0 8px 30px rgba(0,0,0,0.15); border-radius: var(--radius-full); background: #ffffff;">
+                    <i class="fa-solid fa-magnifying-glass search-icon" style="position: absolute; left: 1.5rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 1.1rem; z-index: 10;"></i>
+                    <input type="text" id="offering-search" class="search-input" placeholder="Search courses, faculties or degrees (e.g. BBA, Nursing, B.Tech)..." style="width: 100%; padding: 1.1rem 8.5rem 1.1rem 3.5rem; border-radius: var(--radius-full); border: 1px solid var(--border-color); outline: none; background: transparent; transition: var(--transition-normal);">
+                    <button id="search-action-btn" class="btn btn-primary" style="position: absolute; right: 0.4rem; top: 50%; transform: translateY(-50%); padding: 0.7rem 1.5rem; border-radius: var(--radius-full); font-size: 0.9rem; display: none; align-items: center; gap: 0.5rem; cursor: pointer; border: none; height: calc(100% - 0.8rem); z-index: 10;">
+                        Search <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            
+            <!-- Quick Stats Badges -->
+            <div class="stat-badge-grid">
+                <div class="stat-badge-card">
+                    <div class="stat-badge-num">100+</div>
+                    <div class="stat-badge-title">Diverse Programs</div>
+                </div>
+                <div class="stat-badge-card">
+                    <div class="stat-badge-num">100+</div>
+                    <div class="stat-badge-title">Renowned Faculty</div>
+                </div>
+                <div class="stat-badge-card">
+                    <div class="stat-badge-num">Lavish</div>
+                    <div class="stat-badge-title">Secured Hostels</div>
+                </div>
+                <div class="stat-badge-card">
+                    <div class="stat-badge-num">UGC</div>
+                    <div class="stat-badge-title">Fully Recognized</div>
+                </div>
+            </div>
+
+            <!-- Two-Column Grid Layout -->
+            <div class="university-details-grid">
+                
+                <!-- Left Column: Detailed Profile -->
+                <div>
+                    
+                    <!-- Section 1: Overview -->
+                    <div class="details-section">
+                        <h2>University Profile</h2>
+                        <p style="font-size: 1.05rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.7;">
+                            MK University (located in Matarvadi, Patan, Gujarat) is dedicated to shaping future-ready graduates through quality education, experienced faculty, and an industry-driven curriculum. With a strong focus on innovation, practical learning, and academic excellence, the university empowers students to build successful careers and become leaders in their chosen fields.
+                        </p>
+                    </div>
+
+                    <!-- Section 2: Recognition & Approvals -->
+                    <div class="details-section">
+                        <h2>Approvals & Recognitions</h2>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-top: 1rem;">
+                            <div class="details-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <h3><i class="fa-solid fa-shield-halved"></i> UGC Recognized</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Recognized under University Grants Commission (UGC) guidelines.</p>
+                            </div>
+                            <div class="details-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <h3><i class="fa-solid fa-landmark"></i> Gujarat State Act</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Established & approved by the Government of Gujarat under the Private Universities Act.</p>
+                            </div>
+                            <div class="details-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <h3><i class="fa-solid fa-scale-balanced"></i> BCI Approved</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Bar Council of India approved courses for legal education specializations.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Schools and Specializations -->
+                    <div class="details-section" id="schools-section">
+                        <h2>Academic Schools & Offerings</h2>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem; margin-bottom: 1.5rem;">
+                            MK University comprises several specialized divisions designed for state-of-the-art academic training and practical industry readiness:
+                        </p>
+                        
+                        <div class="schools-list">
+                            <!-- School 1 -->
+                            <div class="school-item" data-courses="B.Tech M.Tech Polytechnic Diploma CSE IT Mechanical Civil Electrical BCA MCA B.Sc-IT Engineering">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                </div>
+                                <h3 class="school-name">School of Engineering, Technology & Computer Science</h3>
+                                <a href="mku-engineering.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- School 2 -->
+                            <div class="school-item" data-courses="MBA BBA B.Com M.Com PGDM Management Business Commerce">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+                                <h3 class="school-name">School of Commerce & Management Studies</h3>
+                                <a href="mku-management.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- School 3 -->
+                            <div class="school-item" data-courses="B.Pharm D.Pharm B.Sc-MLT BPT GNM B.Sc-Nursing B.Optom Pharmacy Healthcare Allied Medical">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-user-doctor"></i>
+                                </div>
+                                <h3 class="school-name">School of Allied & Healthcare Science</h3>
+                                <a href="mku-healthcare.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- School 4 -->
+                            <div class="school-item" data-courses="LLB BA-LLB BBA-LLB LLM Law Legal">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-scale-balanced"></i>
+                                </div>
+                                <h3 class="school-name">School of Law</h3>
+                                <a href="mku-law.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- School 5 -->
+                            <div class="school-item" data-courses="PhD MPhil Research Philosophy">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-microscope"></i>
+                                </div>
+                                <h3 class="school-name">School of Philosophy & Research</h3>
+                                <a href="mku-research.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- School 6 -->
+                            <div class="school-item" data-courses="B.Sc M.Sc Science Physics Chemistry Mathematics Botany Zoology">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-flask"></i>
+                                </div>
+                                <h3 class="school-name">School of Basic & Applied Science</h3>
+                                <a href="mku-science.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- School 7 -->
+                            <div class="school-item" data-courses="B.Voc D.Voc Certificate Diploma Vocational Skill">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-fire-extinguisher"></i>
+                                </div>
+                                <h3 class="school-name">School of Vocational Studies</h3>
+                                <a href="mku-vocational.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- School 8 -->
+                            <div class="school-item" data-courses="BA B.Ed B.Lib MSW MA M.Lib M.Ed BPES MPES BJMC MJMC DJMC Yoga Naturopathy Humanities Arts">
+                                <div class="school-icon-wrapper">
+                                    <i class="fa-solid fa-palette"></i>
+                                </div>
+                                <h3 class="school-name">School of Humanities & Social Studies</h3>
+                                <a href="mku-humanities.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Explore Courses <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Campus Facilities -->
+                    <div class="details-section">
+                        <h2>Campus Highlights</h2>
+                        <ul style="font-size: 1rem; color: var(--text-muted); display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.8rem; margin-top: 1rem; padding-left: 1.2rem; list-style-type: square;">
+                            <li>Central Library with thousands of physical & digital journals.</li>
+                            <li>Separate secure boys' and girls' hostels with dining mess.</li>
+                            <li>Advanced computer hubs and high-speed campus Wi-Fi.</li>
+                            <li>On-campus ATM banking facility.</li>
+                            <li>Vibrant Training & Placement Cell coordinating corporate recruitments.</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Sidebar Counseling Form -->
+                <div class="sticky-sidebar">
+                    <div class="card" style="padding: 2.2rem 1.8rem; border-color: var(--primary-brown);">
+                        <h3 style="font-size: 1.35rem; margin-bottom: 0.6rem; color: var(--primary-green); display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-solid fa-headset"></i> Counseling Desk
+                        </h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5;">
+                            JB Siksha Institute is your trusted advisor. We handle applications, ACPC choice filling, merit seat allocation, and NRI sponsorship coordination for MK University.
+                        </p>
+                        
+                        <div style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.9rem;">
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-phone" style="color: var(--primary-brown); width: 16px;"></i>
+                                <a href="tel:+918780459636" style="font-weight: 700; color: var(--text-dark);">+91 87804 59636</a>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <i class="fa-solid fa-envelope" style="color: var(--primary-brown); width: 16px;"></i>
+                                <a href="mailto:jbsikshainstitute@gmail.com" style="font-weight: 700; color: var(--text-dark); word-break: break-all;">jbsikshainstitute@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <h4 style="font-size: 1.05rem; margin-bottom: 1rem; color: var(--primary-green);">Request Admission Guidance</h4>
+                        
+                        <form id="university-counseling-form">
+                            <div class="form-group">
+                                <label for="counsel-name">Full Name *</label>
+                                <input type="text" id="counsel-name" placeholder="Your Name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="counsel-email">Email Address *</label>
+                                <input type="email" id="counsel-email" placeholder="Your Email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="counsel-phone">Mobile Number *</label>
+                                <input type="tel" id="counsel-phone" placeholder="Your Phone Number" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="counsel-school">Preferred School *</label>
+                                <select id="counsel-school" required>
+                                    <option value="" disabled selected>-- Select School --</option>
+                                    <option value="Engineering & Computing">Engineering & Technology</option>
+                                    <option value="Commerce & Management">Commerce & Management</option>
+                                    <option value="Allied & Healthcare">Allied & Healthcare</option>
+                                    <option value="Law">School of Law</option>
+                                    <option value="Research (Ph.D.)">Philosophy & Research (Ph.D.)</option>
+                                    <option value="Basic Sciences">Basic & Applied Science</option>
+                                    <option value="Vocational Studies">Vocational Studies</option>
+                                    <option value="Humanities">Humanities & Social Studies</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="counsel-message">Your Message</label>
+                                <textarea id="counsel-message" rows="3" placeholder="Describe your background or questions..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                                Submit Request <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        
+                        <div id="counsel-form-response" class="form-message"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    JB Siksha <span>Institute</span>
+                </a>
+                <p>A trusted educational admission consultancy helping students choose appropriate degree paths and secure seats in leading colleges across Gujarat and India.</p>
+                <div class="social-links">
+                    <!-- TODO: add Facebook URL -->
+                    <!-- TODO: add Instagram URL -->
+                    <!-- TODO: add LinkedIn URL -->
+                    <!-- TODO: add WhatsApp URL -->
+                </div>
+            </div>
+            <div>
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html">Home</a></li>
+                    <li class="footer-link-item"><a href="about.html">About Us</a></li>
+                    <li class="footer-link-item"><a href="universities.html">Universities</a></li>
+                    <li class="footer-link-item"><a href="mous.html">Our MOUs</a></li>
+                    <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Our Services</h3>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="index.html#services">Career Profiling</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">ACPC Counselling</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">Management Seats</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">NRI Sponsorship</a></li>
+                    <li class="footer-link-item"><a href="index.html#services">Hostel Coordination</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Contact Office</h3>
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>02, Mani Complex, Plot No. 84, Sector 8, Gandhidham, Kachchh, Gujarat. 370201</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 87804 59636</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>jbsikshainstitute@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 JB Siksha Institute. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-conditions.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Main JavaScript & Form Handler Script -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Offering Search Filter
+            const searchInput = document.getElementById('offering-search');
+            const searchBtn = document.getElementById('search-action-btn');
+            const schoolItems = document.querySelectorAll('.school-item');
+
+            const performScroll = () => {
+                const firstVisible = Array.from(schoolItems).find(item => item.style.display !== 'none');
+                if (firstVisible) {
+                    firstVisible.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    const fallbackSec = document.getElementById('schools-section');
+                    if (fallbackSec) {
+                        fallbackSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            };
+
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const rawQuery = e.target.value.toLowerCase().trim();
+                    
+                    // Show/hide Search button
+                    if (searchBtn) {
+                        searchBtn.style.display = rawQuery.length > 0 ? 'inline-flex' : 'none';
+                    }
+
+                    const normalize = (str) => str.replace(/[\s\.\-\(\)\&]/g, '').toLowerCase();
+                    const queryNormalized = normalize(rawQuery);
+
+                    schoolItems.forEach(item => {
+                        const name = item.querySelector('.school-name').textContent;
+                        const nameNormalized = normalize(name);
+                        const coursesAttr = item.getAttribute('data-courses') || '';
+                        const coursesNormalized = normalize(coursesAttr);
+
+                        let isMatch = nameNormalized.includes(queryNormalized) || coursesNormalized.includes(queryNormalized);
+
+                        if (!isMatch && queryNormalized.length > 1) {
+                            const synonyms = {
+                                'nurse': ['nursing', 'gnm'],
+                                'nursing': ['nurse', 'gnm'],
+                                'gnm': ['nursing', 'nurse'],
+                                'medicine': ['mbbs', 'medical', 'healthcare'],
+                                'mbbs': ['medicine', 'medical'],
+                                'medical': ['mbbs', 'medicine', 'healthcare', 'pharmacy', 'optom', 'physio', 'bpt'],
+                                'physiotherapy': ['bpt', 'physio', 'rehab'],
+                                'bpt': ['physiotherapy', 'physio'],
+                                'pharmacy': ['pharm', 'skpcper', 'druganalyst'],
+                                'pharm': ['pharmacy'],
+                                'bpharm': ['pharmacy'],
+                                'dpharm': ['pharmacy'],
+                                'law': ['llb', 'legal'],
+                                'legal': ['law', 'llb'],
+                                'llb': ['law', 'legal'],
+                                'computer': ['bca', 'mca', 'cse', 'it', 'software', 'laptop', 'developer'],
+                                'bca': ['computer', 'software', 'developer'],
+                                'mca': ['computer', 'software'],
+                                'cse': ['computer', 'engineering', 'laptop'],
+                                'it': ['computer', 'information', 'software'],
+                                'management': ['mba', 'bba', 'business'],
+                                'mba': ['management', 'business'],
+                                'bba': ['management', 'business'],
+                                'commerce': ['bcom', 'mcom', 'accounts'],
+                                'bcom': ['commerce', 'mcom'],
+                                'mcom': ['commerce', 'bcom'],
+                                'design': ['des', 'arch', 'fashion', 'uiux'],
+                                'bdes': ['design'],
+                                'mdes': ['design'],
+                                'architecture': ['arch', 'design'],
+                                'barch': ['architecture'],
+                                'agriculture': ['agri', 'seedling', 'farming'],
+                                'agri': ['agriculture'],
+                                'naturopathy': ['yoga', 'spa', 'naturopathy']
+                            };
+
+                            for (const [key, values] of Object.entries(synonyms)) {
+                                if (queryNormalized === key || queryNormalized.includes(key) || key.includes(queryNormalized)) {
+                                    const hasAny = [key, ...values].some(val => 
+                                        nameNormalized.includes(normalize(val)) || coursesNormalized.includes(normalize(val))
+                                    );
+                                    if (hasAny) {
+                                        isMatch = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        item.style.display = isMatch ? 'flex' : 'none';
+                    });
+                });
+
+                // Listen for Enter key press
+                searchInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        performScroll();
+                    }
+                });
+            }
+
+            if (searchBtn) {
+                searchBtn.addEventListener('click', () => {
+                    performScroll();
+                });
+            }
+
+            // 1. Schools Accordion (Removed: School details are now on a separate page mk-courses.html)
+
+            // 2. Counseling Form Submission Handler
+            const form = document.getElementById('university-counseling-form');
+            const responseDiv = document.getElementById('counsel-form-response');
+
+            if (form && responseDiv) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const name = document.getElementById('counsel-name').value.trim();
+                    const email = document.getElementById('counsel-email').value.trim();
+                    const phone = document.getElementById('counsel-phone').value.trim();
+                    const school = document.getElementById('counsel-school').value;
+
+                    if (!name || !email || !phone || !school) {
+                        responseDiv.textContent = 'Please fill out all required fields.';
+                        responseDiv.className = 'form-message error';
+                        responseDiv.style.display = 'block';
+                        return;
+                    }
+
+                    responseDiv.textContent = 'Submitting counseling request...';
+                    responseDiv.className = 'form-message';
+                    responseDiv.style.display = 'block';
+
+                    // Simulate email routing trigger
+                    setTimeout(() => {
+                        responseDiv.innerHTML = `<strong>Request Received!</strong> Thank you ${name}. We have logged your request for the <strong>${school}</strong> at MK University. Admissions specialist will contact you on <strong>${phone}</strong> or send details to <strong>${email}</strong>. (Lead sent to jbsikshainstitute@gmail.com)`;
+                        responseDiv.className = 'form-message success';
+                        form.reset();
+                    }, 1200);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
